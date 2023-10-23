@@ -551,10 +551,6 @@ Public Class ftmdiMainForm
 
     Private Sub StudentsGradesToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles StudentsGradesToolStripMenuItem.Click
 
-        'fmaRegistrarTORPrinting.MdiParent = Me
-        'fmaRegistrarTORPrinting.Show()
-        'fmaRegistrarTORPrinting.BringToFront()
-
         Cursor = Cursors.WaitCursor
         Dim frm As New fmaRegistrarTORPrinting
 
