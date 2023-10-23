@@ -260,40 +260,13 @@ Public Class fmaIncomeSetupForm
 
     Private Sub cmbType_SelectionChangeCommitted(sender As Object, e As EventArgs) Handles cmbType.SelectionChangeCommitted
 
-        'Try
-        '    Dim drv As DataRowView = DirectCast(cmbType.SelectedItem, DataRowView)
-        '    tor = drv.Item("name").ToString
-        '    If tor.Contains("TOR").ToString Then
-        '        GroupBox1.Enabled = True
-        '        chkSlip.Enabled = True
-        '    End If
 
-        'Catch ex As Exception
-        '    Me.txtCatID.Text = ""
-        'End Try
     End Sub
 
     Public Course As String = ""
     Public SchoolName As String = ""
     Public Address As String = ""
     Public AcademicYear As String = ""
-
-    'Private Sub cmbStudent_SelectionChangeCommitted(sender As Object, e As EventArgs) Handles cmbStudent.SelectionChangeCommitted
-
-    '    Try
-    '            Dim drv As DataRowView = DirectCast(cmbStudent.SelectedItem, DataRowView)
-    '        Course = drv.Item("Course").ToString
-    '        txtcourse.Text = drv.Item("Course").ToString
-    '        SchoolName = drv.Item("SchoolName").ToString
-    '        Address = drv.Item("Address").ToString
-    '        AcademicYear = drv.Item("AcademicYear").ToString
-    '        title.Text = drv.Item("name").ToString
-    '        stdID = drv.Item("std_id").ToString
-    '        Class_roll_no = drv.Item("ID").ToString
-    '    Catch ex As Exception
-    '        End Try
-
-    'End Sub
 
     Dim CollType As String = ""
     Private Sub cmbCollType_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cmbCollType.SelectedIndexChanged
