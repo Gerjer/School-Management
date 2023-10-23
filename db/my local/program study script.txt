@@ -1,0 +1,16 @@
+INSERT INTO `program_of_study` ( `id`, `cat_id`, `course_ID`, `course_grade`, `program_name`, `year_level`, `semester`, `descriptive_title`, `course_number`, `lec_units`, `lab_units`, `units`, `class_type` )
+VALUES
+	(
+		353,
+		13,
+		27,
+		'BSTM',
+		'BACHELOR OF SCIENCE IN TOURISM',
+		'3RD YEAR',
+		'1ST SEMESTER',
+		'Cruise Tourism',
+		'TME 104',
+		3,
+		0,
+		3,
+		'DAY')
