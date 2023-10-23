@@ -169,12 +169,6 @@ Public Class fmaIncomeSetupForm
         loadComboBox()
         Me.dtpPayDate.Value = Date.Now
 
-        'If FeeCategoryID > 0 Then
-        '    cmbType.SelectedValue = FeeCategoryID
-        '    diAmount.Value = Amount
-        '    chkSlip.Enabled = True
-        '    GroupBox1.Enabled = True
-        'End If
         FirstLod = False
     End Sub
 
