@@ -491,10 +491,7 @@ Public Class ftmdiMainForm
     End Sub
 
     Private Sub ToolStripMenuItem1_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles ToolStripMenuItem1.Click
-        'frmFinanceMainForms.MdiParent = Me
-        'frmFinanceMainForms.Show()
-        'frmFinanceMainForms.BringToFront()
-        'ToolStripMenuItem1.HideDropDown()
+
     End Sub
 
     Private Sub FinanceFeeCategoryToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles FinanceFeeCategoryToolStripMenuItem.Click
