@@ -29,7 +29,6 @@ Partial Class fmaFeeCategoryListForm
         Me.ComboItem2 = New DevComponents.Editors.ComboItem()
         Me.ComboItem1 = New DevComponents.Editors.ComboItem()
         Me.GroupPanel2 = New DevComponents.DotNetBar.Controls.GroupPanel()
-        Me.tdbViewer = New C1.Win.C1TrueDBGrid.C1TrueDBGrid()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
         Me.cmbAccCode = New DevComponents.DotNetBar.Controls.ComboBoxEx()
         Me.ComboItem11 = New DevComponents.Editors.ComboItem()
@@ -52,19 +51,21 @@ Partial Class fmaFeeCategoryListForm
         Me.txt_name = New DevComponents.DotNetBar.Controls.TextBoxX()
         Me.LabelX7 = New DevComponents.DotNetBar.LabelX()
         Me.GroupPanel1 = New DevComponents.DotNetBar.Controls.GroupPanel()
+        Me.CMenuStripOperations = New System.Windows.Forms.ContextMenuStrip(Me.components)
+        Me.ViewAssessmentToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.StatementOfAccountToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.tdbViewer = New C1.Win.C1TrueDBGrid.C1TrueDBGrid()
         Me.btnClear = New System.Windows.Forms.Button()
         Me.btnDelete = New System.Windows.Forms.Button()
         Me.btnEdit = New System.Windows.Forms.Button()
         Me.btnClose = New System.Windows.Forms.Button()
         Me.btnAdd = New System.Windows.Forms.Button()
-        Me.CMenuStripOperations = New System.Windows.Forms.ContextMenuStrip(Me.components)
-        Me.ViewAssessmentToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.StatementOfAccountToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.grpcmbAccountCode = New GroupedComboBox()
         Me.GroupPanel2.SuspendLayout()
-        CType(Me.tdbViewer, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupBox1.SuspendLayout()
         Me.GroupPanel1.SuspendLayout()
         Me.CMenuStripOperations.SuspendLayout()
+        CType(Me.tdbViewer, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'ComboItem4
@@ -117,48 +118,10 @@ Partial Class fmaFeeCategoryListForm
         Me.GroupPanel2.Style.TextLineAlignment = DevComponents.DotNetBar.eStyleTextAlignment.Near
         Me.GroupPanel2.TabIndex = 17
         '
-        'tdbViewer
-        '
-        Me.tdbViewer.AllowHorizontalSplit = True
-        Me.tdbViewer.AllowUpdate = False
-        Me.tdbViewer.AllowVerticalSplit = True
-        Me.tdbViewer.AlternatingRows = True
-        Me.tdbViewer.BackColor = System.Drawing.Color.LightBlue
-        Me.tdbViewer.Caption = "FINANCE CATEGORY LIST"
-        Me.tdbViewer.CaptionHeight = 18
-        Me.tdbViewer.DirectionAfterEnter = C1.Win.C1TrueDBGrid.DirectionAfterEnterEnum.MoveNone
-        Me.tdbViewer.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.tdbViewer.ExtendRightColumn = True
-        Me.tdbViewer.FilterBar = True
-        Me.tdbViewer.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.tdbViewer.ForeColor = System.Drawing.Color.MidnightBlue
-        Me.tdbViewer.GroupByCaption = "Drag a column header here to group by that column"
-        Me.tdbViewer.Images.Add(CType(resources.GetObject("tdbViewer.Images"), System.Drawing.Image))
-        Me.tdbViewer.Location = New System.Drawing.Point(0, 177)
-        Me.tdbViewer.MaintainRowCurrency = True
-        Me.tdbViewer.MarqueeStyle = C1.Win.C1TrueDBGrid.MarqueeEnum.HighlightRow
-        Me.tdbViewer.Name = "tdbViewer"
-        Me.tdbViewer.PictureAddnewRow = CType(resources.GetObject("tdbViewer.PictureAddnewRow"), System.Drawing.Image)
-        Me.tdbViewer.PictureCurrentRow = CType(resources.GetObject("tdbViewer.PictureCurrentRow"), System.Drawing.Image)
-        Me.tdbViewer.PictureFilterBar = CType(resources.GetObject("tdbViewer.PictureFilterBar"), System.Drawing.Image)
-        Me.tdbViewer.PreviewInfo.Location = New System.Drawing.Point(0, 0)
-        Me.tdbViewer.PreviewInfo.Size = New System.Drawing.Size(0, 0)
-        Me.tdbViewer.PreviewInfo.ZoomFactor = 75.0R
-        Me.tdbViewer.PrintInfo.PageSettings = CType(resources.GetObject("tdbViewer.PrintInfo.PageSettings"), System.Drawing.Printing.PageSettings)
-        Me.tdbViewer.RowDivider.Color = System.Drawing.Color.DarkBlue
-        Me.tdbViewer.RowDivider.Style = C1.Win.C1TrueDBGrid.LineStyleEnum.None
-        Me.tdbViewer.RowHeight = 15
-        Me.tdbViewer.RowSubDividerColor = System.Drawing.Color.Navy
-        Me.tdbViewer.Size = New System.Drawing.Size(869, 263)
-        Me.tdbViewer.TabAcrossSplits = True
-        Me.tdbViewer.TabIndex = 25
-        Me.tdbViewer.Text = "C1TrueDBGrid1"
-        Me.tdbViewer.VisualStyle = C1.Win.C1TrueDBGrid.VisualStyle.Office2007Blue
-        Me.tdbViewer.PropBag = resources.GetString("tdbViewer.PropBag")
-        '
         'GroupBox1
         '
         Me.GroupBox1.BackColor = System.Drawing.Color.Transparent
+        Me.GroupBox1.Controls.Add(Me.grpcmbAccountCode)
         Me.GroupBox1.Controls.Add(Me.cmbAccCode)
         Me.GroupBox1.Controls.Add(Me.LabelX5)
         Me.GroupBox1.Controls.Add(Me.cmbPayMode)
@@ -190,10 +153,11 @@ Partial Class fmaFeeCategoryListForm
         Me.cmbAccCode.FormattingEnabled = True
         Me.cmbAccCode.ItemHeight = 14
         Me.cmbAccCode.Items.AddRange(New Object() {Me.ComboItem11, Me.ComboItem12})
-        Me.cmbAccCode.Location = New System.Drawing.Point(511, 98)
+        Me.cmbAccCode.Location = New System.Drawing.Point(436, 12)
         Me.cmbAccCode.Name = "cmbAccCode"
-        Me.cmbAccCode.Size = New System.Drawing.Size(233, 20)
+        Me.cmbAccCode.Size = New System.Drawing.Size(38, 20)
         Me.cmbAccCode.TabIndex = 188
+        Me.cmbAccCode.Visible = False
         '
         'ComboItem11
         '
@@ -207,7 +171,7 @@ Partial Class fmaFeeCategoryListForm
         '
         Me.LabelX5.AutoSize = True
         Me.LabelX5.BackColor = System.Drawing.Color.Transparent
-        Me.LabelX5.Location = New System.Drawing.Point(380, 98)
+        Me.LabelX5.Location = New System.Drawing.Point(417, 98)
         Me.LabelX5.Name = "LabelX5"
         Me.LabelX5.Size = New System.Drawing.Size(92, 15)
         Me.LabelX5.TabIndex = 187
@@ -222,9 +186,9 @@ Partial Class fmaFeeCategoryListForm
         Me.cmbPayMode.FormattingEnabled = True
         Me.cmbPayMode.ItemHeight = 14
         Me.cmbPayMode.Items.AddRange(New Object() {Me.ComboItem9, Me.ComboItem10})
-        Me.cmbPayMode.Location = New System.Drawing.Point(511, 69)
+        Me.cmbPayMode.Location = New System.Drawing.Point(548, 69)
         Me.cmbPayMode.Name = "cmbPayMode"
-        Me.cmbPayMode.Size = New System.Drawing.Size(233, 20)
+        Me.cmbPayMode.Size = New System.Drawing.Size(312, 20)
         Me.cmbPayMode.TabIndex = 186
         '
         'ComboItem9
@@ -239,7 +203,7 @@ Partial Class fmaFeeCategoryListForm
         '
         Me.LabelX4.AutoSize = True
         Me.LabelX4.BackColor = System.Drawing.Color.Transparent
-        Me.LabelX4.Location = New System.Drawing.Point(380, 67)
+        Me.LabelX4.Location = New System.Drawing.Point(417, 67)
         Me.LabelX4.Name = "LabelX4"
         Me.LabelX4.Size = New System.Drawing.Size(92, 15)
         Me.LabelX4.TabIndex = 185
@@ -254,9 +218,9 @@ Partial Class fmaFeeCategoryListForm
         Me.cmbTransType.FormattingEnabled = True
         Me.cmbTransType.ItemHeight = 14
         Me.cmbTransType.Items.AddRange(New Object() {Me.ComboItem7, Me.ComboItem8})
-        Me.cmbTransType.Location = New System.Drawing.Point(511, 38)
+        Me.cmbTransType.Location = New System.Drawing.Point(548, 38)
         Me.cmbTransType.Name = "cmbTransType"
-        Me.cmbTransType.Size = New System.Drawing.Size(233, 20)
+        Me.cmbTransType.Size = New System.Drawing.Size(312, 20)
         Me.cmbTransType.TabIndex = 184
         '
         'ComboItem7
@@ -271,7 +235,7 @@ Partial Class fmaFeeCategoryListForm
         '
         Me.LabelX3.AutoSize = True
         Me.LabelX3.BackColor = System.Drawing.Color.Transparent
-        Me.LabelX3.Location = New System.Drawing.Point(379, 38)
+        Me.LabelX3.Location = New System.Drawing.Point(416, 38)
         Me.LabelX3.Name = "LabelX3"
         Me.LabelX3.Size = New System.Drawing.Size(113, 15)
         Me.LabelX3.TabIndex = 183
@@ -287,7 +251,7 @@ Partial Class fmaFeeCategoryListForm
         Me.cmbType.Items.AddRange(New Object() {Me.ComboItem6, Me.ComboItem5})
         Me.cmbType.Location = New System.Drawing.Point(126, 96)
         Me.cmbType.Name = "cmbType"
-        Me.cmbType.Size = New System.Drawing.Size(233, 20)
+        Me.cmbType.Size = New System.Drawing.Size(271, 20)
         Me.cmbType.TabIndex = 182
         '
         'ComboItem6
@@ -322,7 +286,7 @@ Partial Class fmaFeeCategoryListForm
         Me.txtDescr.ForeColor = System.Drawing.Color.MidnightBlue
         Me.txtDescr.Location = New System.Drawing.Point(126, 65)
         Me.txtDescr.Name = "txtDescr"
-        Me.txtDescr.Size = New System.Drawing.Size(233, 20)
+        Me.txtDescr.Size = New System.Drawing.Size(271, 20)
         Me.txtDescr.TabIndex = 179
         '
         'LabelX1
@@ -349,7 +313,7 @@ Partial Class fmaFeeCategoryListForm
         Me.txt_name.ForeColor = System.Drawing.Color.MidnightBlue
         Me.txt_name.Location = New System.Drawing.Point(126, 35)
         Me.txt_name.Name = "txt_name"
-        Me.txt_name.Size = New System.Drawing.Size(233, 20)
+        Me.txt_name.Size = New System.Drawing.Size(271, 20)
         Me.txt_name.TabIndex = 177
         '
         'LabelX7
@@ -396,6 +360,65 @@ Partial Class fmaFeeCategoryListForm
         Me.GroupPanel1.Style.TextColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelText
         Me.GroupPanel1.Style.TextLineAlignment = DevComponents.DotNetBar.eStyleTextAlignment.Near
         Me.GroupPanel1.TabIndex = 22
+        '
+        'CMenuStripOperations
+        '
+        Me.CMenuStripOperations.BackColor = System.Drawing.Color.PaleTurquoise
+        Me.CMenuStripOperations.ImageScalingSize = New System.Drawing.Size(20, 20)
+        Me.CMenuStripOperations.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ViewAssessmentToolStripMenuItem, Me.StatementOfAccountToolStripMenuItem})
+        Me.CMenuStripOperations.Name = "CMenuStripOperations"
+        Me.CMenuStripOperations.Size = New System.Drawing.Size(207, 48)
+        '
+        'ViewAssessmentToolStripMenuItem
+        '
+        Me.ViewAssessmentToolStripMenuItem.Name = "ViewAssessmentToolStripMenuItem"
+        Me.ViewAssessmentToolStripMenuItem.Size = New System.Drawing.Size(206, 22)
+        Me.ViewAssessmentToolStripMenuItem.Text = "View Schedule/Instructor"
+        '
+        'StatementOfAccountToolStripMenuItem
+        '
+        Me.StatementOfAccountToolStripMenuItem.Name = "StatementOfAccountToolStripMenuItem"
+        Me.StatementOfAccountToolStripMenuItem.Size = New System.Drawing.Size(206, 22)
+        Me.StatementOfAccountToolStripMenuItem.Text = "View Enrolled Students"
+        '
+        'tdbViewer
+        '
+        Me.tdbViewer.AllowHorizontalSplit = True
+        Me.tdbViewer.AllowUpdate = False
+        Me.tdbViewer.AllowVerticalSplit = True
+        Me.tdbViewer.AlternatingRows = True
+        Me.tdbViewer.BackColor = System.Drawing.Color.LightBlue
+        Me.tdbViewer.Caption = "FINANCE CATEGORY LIST"
+        Me.tdbViewer.CaptionHeight = 18
+        Me.tdbViewer.DirectionAfterEnter = C1.Win.C1TrueDBGrid.DirectionAfterEnterEnum.MoveNone
+        Me.tdbViewer.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.tdbViewer.ExtendRightColumn = True
+        Me.tdbViewer.FilterBar = True
+        Me.tdbViewer.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.tdbViewer.ForeColor = System.Drawing.Color.MidnightBlue
+        Me.tdbViewer.GroupByCaption = "Drag a column header here to group by that column"
+        Me.tdbViewer.Images.Add(CType(resources.GetObject("tdbViewer.Images"), System.Drawing.Image))
+        Me.tdbViewer.Location = New System.Drawing.Point(0, 177)
+        Me.tdbViewer.MaintainRowCurrency = True
+        Me.tdbViewer.MarqueeStyle = C1.Win.C1TrueDBGrid.MarqueeEnum.HighlightRow
+        Me.tdbViewer.Name = "tdbViewer"
+        Me.tdbViewer.PictureAddnewRow = CType(resources.GetObject("tdbViewer.PictureAddnewRow"), System.Drawing.Image)
+        Me.tdbViewer.PictureCurrentRow = CType(resources.GetObject("tdbViewer.PictureCurrentRow"), System.Drawing.Image)
+        Me.tdbViewer.PictureFilterBar = CType(resources.GetObject("tdbViewer.PictureFilterBar"), System.Drawing.Image)
+        Me.tdbViewer.PreviewInfo.Location = New System.Drawing.Point(0, 0)
+        Me.tdbViewer.PreviewInfo.Size = New System.Drawing.Size(0, 0)
+        Me.tdbViewer.PreviewInfo.ZoomFactor = 75.0R
+        Me.tdbViewer.PrintInfo.PageSettings = CType(resources.GetObject("tdbViewer.PrintInfo.PageSettings"), System.Drawing.Printing.PageSettings)
+        Me.tdbViewer.RowDivider.Color = System.Drawing.Color.DarkBlue
+        Me.tdbViewer.RowDivider.Style = C1.Win.C1TrueDBGrid.LineStyleEnum.None
+        Me.tdbViewer.RowHeight = 15
+        Me.tdbViewer.RowSubDividerColor = System.Drawing.Color.Navy
+        Me.tdbViewer.Size = New System.Drawing.Size(869, 263)
+        Me.tdbViewer.TabAcrossSplits = True
+        Me.tdbViewer.TabIndex = 25
+        Me.tdbViewer.Text = "C1TrueDBGrid1"
+        Me.tdbViewer.VisualStyle = C1.Win.C1TrueDBGrid.VisualStyle.Office2007Blue
+        Me.tdbViewer.PropBag = resources.GetString("tdbViewer.PropBag")
         '
         'btnClear
         '
@@ -476,25 +499,14 @@ Partial Class fmaFeeCategoryListForm
         Me.btnAdd.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
         Me.btnAdd.UseVisualStyleBackColor = True
         '
-        'CMenuStripOperations
+        'grpcmbAccountCode
         '
-        Me.CMenuStripOperations.BackColor = System.Drawing.Color.PaleTurquoise
-        Me.CMenuStripOperations.ImageScalingSize = New System.Drawing.Size(20, 20)
-        Me.CMenuStripOperations.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ViewAssessmentToolStripMenuItem, Me.StatementOfAccountToolStripMenuItem})
-        Me.CMenuStripOperations.Name = "CMenuStripOperations"
-        Me.CMenuStripOperations.Size = New System.Drawing.Size(207, 48)
-        '
-        'ViewAssessmentToolStripMenuItem
-        '
-        Me.ViewAssessmentToolStripMenuItem.Name = "ViewAssessmentToolStripMenuItem"
-        Me.ViewAssessmentToolStripMenuItem.Size = New System.Drawing.Size(206, 22)
-        Me.ViewAssessmentToolStripMenuItem.Text = "View Schedule/Instructor"
-        '
-        'StatementOfAccountToolStripMenuItem
-        '
-        Me.StatementOfAccountToolStripMenuItem.Name = "StatementOfAccountToolStripMenuItem"
-        Me.StatementOfAccountToolStripMenuItem.Size = New System.Drawing.Size(206, 22)
-        Me.StatementOfAccountToolStripMenuItem.Text = "View Enrolled Students"
+        Me.grpcmbAccountCode.DataSource = Nothing
+        Me.grpcmbAccountCode.FormattingEnabled = True
+        Me.grpcmbAccountCode.Location = New System.Drawing.Point(546, 99)
+        Me.grpcmbAccountCode.Name = "grpcmbAccountCode"
+        Me.grpcmbAccountCode.Size = New System.Drawing.Size(312, 21)
+        Me.grpcmbAccountCode.TabIndex = 189
         '
         'fmaFeeCategoryListForm
         '
@@ -509,11 +521,11 @@ Partial Class fmaFeeCategoryListForm
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "FINANCE FEE CATEGORY"
         Me.GroupPanel2.ResumeLayout(False)
-        CType(Me.tdbViewer, System.ComponentModel.ISupportInitialize).EndInit()
         Me.GroupBox1.ResumeLayout(False)
         Me.GroupBox1.PerformLayout()
         Me.GroupPanel1.ResumeLayout(False)
         Me.CMenuStripOperations.ResumeLayout(False)
+        CType(Me.tdbViewer, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
@@ -553,4 +565,5 @@ Partial Class fmaFeeCategoryListForm
     Friend WithEvents ComboItem11 As DevComponents.Editors.ComboItem
     Friend WithEvents ComboItem12 As DevComponents.Editors.ComboItem
     Friend WithEvents LabelX5 As DevComponents.DotNetBar.LabelX
+    Friend WithEvents grpcmbAccountCode As GroupedComboBox
 End Class

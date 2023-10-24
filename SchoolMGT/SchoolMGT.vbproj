@@ -136,6 +136,10 @@
     <Reference Include="DevExpress.XtraSpreadsheet.v18.2, Version=18.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.XtraTreeList.v18.2, Version=18.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.XtraVerticalGrid.v18.2, Version=18.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DropDownControls, Version=1.1.5.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Debug\DropDownControls.dll</HintPath>
+    </Reference>
     <Reference Include="EnvDTE, Version=8.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
     <Reference Include="Microsoft.VisualStudio.Shell.Interop, Version=7.1.40304.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
     <Reference Include="Microsoft.VisualStudio.Shell.Interop.8.0, Version=8.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
@@ -294,6 +298,12 @@
       <DependentUpon>frmDailyCashCollectionDummy.vb</DependentUpon>
     </Compile>
     <Compile Include="01SETUPFORMS\Daily Cash Collection\View\frmDailyCashCollectionDummy.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="01SETUPFORMS\DotNetBarControls\ComboBoxGroup.Designer.vb">
+      <DependentUpon>ComboBoxGroup.vb</DependentUpon>
+    </Compile>
+    <Compile Include="01SETUPFORMS\DotNetBarControls\ComboBoxGroup.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="01SETUPFORMS\DTR\fmaEmp_AttendanceInquiryForm.designer.vb">
@@ -1616,6 +1626,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="01SETUPFORMS\Daily Cash Collection\View\frmDailyCashCollectionDummy.resx">
       <DependentUpon>frmDailyCashCollectionDummy.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="01SETUPFORMS\DotNetBarControls\ComboBoxGroup.resx">
+      <DependentUpon>ComboBoxGroup.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="01SETUPFORMS\DTR\fmaEmp_AttendanceInquiryForm.resx">
       <DependentUpon>fmaEmp_AttendanceInquiryForm.vb</DependentUpon>

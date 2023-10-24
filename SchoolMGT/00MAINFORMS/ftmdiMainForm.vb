@@ -1208,4 +1208,12 @@ Public Class ftmdiMainForm
         Cursor = Cursors.Default
 
     End Sub
+
+    Private Sub ComboBoxGroupToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ComboBoxGroupToolStripMenuItem.Click
+
+        Dim frm As New ComboBoxGroup
+        frm.Show()
+        frm.BringToFront()
+
+    End Sub
 End Class

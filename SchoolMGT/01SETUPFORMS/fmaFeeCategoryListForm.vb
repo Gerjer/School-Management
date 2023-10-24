@@ -30,8 +30,24 @@ Public Class fmaFeeCategoryListForm
         cmbAccCode.DisplayMember = "name"
         cmbAccCode.SelectedIndex = -1
 
+        grpcmbAccountCode.DataSource = getAccCodeHeader()
+        grpcmbAccountCode.ValueMember = "id"
+        grpcmbAccountCode.DisplayMember = "name"
+        grpcmbAccountCode.GroupMember = "grpname"
 
     End Sub
+
+    Private Function getAccCodeHeader() As DataTable
+        Dim dt As DataTable = DataSource(String.Format("SELECT
+	                                0_chart_master.account_code'id',
+	                                0_chart_types.`name`'grpname',
+	                                CONCAT(0_chart_master.account_code,' - ',0_chart_master.account_name ) 'name'
+	
+                                FROM
+	                                djemfcst_acctng2022.0_chart_types
+	                                INNER JOIN djemfcst_acctng2022.0_chart_master ON 0_chart_types.id = 0_chart_master.account_type"))
+        Return dt
+    End Function
 
     Private Function getAccCode() As Object
         Dim sql As String = ""
@@ -147,7 +163,7 @@ Public Class fmaFeeCategoryListForm
             cmbTransType.Text = tdbViewer.Columns.Item(4).Value
             cmbPayMode.Text = tdbViewer.Columns.Item(5).Value
             cmbAccCode.SelectedValue = tdbViewer.Columns.Item(6).Value
-
+            grpcmbAccountCode.SelectedValue = tdbViewer.Columns.Item(6).Value
 
             btnAdd.Text = "Add"
             txt_name.Enabled = False
@@ -303,7 +319,7 @@ Public Class fmaFeeCategoryListForm
     Private Sub cmbAccCode_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cmbAccCode.SelectedIndexChanged
         Try
             Dim drv As DataRowView = DirectCast(cmbAccCode.SelectedItem, DataRowView)
-            AccCode = drv.Item("code").ToString
+            '        AccCode = drv.Item("code").ToString
         Catch ex As Exception
 
         End Try
@@ -311,5 +327,19 @@ Public Class fmaFeeCategoryListForm
 
     Private Sub cmbTransType_TextChanged(sender As Object, e As EventArgs) Handles cmbTransType.TextChanged
         TranType = cmbTransType.Text
+    End Sub
+
+    Private Sub grpcmbAccountCode_SelectedIndexChanged(sender As Object, e As EventArgs) Handles grpcmbAccountCode.SelectedIndexChanged
+
+        If grpcmbAccountCode.Focused = True Then
+            Try
+                Dim drv As DataRowView = DirectCast(grpcmbAccountCode.SelectedItem, DataRowView)
+                AccCode = drv.Item("id").ToString
+                '       Dim name As String = drv.Item("name").ToString
+            Catch ex As Exception
+
+            End Try
+        End If
+
     End Sub
 End Class
