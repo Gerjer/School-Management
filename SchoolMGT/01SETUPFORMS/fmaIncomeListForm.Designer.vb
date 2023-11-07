@@ -622,6 +622,7 @@ Partial Class fmaIncomeListForm
         Me.btnSearch.Dock = System.Windows.Forms.DockStyle.Left
         Me.btnSearch.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnSearch.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnSearch.Image = Global.SchoolMGT.My.Resources.Resources.zoom
         Me.btnSearch.Location = New System.Drawing.Point(258, 0)
         Me.btnSearch.Name = "btnSearch"
         Me.btnSearch.Size = New System.Drawing.Size(133, 32)
@@ -668,6 +669,7 @@ Partial Class fmaIncomeListForm
         Me.btnDelete.Dock = System.Windows.Forms.DockStyle.Left
         Me.btnDelete.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnDelete.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnDelete.Image = Global.SchoolMGT.My.Resources.Resources.close
         Me.btnDelete.Location = New System.Drawing.Point(86, 0)
         Me.btnDelete.Name = "btnDelete"
         Me.btnDelete.Size = New System.Drawing.Size(86, 32)
@@ -683,6 +685,8 @@ Partial Class fmaIncomeListForm
         Me.btnAdd.Dock = System.Windows.Forms.DockStyle.Left
         Me.btnAdd.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnAdd.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnAdd.Image = Global.SchoolMGT.My.Resources.Resources.add
+        Me.btnAdd.ImageAlign = System.Drawing.ContentAlignment.TopCenter
         Me.btnAdd.Location = New System.Drawing.Point(0, 0)
         Me.btnAdd.Name = "btnAdd"
         Me.btnAdd.Size = New System.Drawing.Size(86, 32)

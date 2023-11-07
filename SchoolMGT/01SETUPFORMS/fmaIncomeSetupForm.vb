@@ -218,9 +218,9 @@ Public Class fmaIncomeSetupForm
                 WHERE
                 person.status_type_id = 1 AND
                 person.end_time IS NULL AND
-                students.status_type_id = 1 AND
-                students.end_time IS NULL
-
+                students.status_type_id = 1 
+                -- AND students.end_time IS NULL
+                GROUP BY person.display_name
                 ORDER BY
                 `Name` ASC
                 "
