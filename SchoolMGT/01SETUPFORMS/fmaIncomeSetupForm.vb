@@ -330,18 +330,23 @@ Public Class fmaIncomeSetupForm
     End Sub
 
     Private Sub cmbStudent_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cmbStudent.SelectedIndexChanged
-        Try
-            Dim drv As DataRowView = DirectCast(cmbStudent.SelectedItem, DataRowView)
-            Course = drv.Item("Course").ToString
-            txtcourse.Text = drv.Item("Course").ToString
-            SchoolName = drv.Item("SchoolName").ToString
-            Address = drv.Item("Address").ToString
-            AcademicYear = drv.Item("AcademicYear").ToString
-            title.Text = drv.Item("name").ToString
-            stdID = drv.Item("std_id").ToString
-            Class_roll_no = drv.Item("ID").ToString
-        Catch ex As Exception
-        End Try
+
+        If cmbStudent.Focused Then
+            Try
+                Dim drv As DataRowView = DirectCast(cmbStudent.SelectedItem, DataRowView)
+                Course = drv.Item("Course").ToString
+                txtcourse.Text = drv.Item("Course").ToString
+                SchoolName = drv.Item("SchoolName").ToString
+                Address = drv.Item("Address").ToString
+                AcademicYear = drv.Item("AcademicYear").ToString
+                title.Text = drv.Item("name").ToString
+                stdID = drv.Item("std_id").ToString
+                Class_roll_no = drv.Item("ID").ToString
+            Catch ex As Exception
+            End Try
+        End If
+
+
     End Sub
 
 

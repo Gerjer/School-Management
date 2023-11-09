@@ -55,6 +55,7 @@ Partial Class DevComponentsControls
         Me.ButtonX1 = New DevComponents.DotNetBar.ButtonX()
         Me.expReasonChange = New DevComponents.DotNetBar.ExpandablePanel()
         Me.TextBox1 = New System.Windows.Forms.TextBox()
+        Me.LabelX2 = New DevComponents.DotNetBar.LabelX()
         CType(Me.TabControl4, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.TabControl4.SuspendLayout()
         Me.TabControlPanel9.SuspendLayout()
@@ -69,10 +70,9 @@ Partial Class DevComponentsControls
         Me.GroupPanel2.CanvasColor = System.Drawing.SystemColors.Control
         Me.GroupPanel2.ColorSchemeStyle = DevComponents.DotNetBar.eDotNetBarStyle.Office2007
         Me.GroupPanel2.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.GroupPanel2.Location = New System.Drawing.Point(744, 99)
-        Me.GroupPanel2.Margin = New System.Windows.Forms.Padding(4)
+        Me.GroupPanel2.Location = New System.Drawing.Point(558, 80)
         Me.GroupPanel2.Name = "GroupPanel2"
-        Me.GroupPanel2.Size = New System.Drawing.Size(248, 92)
+        Me.GroupPanel2.Size = New System.Drawing.Size(186, 75)
         '
         '
         '
@@ -103,9 +103,8 @@ Partial Class DevComponentsControls
         Me.PanelEx1.Dock = System.Windows.Forms.DockStyle.Top
         Me.PanelEx1.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.PanelEx1.Location = New System.Drawing.Point(0, 0)
-        Me.PanelEx1.Margin = New System.Windows.Forms.Padding(4)
         Me.PanelEx1.Name = "PanelEx1"
-        Me.PanelEx1.Size = New System.Drawing.Size(1067, 36)
+        Me.PanelEx1.Size = New System.Drawing.Size(800, 29)
         Me.PanelEx1.Style.Alignment = System.Drawing.StringAlignment.Center
         Me.PanelEx1.Style.BackColor1.Color = System.Drawing.Color.FromArgb(CType(CType(41, Byte), Integer), CType(CType(53, Byte), Integer), CType(CType(65, Byte), Integer))
         Me.PanelEx1.Style.BackColor2.Color = System.Drawing.Color.Black
@@ -121,10 +120,9 @@ Partial Class DevComponentsControls
         Me.Label1.AutoSize = True
         Me.Label1.Font = New System.Drawing.Font("Century Gothic", 30.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label1.ForeColor = System.Drawing.Color.Gold
-        Me.Label1.Location = New System.Drawing.Point(460, 206)
-        Me.Label1.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.Label1.Location = New System.Drawing.Point(345, 167)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(222, 59)
+        Me.Label1.Size = New System.Drawing.Size(178, 47)
         Me.Label1.TabIndex = 46
         Me.Label1.Text = "DECIVEL"
         '
@@ -133,10 +131,9 @@ Partial Class DevComponentsControls
         Me.Label2.AutoSize = True
         Me.Label2.Font = New System.Drawing.Font("Century Schoolbook", 30.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label2.ForeColor = System.Drawing.Color.LimeGreen
-        Me.Label2.Location = New System.Drawing.Point(68, 190)
-        Me.Label2.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.Label2.Location = New System.Drawing.Point(51, 154)
         Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(166, 60)
+        Me.Label2.Size = New System.Drawing.Size(134, 47)
         Me.Label2.TabIndex = 47
         Me.Label2.Text = "VOLT"
         '
@@ -145,10 +142,9 @@ Partial Class DevComponentsControls
         Me.Label3.AutoSize = True
         Me.Label3.Font = New System.Drawing.Font("Microsoft Sans Serif", 30.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label3.ForeColor = System.Drawing.Color.OrangeRed
-        Me.Label3.Location = New System.Drawing.Point(71, 258)
-        Me.Label3.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.Label3.Location = New System.Drawing.Point(53, 210)
         Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(276, 58)
+        Me.Label3.Size = New System.Drawing.Size(223, 46)
         Me.Label3.TabIndex = 48
         Me.Label3.Text = "THUNDER"
         '
@@ -158,10 +154,9 @@ Partial Class DevComponentsControls
         Me.GroupPanel1.CanvasColor = System.Drawing.SystemColors.Control
         Me.GroupPanel1.ColorSchemeStyle = DevComponents.DotNetBar.eDotNetBarStyle.Office2007
         Me.GroupPanel1.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.GroupPanel1.Location = New System.Drawing.Point(744, 202)
-        Me.GroupPanel1.Margin = New System.Windows.Forms.Padding(4)
+        Me.GroupPanel1.Location = New System.Drawing.Point(558, 164)
         Me.GroupPanel1.Name = "GroupPanel1"
-        Me.GroupPanel1.Size = New System.Drawing.Size(248, 92)
+        Me.GroupPanel1.Size = New System.Drawing.Size(186, 75)
         '
         '
         '
@@ -190,12 +185,11 @@ Partial Class DevComponentsControls
         Me.TabControl4.CanReorderTabs = False
         Me.TabControl4.Controls.Add(Me.TabControlPanel9)
         Me.TabControl4.Controls.Add(Me.TabControlPanel10)
-        Me.TabControl4.Location = New System.Drawing.Point(16, 319)
-        Me.TabControl4.Margin = New System.Windows.Forms.Padding(4)
+        Me.TabControl4.Location = New System.Drawing.Point(12, 259)
         Me.TabControl4.Name = "TabControl4"
         Me.TabControl4.SelectedTabFont = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold)
         Me.TabControl4.SelectedTabIndex = 0
-        Me.TabControl4.Size = New System.Drawing.Size(299, 145)
+        Me.TabControl4.Size = New System.Drawing.Size(224, 118)
         Me.TabControl4.TabIndex = 52
         Me.TabControl4.TabLayoutType = DevComponents.DotNetBar.eTabLayoutType.FixedWithNavigationBox
         Me.TabControl4.Tabs.Add(Me.TabItem13)
@@ -211,10 +205,9 @@ Partial Class DevComponentsControls
         Me.TabControlPanel9.Controls.Add(Me.ButtonX14)
         Me.TabControlPanel9.Dock = System.Windows.Forms.DockStyle.Fill
         Me.TabControlPanel9.Location = New System.Drawing.Point(0, 26)
-        Me.TabControlPanel9.Margin = New System.Windows.Forms.Padding(4)
         Me.TabControlPanel9.Name = "TabControlPanel9"
         Me.TabControlPanel9.Padding = New System.Windows.Forms.Padding(1)
-        Me.TabControlPanel9.Size = New System.Drawing.Size(299, 119)
+        Me.TabControlPanel9.Size = New System.Drawing.Size(224, 92)
         Me.TabControlPanel9.Style.BackColor1.Color = System.Drawing.Color.FromArgb(CType(CType(142, Byte), Integer), CType(CType(179, Byte), Integer), CType(CType(231, Byte), Integer))
         Me.TabControlPanel9.Style.BackColor2.Color = System.Drawing.Color.FromArgb(CType(CType(223, Byte), Integer), CType(CType(237, Byte), Integer), CType(CType(254, Byte), Integer))
         Me.TabControlPanel9.Style.Border = DevComponents.DotNetBar.eBorderType.SingleLine
@@ -228,10 +221,9 @@ Partial Class DevComponentsControls
         'Button3
         '
         Me.Button3.DialogResult = System.Windows.Forms.DialogResult.Cancel
-        Me.Button3.Location = New System.Drawing.Point(1040, 553)
-        Me.Button3.Margin = New System.Windows.Forms.Padding(4)
+        Me.Button3.Location = New System.Drawing.Point(780, 449)
         Me.Button3.Name = "Button3"
-        Me.Button3.Size = New System.Drawing.Size(100, 28)
+        Me.Button3.Size = New System.Drawing.Size(75, 23)
         Me.Button3.TabIndex = 19
         Me.Button3.Text = "Cancel"
         Me.Button3.UseVisualStyleBackColor = True
@@ -242,11 +234,10 @@ Partial Class DevComponentsControls
         Me.ButtonX11.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton
         Me.ButtonX11.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground
         Me.ButtonX11.Image = CType(resources.GetObject("ButtonX11.Image"), System.Drawing.Image)
-        Me.ButtonX11.Location = New System.Drawing.Point(1181, 543)
-        Me.ButtonX11.Margin = New System.Windows.Forms.Padding(4)
+        Me.ButtonX11.Location = New System.Drawing.Point(886, 441)
         Me.ButtonX11.Name = "ButtonX11"
         Me.ButtonX11.Shortcuts.Add(DevComponents.DotNetBar.eShortcut.CtrlL)
-        Me.ButtonX11.Size = New System.Drawing.Size(124, 38)
+        Me.ButtonX11.Size = New System.Drawing.Size(93, 31)
         Me.ButtonX11.TabIndex = 29
         Me.ButtonX11.Text = "List's"
         '
@@ -255,11 +246,10 @@ Partial Class DevComponentsControls
         Me.ButtonX12.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton
         Me.ButtonX12.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground
         Me.ButtonX12.Image = CType(resources.GetObject("ButtonX12.Image"), System.Drawing.Image)
-        Me.ButtonX12.Location = New System.Drawing.Point(183, 543)
-        Me.ButtonX12.Margin = New System.Windows.Forms.Padding(4)
+        Me.ButtonX12.Location = New System.Drawing.Point(137, 441)
         Me.ButtonX12.Name = "ButtonX12"
         Me.ButtonX12.Shortcuts.Add(DevComponents.DotNetBar.eShortcut.CtrlS)
-        Me.ButtonX12.Size = New System.Drawing.Size(124, 38)
+        Me.ButtonX12.Size = New System.Drawing.Size(93, 31)
         Me.ButtonX12.TabIndex = 27
         Me.ButtonX12.Text = "Save"
         '
@@ -268,11 +258,10 @@ Partial Class DevComponentsControls
         Me.ButtonX13.AccessibleRole = System.Windows.Forms.AccessibleRole.None
         Me.ButtonX13.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground
         Me.ButtonX13.Image = CType(resources.GetObject("ButtonX13.Image"), System.Drawing.Image)
-        Me.ButtonX13.Location = New System.Drawing.Point(19, 543)
-        Me.ButtonX13.Margin = New System.Windows.Forms.Padding(4)
+        Me.ButtonX13.Location = New System.Drawing.Point(14, 441)
         Me.ButtonX13.Name = "ButtonX13"
         Me.ButtonX13.Shortcuts.Add(DevComponents.DotNetBar.eShortcut.CtrlA)
-        Me.ButtonX13.Size = New System.Drawing.Size(124, 38)
+        Me.ButtonX13.Size = New System.Drawing.Size(93, 31)
         Me.ButtonX13.TabIndex = 0
         Me.ButtonX13.Text = "Add"
         '
@@ -281,11 +270,10 @@ Partial Class DevComponentsControls
         Me.ButtonX14.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton
         Me.ButtonX14.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground
         Me.ButtonX14.Image = CType(resources.GetObject("ButtonX14.Image"), System.Drawing.Image)
-        Me.ButtonX14.Location = New System.Drawing.Point(347, 543)
-        Me.ButtonX14.Margin = New System.Windows.Forms.Padding(4)
+        Me.ButtonX14.Location = New System.Drawing.Point(260, 441)
         Me.ButtonX14.Name = "ButtonX14"
         Me.ButtonX14.Shortcuts.Add(DevComponents.DotNetBar.eShortcut.CtrlD)
-        Me.ButtonX14.Size = New System.Drawing.Size(124, 38)
+        Me.ButtonX14.Size = New System.Drawing.Size(93, 31)
         Me.ButtonX14.TabIndex = 28
         Me.ButtonX14.Text = "Delete"
         '
@@ -299,10 +287,9 @@ Partial Class DevComponentsControls
         '
         Me.TabControlPanel10.Dock = System.Windows.Forms.DockStyle.Fill
         Me.TabControlPanel10.Location = New System.Drawing.Point(0, 26)
-        Me.TabControlPanel10.Margin = New System.Windows.Forms.Padding(4)
         Me.TabControlPanel10.Name = "TabControlPanel10"
         Me.TabControlPanel10.Padding = New System.Windows.Forms.Padding(1)
-        Me.TabControlPanel10.Size = New System.Drawing.Size(299, 119)
+        Me.TabControlPanel10.Size = New System.Drawing.Size(224, 92)
         Me.TabControlPanel10.Style.BackColor1.Color = System.Drawing.Color.FromArgb(CType(CType(142, Byte), Integer), CType(CType(179, Byte), Integer), CType(CType(231, Byte), Integer))
         Me.TabControlPanel10.Style.BackColor2.Color = System.Drawing.Color.FromArgb(CType(CType(223, Byte), Integer), CType(CType(237, Byte), Integer), CType(CType(254, Byte), Integer))
         Me.TabControlPanel10.Style.Border = DevComponents.DotNetBar.eBorderType.SingleLine
@@ -324,10 +311,9 @@ Partial Class DevComponentsControls
         Me.PanelEx2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.PanelEx2.CanvasColor = System.Drawing.Color.Transparent
         Me.PanelEx2.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.PanelEx2.Location = New System.Drawing.Point(79, 137)
-        Me.PanelEx2.Margin = New System.Windows.Forms.Padding(4)
+        Me.PanelEx2.Location = New System.Drawing.Point(59, 111)
         Me.PanelEx2.Name = "PanelEx2"
-        Me.PanelEx2.Size = New System.Drawing.Size(108, 49)
+        Me.PanelEx2.Size = New System.Drawing.Size(81, 40)
         Me.PanelEx2.Style.Alignment = System.Drawing.StringAlignment.Center
         Me.PanelEx2.Style.BackColor1.Color = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(128, Byte), Integer), CType(CType(0, Byte), Integer))
         Me.PanelEx2.Style.BackColor2.Color = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(128, Byte), Integer))
@@ -349,8 +335,7 @@ Partial Class DevComponentsControls
         Me.dtpServDateExamination.FocusHighlightEnabled = True
         Me.dtpServDateExamination.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.dtpServDateExamination.ForeColor = System.Drawing.Color.MidnightBlue
-        Me.dtpServDateExamination.Location = New System.Drawing.Point(277, 116)
-        Me.dtpServDateExamination.Margin = New System.Windows.Forms.Padding(4)
+        Me.dtpServDateExamination.Location = New System.Drawing.Point(208, 94)
         Me.dtpServDateExamination.MinDate = New Date(1900, 1, 1, 0, 0, 0, 0)
         '
         '
@@ -377,16 +362,15 @@ Partial Class DevComponentsControls
         Me.dtpServDateExamination.MonthCalendar.NavigationBackgroundStyle.BackColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground
         Me.dtpServDateExamination.MonthCalendar.TodayButtonVisible = True
         Me.dtpServDateExamination.Name = "dtpServDateExamination"
-        Me.dtpServDateExamination.Size = New System.Drawing.Size(269, 23)
+        Me.dtpServDateExamination.Size = New System.Drawing.Size(202, 20)
         Me.dtpServDateExamination.TabIndex = 244
         '
         'WinLabel
         '
         Me.WinLabel.BackColor = System.Drawing.Color.Transparent
         Me.WinLabel.Location = New System.Drawing.Point(0, 0)
-        Me.WinLabel.Margin = New System.Windows.Forms.Padding(4)
         Me.WinLabel.Name = "WinLabel"
-        Me.WinLabel.Size = New System.Drawing.Size(489, 41)
+        Me.WinLabel.Size = New System.Drawing.Size(367, 33)
         Me.WinLabel.TabIndex = 245
         Me.WinLabel.Text = "PAY GRADES SETUP"
         Me.WinLabel.TextAlignment = System.Drawing.StringAlignment.Center
@@ -400,10 +384,9 @@ Partial Class DevComponentsControls
         Me.txthome_phone.Border.TextShadowColor = System.Drawing.Color.Tomato
         Me.txthome_phone.FocusHighlightEnabled = True
         Me.txthome_phone.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txthome_phone.Location = New System.Drawing.Point(277, 148)
-        Me.txthome_phone.Margin = New System.Windows.Forms.Padding(4)
+        Me.txthome_phone.Location = New System.Drawing.Point(208, 120)
         Me.txthome_phone.Name = "txthome_phone"
-        Me.txthome_phone.Size = New System.Drawing.Size(355, 23)
+        Me.txthome_phone.Size = New System.Drawing.Size(266, 20)
         Me.txthome_phone.TabIndex = 246
         '
         'cmbCourse
@@ -412,10 +395,9 @@ Partial Class DevComponentsControls
         Me.cmbCourse.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed
         Me.cmbCourse.FormattingEnabled = True
         Me.cmbCourse.ItemHeight = 14
-        Me.cmbCourse.Location = New System.Drawing.Point(277, 177)
-        Me.cmbCourse.Margin = New System.Windows.Forms.Padding(4)
+        Me.cmbCourse.Location = New System.Drawing.Point(208, 144)
         Me.cmbCourse.Name = "cmbCourse"
-        Me.cmbCourse.Size = New System.Drawing.Size(353, 20)
+        Me.cmbCourse.Size = New System.Drawing.Size(266, 20)
         Me.cmbCourse.TabIndex = 247
         '
         'GroupPanel4
@@ -425,10 +407,9 @@ Partial Class DevComponentsControls
         Me.GroupPanel4.ColorSchemeStyle = DevComponents.DotNetBar.eDotNetBarStyle.Office2007
         Me.GroupPanel4.Controls.Add(Me.WinLabel)
         Me.GroupPanel4.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.GroupPanel4.Location = New System.Drawing.Point(31, 43)
-        Me.GroupPanel4.Margin = New System.Windows.Forms.Padding(4)
+        Me.GroupPanel4.Location = New System.Drawing.Point(23, 35)
         Me.GroupPanel4.Name = "GroupPanel4"
-        Me.GroupPanel4.Size = New System.Drawing.Size(649, 43)
+        Me.GroupPanel4.Size = New System.Drawing.Size(487, 35)
         '
         '
         '
@@ -453,10 +434,9 @@ Partial Class DevComponentsControls
         'LabelX1
         '
         Me.LabelX1.AutoSize = True
-        Me.LabelX1.Location = New System.Drawing.Point(16, 97)
-        Me.LabelX1.Margin = New System.Windows.Forms.Padding(4)
+        Me.LabelX1.Location = New System.Drawing.Point(12, 79)
         Me.LabelX1.Name = "LabelX1"
-        Me.LabelX1.Size = New System.Drawing.Size(634, 17)
+        Me.LabelX1.Size = New System.Drawing.Size(536, 15)
         Me.LabelX1.TabIndex = 249
         Me.LabelX1.Text = "<font face=""Comic Sans MS""><b><font color=""#ED1C24""><font size=12>COURSE/LEVEL</f" &
     "ont></b></font>"
@@ -472,12 +452,11 @@ Partial Class DevComponentsControls
         Me.ButtonX10.Image = CType(resources.GetObject("ButtonX10.Image"), System.Drawing.Image)
         Me.ButtonX10.ImageFixedSize = New System.Drawing.Size(40, 40)
         Me.ButtonX10.ImagePosition = DevComponents.DotNetBar.eImagePosition.Top
-        Me.ButtonX10.Location = New System.Drawing.Point(593, 336)
-        Me.ButtonX10.Margin = New System.Windows.Forms.Padding(4)
+        Me.ButtonX10.Location = New System.Drawing.Point(445, 273)
         Me.ButtonX10.Name = "ButtonX10"
         Me.ButtonX10.Shape = New DevComponents.DotNetBar.RoundRectangleShapeDescriptor(5)
         Me.ButtonX10.Shortcuts.Add(DevComponents.DotNetBar.eShortcut.F5)
-        Me.ButtonX10.Size = New System.Drawing.Size(87, 65)
+        Me.ButtonX10.Size = New System.Drawing.Size(65, 53)
         Me.ButtonX10.TabIndex = 49
         Me.ButtonX10.Tag = "1"
         Me.ButtonX10.Tooltip = "Reset Quantity"
@@ -493,12 +472,11 @@ Partial Class DevComponentsControls
         Me.ButtonX6.HoverImage = CType(resources.GetObject("ButtonX6.HoverImage"), System.Drawing.Image)
         Me.ButtonX6.Image = CType(resources.GetObject("ButtonX6.Image"), System.Drawing.Image)
         Me.ButtonX6.ImageFixedSize = New System.Drawing.Size(40, 60)
-        Me.ButtonX6.Location = New System.Drawing.Point(412, 423)
-        Me.ButtonX6.Margin = New System.Windows.Forms.Padding(4)
+        Me.ButtonX6.Location = New System.Drawing.Point(309, 344)
         Me.ButtonX6.Name = "ButtonX6"
         Me.ButtonX6.Shape = New DevComponents.DotNetBar.RoundRectangleShapeDescriptor(5)
         Me.ButtonX6.Shortcuts.Add(DevComponents.DotNetBar.eShortcut.F5)
-        Me.ButtonX6.Size = New System.Drawing.Size(103, 68)
+        Me.ButtonX6.Size = New System.Drawing.Size(77, 55)
         Me.ButtonX6.SplitButton = True
         Me.ButtonX6.TabIndex = 45
         Me.ButtonX6.Tag = "7"
@@ -515,12 +493,11 @@ Partial Class DevComponentsControls
         Me.ButtonX3.ForeColor = System.Drawing.Color.Gold
         Me.ButtonX3.Image = CType(resources.GetObject("ButtonX3.Image"), System.Drawing.Image)
         Me.ButtonX3.ImageFixedSize = New System.Drawing.Size(40, 60)
-        Me.ButtonX3.Location = New System.Drawing.Point(407, 256)
-        Me.ButtonX3.Margin = New System.Windows.Forms.Padding(4)
+        Me.ButtonX3.Location = New System.Drawing.Point(305, 208)
         Me.ButtonX3.Name = "ButtonX3"
         Me.ButtonX3.Shape = New DevComponents.DotNetBar.RoundRectangleShapeDescriptor(5)
         Me.ButtonX3.Shortcuts.Add(DevComponents.DotNetBar.eShortcut.F5)
-        Me.ButtonX3.Size = New System.Drawing.Size(115, 76)
+        Me.ButtonX3.Size = New System.Drawing.Size(86, 62)
         Me.ButtonX3.SplitButton = True
         Me.ButtonX3.TabIndex = 43
         Me.ButtonX3.Tag = "7"
@@ -537,12 +514,11 @@ Partial Class DevComponentsControls
         Me.ButtonX4.ForeColor = System.Drawing.Color.LimeGreen
         Me.ButtonX4.Image = CType(resources.GetObject("ButtonX4.Image"), System.Drawing.Image)
         Me.ButtonX4.ImageFixedSize = New System.Drawing.Size(40, 60)
-        Me.ButtonX4.Location = New System.Drawing.Point(407, 348)
-        Me.ButtonX4.Margin = New System.Windows.Forms.Padding(4)
+        Me.ButtonX4.Location = New System.Drawing.Point(305, 283)
         Me.ButtonX4.Name = "ButtonX4"
         Me.ButtonX4.Shape = New DevComponents.DotNetBar.RoundRectangleShapeDescriptor(5)
         Me.ButtonX4.Shortcuts.Add(DevComponents.DotNetBar.eShortcut.F5)
-        Me.ButtonX4.Size = New System.Drawing.Size(103, 68)
+        Me.ButtonX4.Size = New System.Drawing.Size(77, 55)
         Me.ButtonX4.SplitButton = True
         Me.ButtonX4.TabIndex = 44
         Me.ButtonX4.Tag = "7"
@@ -559,12 +535,11 @@ Partial Class DevComponentsControls
         Me.ButtonX1.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.ButtonX1.ImageFixedSize = New System.Drawing.Size(40, 40)
         Me.ButtonX1.ImagePosition = DevComponents.DotNetBar.eImagePosition.Top
-        Me.ButtonX1.Location = New System.Drawing.Point(708, 307)
-        Me.ButtonX1.Margin = New System.Windows.Forms.Padding(4)
+        Me.ButtonX1.Location = New System.Drawing.Point(531, 249)
         Me.ButtonX1.Name = "ButtonX1"
         Me.ButtonX1.Shape = New DevComponents.DotNetBar.RoundRectangleShapeDescriptor(5)
         Me.ButtonX1.Shortcuts.Add(DevComponents.DotNetBar.eShortcut.F5)
-        Me.ButtonX1.Size = New System.Drawing.Size(305, 140)
+        Me.ButtonX1.Size = New System.Drawing.Size(229, 114)
         Me.ButtonX1.TabIndex = 250
         Me.ButtonX1.Tag = "1"
         Me.ButtonX1.Text = "Per Barangay Records the said Person is <b><font color=""#ED1C24"">NOT </font>PERSO" &
@@ -578,11 +553,10 @@ Partial Class DevComponentsControls
         Me.expReasonChange.CollapseDirection = DevComponents.DotNetBar.eCollapseDirection.LeftToRight
         Me.expReasonChange.ColorSchemeStyle = DevComponents.DotNetBar.eDotNetBarStyle.Office2007
         Me.expReasonChange.Controls.Add(Me.TextBox1)
-        Me.expReasonChange.Location = New System.Drawing.Point(708, 455)
-        Me.expReasonChange.Margin = New System.Windows.Forms.Padding(4)
+        Me.expReasonChange.Location = New System.Drawing.Point(531, 370)
         Me.expReasonChange.Name = "expReasonChange"
-        Me.expReasonChange.Padding = New System.Windows.Forms.Padding(7, 6, 7, 6)
-        Me.expReasonChange.Size = New System.Drawing.Size(335, 96)
+        Me.expReasonChange.Padding = New System.Windows.Forms.Padding(5, 5, 5, 5)
+        Me.expReasonChange.Size = New System.Drawing.Size(251, 78)
         Me.expReasonChange.Style.Alignment = System.Drawing.StringAlignment.Center
         Me.expReasonChange.Style.BackColor1.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground
         Me.expReasonChange.Style.BackColor2.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground2
@@ -591,7 +565,6 @@ Partial Class DevComponentsControls
         Me.expReasonChange.Style.ForeColor.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.ItemText
         Me.expReasonChange.Style.GradientAngle = 90
         Me.expReasonChange.TabIndex = 252
-        Me.expReasonChange.TitleHeight = 32
         Me.expReasonChange.TitleStyle.Alignment = System.Drawing.StringAlignment.Center
         Me.expReasonChange.TitleStyle.BackColor1.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground
         Me.expReasonChange.TitleStyle.BackColor2.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground2
@@ -605,19 +578,30 @@ Partial Class DevComponentsControls
         'TextBox1
         '
         Me.TextBox1.Dock = System.Windows.Forms.DockStyle.Left
-        Me.TextBox1.Location = New System.Drawing.Point(7, 38)
-        Me.TextBox1.Margin = New System.Windows.Forms.Padding(4)
+        Me.TextBox1.Location = New System.Drawing.Point(5, 31)
         Me.TextBox1.Multiline = True
         Me.TextBox1.Name = "TextBox1"
-        Me.TextBox1.Size = New System.Drawing.Size(205, 52)
+        Me.TextBox1.Size = New System.Drawing.Size(155, 42)
         Me.TextBox1.TabIndex = 1
         Me.TextBox1.Text = "EDIT : "
         '
+        'LabelX2
+        '
+        Me.LabelX2.AutoSize = True
+        Me.LabelX2.Location = New System.Drawing.Point(78, 383)
+        Me.LabelX2.Name = "LabelX2"
+        Me.LabelX2.Size = New System.Drawing.Size(77, 54)
+        Me.LabelX2.TabIndex = 253
+        Me.LabelX2.Text = "<font color=""#ED1C24"">Manual Entry</font>" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "<br>of Payee</br>" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "<br> is not recorde" &
+    "d</br> " & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "<br>in the system</br>"
+        Me.LabelX2.TextLineAlignment = System.Drawing.StringAlignment.Near
+        '
         'DevComponentsControls
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(1067, 554)
+        Me.ClientSize = New System.Drawing.Size(800, 450)
+        Me.Controls.Add(Me.LabelX2)
         Me.Controls.Add(Me.expReasonChange)
         Me.Controls.Add(Me.ButtonX1)
         Me.Controls.Add(Me.LabelX1)
@@ -637,7 +621,6 @@ Partial Class DevComponentsControls
         Me.Controls.Add(Me.ButtonX6)
         Me.Controls.Add(Me.ButtonX3)
         Me.Controls.Add(Me.ButtonX4)
-        Me.Margin = New System.Windows.Forms.Padding(4)
         Me.Name = "DevComponentsControls"
         Me.Text = "DevComponentsControls"
         CType(Me.TabControl4, System.ComponentModel.ISupportInitialize).EndInit()
@@ -683,4 +666,5 @@ Partial Class DevComponentsControls
     Friend WithEvents ButtonX1 As DevComponents.DotNetBar.ButtonX
     Friend WithEvents expReasonChange As DevComponents.DotNetBar.ExpandablePanel
     Friend WithEvents TextBox1 As TextBox
+    Friend WithEvents LabelX2 As DevComponents.DotNetBar.LabelX
 End Class

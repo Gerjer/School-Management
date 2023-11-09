@@ -81,6 +81,7 @@ Partial Class fmaIncomeSetupForm
         Me.cmbCollType = New DevComponents.DotNetBar.Controls.ComboBoxEx()
         Me.ComboItem9 = New DevComponents.Editors.ComboItem()
         Me.ComboItem10 = New DevComponents.Editors.ComboItem()
+        Me.LabelX16 = New DevComponents.DotNetBar.LabelX()
         Me.PanelEx1.SuspendLayout()
         Me.GroupPanel2.SuspendLayout()
         Me.GroupPanel3.SuspendLayout()
@@ -501,6 +502,7 @@ Partial Class fmaIncomeSetupForm
         Me.GroupPanel1.BackColor = System.Drawing.Color.Transparent
         Me.GroupPanel1.CanvasColor = System.Drawing.SystemColors.Control
         Me.GroupPanel1.ColorSchemeStyle = DevComponents.DotNetBar.eDotNetBarStyle.Office2007
+        Me.GroupPanel1.Controls.Add(Me.LabelX16)
         Me.GroupPanel1.Controls.Add(Me.Label1)
         Me.GroupPanel1.Controls.Add(Me.chkActive)
         Me.GroupPanel1.Controls.Add(Me.txtcourse)
@@ -542,7 +544,7 @@ Partial Class fmaIncomeSetupForm
         Me.Label1.AutoSize = True
         Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label1.ForeColor = System.Drawing.Color.Gray
-        Me.Label1.Location = New System.Drawing.Point(155, 0)
+        Me.Label1.Location = New System.Drawing.Point(155, 2)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(235, 13)
         Me.Label1.TabIndex = 190
@@ -551,11 +553,10 @@ Partial Class fmaIncomeSetupForm
         'chkActive
         '
         Me.chkActive.AutoSize = True
-        Me.chkActive.Location = New System.Drawing.Point(464, 23)
+        Me.chkActive.Location = New System.Drawing.Point(454, 2)
         Me.chkActive.Name = "chkActive"
-        Me.chkActive.Size = New System.Drawing.Size(83, 17)
+        Me.chkActive.Size = New System.Drawing.Size(15, 14)
         Me.chkActive.TabIndex = 189
-        Me.chkActive.Text = "Exit Student"
         Me.chkActive.UseVisualStyleBackColor = True
         '
         'txtcourse
@@ -570,7 +571,7 @@ Partial Class fmaIncomeSetupForm
         Me.txtcourse.FocusHighlightEnabled = True
         Me.txtcourse.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtcourse.ForeColor = System.Drawing.Color.MidnightBlue
-        Me.txtcourse.Location = New System.Drawing.Point(120, 47)
+        Me.txtcourse.Location = New System.Drawing.Point(120, 51)
         Me.txtcourse.Name = "txtcourse"
         Me.txtcourse.Size = New System.Drawing.Size(425, 23)
         Me.txtcourse.TabIndex = 188
@@ -580,7 +581,7 @@ Partial Class fmaIncomeSetupForm
         Me.LabelX11.AutoSize = True
         Me.LabelX11.BackColor = System.Drawing.Color.Transparent
         Me.LabelX11.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LabelX11.Location = New System.Drawing.Point(10, 49)
+        Me.LabelX11.Location = New System.Drawing.Point(10, 52)
         Me.LabelX11.Name = "LabelX11"
         Me.LabelX11.Size = New System.Drawing.Size(60, 18)
         Me.LabelX11.TabIndex = 187
@@ -591,7 +592,7 @@ Partial Class fmaIncomeSetupForm
         Me.LabelX7.AutoSize = True
         Me.LabelX7.BackColor = System.Drawing.Color.Transparent
         Me.LabelX7.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LabelX7.Location = New System.Drawing.Point(10, 77)
+        Me.LabelX7.Location = New System.Drawing.Point(10, 80)
         Me.LabelX7.Name = "LabelX7"
         Me.LabelX7.Size = New System.Drawing.Size(87, 18)
         Me.LabelX7.TabIndex = 156
@@ -605,7 +606,7 @@ Partial Class fmaIncomeSetupForm
         Me.cmbType.FormattingEnabled = True
         Me.cmbType.ItemHeight = 20
         Me.cmbType.Items.AddRange(New Object() {Me.ComboItem6, Me.ComboItem5})
-        Me.cmbType.Location = New System.Drawing.Point(122, 74)
+        Me.cmbType.Location = New System.Drawing.Point(122, 76)
         Me.cmbType.Name = "cmbType"
         Me.cmbType.Size = New System.Drawing.Size(425, 26)
         Me.cmbType.TabIndex = 183
@@ -627,7 +628,7 @@ Partial Class fmaIncomeSetupForm
         Me.cmbStudent.FormattingEnabled = True
         Me.cmbStudent.ItemHeight = 16
         Me.cmbStudent.Items.AddRange(New Object() {Me.ComboItem7, Me.ComboItem8})
-        Me.cmbStudent.Location = New System.Drawing.Point(123, 18)
+        Me.cmbStudent.Location = New System.Drawing.Point(123, 23)
         Me.cmbStudent.Name = "cmbStudent"
         Me.cmbStudent.Size = New System.Drawing.Size(331, 24)
         Me.cmbStudent.TabIndex = 186
@@ -645,7 +646,7 @@ Partial Class fmaIncomeSetupForm
         Me.LabelX6.AutoSize = True
         Me.LabelX6.BackColor = System.Drawing.Color.Transparent
         Me.LabelX6.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LabelX6.Location = New System.Drawing.Point(10, 20)
+        Me.LabelX6.Location = New System.Drawing.Point(8, 23)
         Me.LabelX6.Name = "LabelX6"
         Me.LabelX6.Size = New System.Drawing.Size(111, 18)
         Me.LabelX6.TabIndex = 185
@@ -913,6 +914,17 @@ Partial Class fmaIncomeSetupForm
         '
         Me.ComboItem10.Text = "INCOME"
         '
+        'LabelX16
+        '
+        Me.LabelX16.AutoSize = True
+        Me.LabelX16.Location = New System.Drawing.Point(478, -1)
+        Me.LabelX16.Name = "LabelX16"
+        Me.LabelX16.Size = New System.Drawing.Size(75, 54)
+        Me.LabelX16.TabIndex = 254
+        Me.LabelX16.Text = "<font color=""#ED1C24"">Manual Entry</font>" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "<br>of Payee</br>" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "<br> is not recorde" &
+    "d</br> " & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "<br>in the system</br>"
+        Me.LabelX16.TextLineAlignment = System.Drawing.StringAlignment.Near
+        '
         'fmaIncomeSetupForm
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -1005,4 +1017,5 @@ Partial Class fmaIncomeSetupForm
     Friend WithEvents LabelX11 As DevComponents.DotNetBar.LabelX
     Friend WithEvents chkActive As CheckBox
     Friend WithEvents Label1 As Label
+    Friend WithEvents LabelX16 As DevComponents.DotNetBar.LabelX
 End Class
