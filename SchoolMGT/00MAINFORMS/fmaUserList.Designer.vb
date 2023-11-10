@@ -64,8 +64,9 @@ Partial Class fmaUserList
         Me.tdbViewer.DirectionAfterEnter = C1.Win.C1TrueDBGrid.DirectionAfterEnterEnum.MoveNone
         Me.tdbViewer.Dock = System.Windows.Forms.DockStyle.Fill
         Me.tdbViewer.ExtendRightColumn = True
+        Me.tdbViewer.FilterBar = True
         Me.tdbViewer.FlatStyle = C1.Win.C1TrueDBGrid.FlatModeEnum.Standard
-        Me.tdbViewer.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.tdbViewer.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.tdbViewer.ForeColor = System.Drawing.Color.MidnightBlue
         Me.tdbViewer.GroupByCaption = "Drag a column header here to group by that column"
         Me.tdbViewer.Images.Add(CType(resources.GetObject("tdbViewer.Images"), System.Drawing.Image))
@@ -82,7 +83,7 @@ Partial Class fmaUserList
         Me.tdbViewer.PrintInfo.PageSettings = CType(resources.GetObject("tdbViewer.PrintInfo.PageSettings"), System.Drawing.Printing.PageSettings)
         Me.tdbViewer.RowDivider.Color = System.Drawing.Color.DarkBlue
         Me.tdbViewer.RowDivider.Style = C1.Win.C1TrueDBGrid.LineStyleEnum.None
-        Me.tdbViewer.RowHeight = 20
+        Me.tdbViewer.RowHeight = 30
         Me.tdbViewer.RowSubDividerColor = System.Drawing.Color.Navy
         Me.tdbViewer.Size = New System.Drawing.Size(1206, 314)
         Me.tdbViewer.TabAcrossSplits = True

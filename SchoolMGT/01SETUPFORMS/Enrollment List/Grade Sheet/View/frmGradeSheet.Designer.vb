@@ -28,6 +28,7 @@ Partial Class frmGradeSheet
         Me.gcGradeSheet = New DevExpress.XtraGrid.GridControl()
         Me.gvGradeSheet = New DevExpress.XtraGrid.Views.Grid.GridView()
         Me.GroupPanel6 = New DevComponents.DotNetBar.Controls.GroupPanel()
+        Me.btnRemove = New DevComponents.DotNetBar.ButtonX()
         Me.txtInstructor = New System.Windows.Forms.TextBox()
         Me.txtDean = New System.Windows.Forms.TextBox()
         Me.Label16 = New System.Windows.Forms.Label()
@@ -114,7 +115,6 @@ Partial Class frmGradeSheet
         Me.ComboItem10 = New DevComponents.Editors.ComboItem()
         Me.ContextMenuStrip1 = New System.Windows.Forms.ContextMenuStrip(Me.components)
         Me.Timer1 = New System.Windows.Forms.Timer(Me.components)
-        Me.btnRemove = New DevComponents.DotNetBar.ButtonX()
         Me.GroupPanel1.SuspendLayout()
         CType(Me.gcGradeSheet, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.gvGradeSheet, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -232,6 +232,21 @@ Partial Class frmGradeSheet
         Me.GroupPanel6.Style.TextLineAlignment = DevComponents.DotNetBar.eStyleTextAlignment.Near
         Me.GroupPanel6.TabIndex = 54
         Me.GroupPanel6.Visible = False
+        '
+        'btnRemove
+        '
+        Me.btnRemove.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton
+        Me.btnRemove.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.btnRemove.ColorTable = DevComponents.DotNetBar.eButtonColor.Office2007WithBackground
+        Me.btnRemove.DialogResult = System.Windows.Forms.DialogResult.Cancel
+        Me.btnRemove.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnRemove.Image = Global.SchoolMGT.My.Resources.Resources.close
+        Me.btnRemove.Location = New System.Drawing.Point(1208, 41)
+        Me.btnRemove.Name = "btnRemove"
+        Me.btnRemove.Size = New System.Drawing.Size(111, 34)
+        Me.btnRemove.TabIndex = 247
+        Me.btnRemove.Text = "Close"
+        Me.btnRemove.Tooltip = "Add Subject"
         '
         'txtInstructor
         '
@@ -1153,25 +1168,6 @@ Partial Class frmGradeSheet
         Me.ContextMenuStrip1.ImageScalingSize = New System.Drawing.Size(20, 20)
         Me.ContextMenuStrip1.Name = "ContextMenuStrip1"
         Me.ContextMenuStrip1.Size = New System.Drawing.Size(61, 4)
-        '
-        'Timer1
-        '
-        Me.Timer1.Interval = 3000
-        '
-        'btnRemove
-        '
-        Me.btnRemove.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton
-        Me.btnRemove.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.btnRemove.ColorTable = DevComponents.DotNetBar.eButtonColor.Office2007WithBackground
-        Me.btnRemove.DialogResult = System.Windows.Forms.DialogResult.Cancel
-        Me.btnRemove.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnRemove.Image = Global.SchoolMGT.My.Resources.Resources.close
-        Me.btnRemove.Location = New System.Drawing.Point(1208, 41)
-        Me.btnRemove.Name = "btnRemove"
-        Me.btnRemove.Size = New System.Drawing.Size(111, 34)
-        Me.btnRemove.TabIndex = 247
-        Me.btnRemove.Text = "Close"
-        Me.btnRemove.Tooltip = "Add Subject"
         '
         'frmGradeSheet
         '

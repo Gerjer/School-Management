@@ -31,6 +31,7 @@ Partial Class ftmdiMainForm
         Me.global_loginAuth = New System.Windows.Forms.ToolStripLabel()
         Me.ToolStripLabel3 = New System.Windows.Forms.ToolStripLabel()
         Me.txtSystemText = New System.Windows.Forms.ToolStripLabel()
+        Me.ToolStripButton1 = New System.Windows.Forms.ToolStripButton()
         Me.DisbursementsToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ExitToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.AboutToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
@@ -42,33 +43,6 @@ Partial Class ftmdiMainForm
         Me.MSPaintToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.NotepadToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.menuMain = New System.Windows.Forms.MenuStrip()
-        Me.AboutToolStripMenuItem2 = New System.Windows.Forms.ToolStripMenuItem()
-        Me.ToolStripMenuItemCheckUpdate = New System.Windows.Forms.ToolStripMenuItem()
-        Me.ToolStripSeparator2 = New System.Windows.Forms.ToolStripSeparator()
-        Me.ToolStripMenuItem6 = New System.Windows.Forms.ToolStripMenuItem()
-        Me.ToolStripMenuItem7 = New System.Windows.Forms.ToolStripMenuItem()
-        Me.PointOfSaleToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.TransactionToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.CLOSEDAYToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.VOIDTRANSACTIONSToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.PurchaseOrdersToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.InventoryToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.NewToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.AddToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.SettingsToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.ITEMSETUPToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.UNITMEASUREToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.PRODUCTToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.USERSETUPToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.SUPPLIERSETUPToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.RECIEPTSETUPToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.ReportToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.INVENTORYLISTToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.LISTToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.OUTOFSTOCKToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.SALESREPORTToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.Timer1 = New System.Windows.Forms.Timer(Me.components)
-        Me.ToolStripButton1 = New System.Windows.Forms.ToolStripButton()
         Me.ToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
         Me.FEESToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.CreateFeesToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
@@ -165,6 +139,32 @@ Partial Class ftmdiMainForm
         Me.SYSTEMSToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
         Me.LogoutToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
         Me.ExitToolStripMenuItem3 = New System.Windows.Forms.ToolStripMenuItem()
+        Me.AboutToolStripMenuItem2 = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ToolStripMenuItemCheckUpdate = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ToolStripSeparator2 = New System.Windows.Forms.ToolStripSeparator()
+        Me.ToolStripMenuItem6 = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ToolStripMenuItem7 = New System.Windows.Forms.ToolStripMenuItem()
+        Me.PointOfSaleToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.TransactionToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.CLOSEDAYToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.VOIDTRANSACTIONSToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.PurchaseOrdersToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.InventoryToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.NewToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.AddToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.SettingsToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ITEMSETUPToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.UNITMEASUREToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.PRODUCTToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.USERSETUPToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.SUPPLIERSETUPToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.RECIEPTSETUPToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ReportToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.INVENTORYLISTToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.LISTToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.OUTOFSTOCKToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.SALESREPORTToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.Timer1 = New System.Windows.Forms.Timer(Me.components)
         Me.ToolStrip1.SuspendLayout()
         Me.menuMain.SuspendLayout()
         Me.SuspendLayout()
@@ -222,6 +222,15 @@ Partial Class ftmdiMainForm
         Me.txtSystemText.Name = "txtSystemText"
         Me.txtSystemText.Size = New System.Drawing.Size(72, 24)
         Me.txtSystemText.Text = "System Date"
+        '
+        'ToolStripButton1
+        '
+        Me.ToolStripButton1.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image
+        Me.ToolStripButton1.Image = CType(resources.GetObject("ToolStripButton1.Image"), System.Drawing.Image)
+        Me.ToolStripButton1.ImageTransparentColor = System.Drawing.Color.Magenta
+        Me.ToolStripButton1.Name = "ToolStripButton1"
+        Me.ToolStripButton1.Size = New System.Drawing.Size(24, 24)
+        Me.ToolStripButton1.Text = "ToolStripButton1"
         '
         'DisbursementsToolStripMenuItem
         '
@@ -307,184 +316,6 @@ Partial Class ftmdiMainForm
         Me.menuMain.Size = New System.Drawing.Size(1106, 32)
         Me.menuMain.TabIndex = 1
         Me.menuMain.Text = "MenuStrip1"
-        '
-        'AboutToolStripMenuItem2
-        '
-        Me.AboutToolStripMenuItem2.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ToolStripMenuItemCheckUpdate, Me.ToolStripSeparator2, Me.ToolStripMenuItem6, Me.ToolStripMenuItem7})
-        Me.AboutToolStripMenuItem2.Name = "AboutToolStripMenuItem2"
-        Me.AboutToolStripMenuItem2.ShortcutKeys = CType((System.Windows.Forms.Keys.Control Or System.Windows.Forms.Keys.A), System.Windows.Forms.Keys)
-        Me.AboutToolStripMenuItem2.Size = New System.Drawing.Size(62, 28)
-        Me.AboutToolStripMenuItem2.Text = "&Help"
-        Me.AboutToolStripMenuItem2.Visible = False
-        '
-        'ToolStripMenuItemCheckUpdate
-        '
-        Me.ToolStripMenuItemCheckUpdate.Name = "ToolStripMenuItemCheckUpdate"
-        Me.ToolStripMenuItemCheckUpdate.Size = New System.Drawing.Size(234, 28)
-        Me.ToolStripMenuItemCheckUpdate.Text = "Check for Updates"
-        '
-        'ToolStripSeparator2
-        '
-        Me.ToolStripSeparator2.Name = "ToolStripSeparator2"
-        Me.ToolStripSeparator2.Size = New System.Drawing.Size(231, 6)
-        '
-        'ToolStripMenuItem6
-        '
-        Me.ToolStripMenuItem6.Enabled = False
-        Me.ToolStripMenuItem6.Name = "ToolStripMenuItem6"
-        Me.ToolStripMenuItem6.Size = New System.Drawing.Size(234, 28)
-        Me.ToolStripMenuItem6.Text = "Online Help"
-        '
-        'ToolStripMenuItem7
-        '
-        Me.ToolStripMenuItem7.Name = "ToolStripMenuItem7"
-        Me.ToolStripMenuItem7.Size = New System.Drawing.Size(234, 28)
-        Me.ToolStripMenuItem7.Text = "About"
-        '
-        'PointOfSaleToolStripMenuItem
-        '
-        Me.PointOfSaleToolStripMenuItem.Name = "PointOfSaleToolStripMenuItem"
-        Me.PointOfSaleToolStripMenuItem.Size = New System.Drawing.Size(136, 22)
-        Me.PointOfSaleToolStripMenuItem.Text = "&Point of Sale"
-        '
-        'TransactionToolStripMenuItem
-        '
-        Me.TransactionToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.CLOSEDAYToolStripMenuItem, Me.VOIDTRANSACTIONSToolStripMenuItem})
-        Me.TransactionToolStripMenuItem.Name = "TransactionToolStripMenuItem"
-        Me.TransactionToolStripMenuItem.Size = New System.Drawing.Size(132, 22)
-        Me.TransactionToolStripMenuItem.Text = "Transa&ction"
-        '
-        'CLOSEDAYToolStripMenuItem
-        '
-        Me.CLOSEDAYToolStripMenuItem.Name = "CLOSEDAYToolStripMenuItem"
-        Me.CLOSEDAYToolStripMenuItem.Size = New System.Drawing.Size(183, 22)
-        Me.CLOSEDAYToolStripMenuItem.Text = "CLOSE DAY"
-        '
-        'VOIDTRANSACTIONSToolStripMenuItem
-        '
-        Me.VOIDTRANSACTIONSToolStripMenuItem.Name = "VOIDTRANSACTIONSToolStripMenuItem"
-        Me.VOIDTRANSACTIONSToolStripMenuItem.Size = New System.Drawing.Size(183, 22)
-        Me.VOIDTRANSACTIONSToolStripMenuItem.Text = "VIEW TRANSACTION"
-        '
-        'PurchaseOrdersToolStripMenuItem
-        '
-        Me.PurchaseOrdersToolStripMenuItem.Name = "PurchaseOrdersToolStripMenuItem"
-        Me.PurchaseOrdersToolStripMenuItem.Size = New System.Drawing.Size(169, 22)
-        Me.PurchaseOrdersToolStripMenuItem.Text = "P&urchase Orders"
-        '
-        'InventoryToolStripMenuItem
-        '
-        Me.InventoryToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.NewToolStripMenuItem, Me.AddToolStripMenuItem})
-        Me.InventoryToolStripMenuItem.Name = "InventoryToolStripMenuItem"
-        Me.InventoryToolStripMenuItem.Size = New System.Drawing.Size(116, 22)
-        Me.InventoryToolStripMenuItem.Text = "&Inventory"
-        '
-        'NewToolStripMenuItem
-        '
-        Me.NewToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(192, Byte), Integer))
-        Me.NewToolStripMenuItem.Name = "NewToolStripMenuItem"
-        Me.NewToolStripMenuItem.Size = New System.Drawing.Size(162, 22)
-        Me.NewToolStripMenuItem.Text = "Listing"
-        '
-        'AddToolStripMenuItem
-        '
-        Me.AddToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(192, Byte), Integer))
-        Me.AddToolStripMenuItem.Name = "AddToolStripMenuItem"
-        Me.AddToolStripMenuItem.Size = New System.Drawing.Size(162, 22)
-        Me.AddToolStripMenuItem.Text = "Replenish Stocks"
-        '
-        'SettingsToolStripMenuItem
-        '
-        Me.SettingsToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ITEMSETUPToolStripMenuItem, Me.USERSETUPToolStripMenuItem, Me.SUPPLIERSETUPToolStripMenuItem, Me.RECIEPTSETUPToolStripMenuItem})
-        Me.SettingsToolStripMenuItem.Name = "SettingsToolStripMenuItem"
-        Me.SettingsToolStripMenuItem.Size = New System.Drawing.Size(100, 22)
-        Me.SettingsToolStripMenuItem.Text = "S&ettings"
-        '
-        'ITEMSETUPToolStripMenuItem
-        '
-        Me.ITEMSETUPToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(192, Byte), Integer))
-        Me.ITEMSETUPToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.UNITMEASUREToolStripMenuItem, Me.PRODUCTToolStripMenuItem})
-        Me.ITEMSETUPToolStripMenuItem.Name = "ITEMSETUPToolStripMenuItem"
-        Me.ITEMSETUPToolStripMenuItem.Size = New System.Drawing.Size(160, 22)
-        Me.ITEMSETUPToolStripMenuItem.Text = "ITEM SETUP"
-        '
-        'UNITMEASUREToolStripMenuItem
-        '
-        Me.UNITMEASUREToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(192, Byte), Integer))
-        Me.UNITMEASUREToolStripMenuItem.Name = "UNITMEASUREToolStripMenuItem"
-        Me.UNITMEASUREToolStripMenuItem.Size = New System.Drawing.Size(155, 22)
-        Me.UNITMEASUREToolStripMenuItem.Text = "UNIT MEASURE"
-        '
-        'PRODUCTToolStripMenuItem
-        '
-        Me.PRODUCTToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(192, Byte), Integer))
-        Me.PRODUCTToolStripMenuItem.Name = "PRODUCTToolStripMenuItem"
-        Me.PRODUCTToolStripMenuItem.Size = New System.Drawing.Size(155, 22)
-        Me.PRODUCTToolStripMenuItem.Text = "PRODUCT"
-        '
-        'USERSETUPToolStripMenuItem
-        '
-        Me.USERSETUPToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(192, Byte), Integer))
-        Me.USERSETUPToolStripMenuItem.Name = "USERSETUPToolStripMenuItem"
-        Me.USERSETUPToolStripMenuItem.Size = New System.Drawing.Size(160, 22)
-        Me.USERSETUPToolStripMenuItem.Text = "USER SETUP"
-        '
-        'SUPPLIERSETUPToolStripMenuItem
-        '
-        Me.SUPPLIERSETUPToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(192, Byte), Integer))
-        Me.SUPPLIERSETUPToolStripMenuItem.Name = "SUPPLIERSETUPToolStripMenuItem"
-        Me.SUPPLIERSETUPToolStripMenuItem.Size = New System.Drawing.Size(160, 22)
-        Me.SUPPLIERSETUPToolStripMenuItem.Text = "SUPPLIER SETUP"
-        '
-        'RECIEPTSETUPToolStripMenuItem
-        '
-        Me.RECIEPTSETUPToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(192, Byte), Integer))
-        Me.RECIEPTSETUPToolStripMenuItem.Name = "RECIEPTSETUPToolStripMenuItem"
-        Me.RECIEPTSETUPToolStripMenuItem.Size = New System.Drawing.Size(160, 22)
-        Me.RECIEPTSETUPToolStripMenuItem.Text = "RECIEPT SETUP"
-        '
-        'ReportToolStripMenuItem
-        '
-        Me.ReportToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.INVENTORYLISTToolStripMenuItem, Me.SALESREPORTToolStripMenuItem})
-        Me.ReportToolStripMenuItem.Name = "ReportToolStripMenuItem"
-        Me.ReportToolStripMenuItem.Size = New System.Drawing.Size(90, 22)
-        Me.ReportToolStripMenuItem.Text = "&Report"
-        '
-        'INVENTORYLISTToolStripMenuItem
-        '
-        Me.INVENTORYLISTToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(192, Byte), Integer))
-        Me.INVENTORYLISTToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.LISTToolStripMenuItem, Me.OUTOFSTOCKToolStripMenuItem})
-        Me.INVENTORYLISTToolStripMenuItem.Name = "INVENTORYLISTToolStripMenuItem"
-        Me.INVENTORYLISTToolStripMenuItem.Size = New System.Drawing.Size(160, 22)
-        Me.INVENTORYLISTToolStripMenuItem.Text = "INVENTORY LIST"
-        '
-        'LISTToolStripMenuItem
-        '
-        Me.LISTToolStripMenuItem.Name = "LISTToolStripMenuItem"
-        Me.LISTToolStripMenuItem.Size = New System.Drawing.Size(153, 22)
-        Me.LISTToolStripMenuItem.Text = "LIST"
-        '
-        'OUTOFSTOCKToolStripMenuItem
-        '
-        Me.OUTOFSTOCKToolStripMenuItem.Name = "OUTOFSTOCKToolStripMenuItem"
-        Me.OUTOFSTOCKToolStripMenuItem.Size = New System.Drawing.Size(153, 22)
-        Me.OUTOFSTOCKToolStripMenuItem.Text = "OUT OF STOCK"
-        '
-        'SALESREPORTToolStripMenuItem
-        '
-        Me.SALESREPORTToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(192, Byte), Integer))
-        Me.SALESREPORTToolStripMenuItem.Name = "SALESREPORTToolStripMenuItem"
-        Me.SALESREPORTToolStripMenuItem.Size = New System.Drawing.Size(160, 22)
-        Me.SALESREPORTToolStripMenuItem.Text = "SALES REPORT"
-        '
-        'ToolStripButton1
-        '
-        Me.ToolStripButton1.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image
-        Me.ToolStripButton1.Image = CType(resources.GetObject("ToolStripButton1.Image"), System.Drawing.Image)
-        Me.ToolStripButton1.ImageTransparentColor = System.Drawing.Color.Magenta
-        Me.ToolStripButton1.Name = "ToolStripButton1"
-        Me.ToolStripButton1.Size = New System.Drawing.Size(24, 24)
-        Me.ToolStripButton1.Text = "ToolStripButton1"
         '
         'ToolStripMenuItem1
         '
@@ -817,7 +648,7 @@ Partial Class ftmdiMainForm
         Me.ScheduleToolStripMenuItem.AccessibleName = "19"
         Me.ScheduleToolStripMenuItem.Image = CType(resources.GetObject("ScheduleToolStripMenuItem.Image"), System.Drawing.Image)
         Me.ScheduleToolStripMenuItem.Name = "ScheduleToolStripMenuItem"
-        Me.ScheduleToolStripMenuItem.Size = New System.Drawing.Size(173, 24)
+        Me.ScheduleToolStripMenuItem.Size = New System.Drawing.Size(184, 26)
         Me.ScheduleToolStripMenuItem.Text = "by Instructor "
         '
         'StudentToolStripMenuItem1
@@ -825,7 +656,7 @@ Partial Class ftmdiMainForm
         Me.StudentToolStripMenuItem1.AccessibleName = "20"
         Me.StudentToolStripMenuItem1.Image = CType(resources.GetObject("StudentToolStripMenuItem1.Image"), System.Drawing.Image)
         Me.StudentToolStripMenuItem1.Name = "StudentToolStripMenuItem1"
-        Me.StudentToolStripMenuItem1.Size = New System.Drawing.Size(173, 24)
+        Me.StudentToolStripMenuItem1.Size = New System.Drawing.Size(184, 26)
         Me.StudentToolStripMenuItem1.Tag = "1"
         Me.StudentToolStripMenuItem1.Text = "by Student"
         '
@@ -833,7 +664,7 @@ Partial Class ftmdiMainForm
         '
         Me.MultipleEntryToolStripMenuItem.AccessibleName = "64"
         Me.MultipleEntryToolStripMenuItem.Name = "MultipleEntryToolStripMenuItem"
-        Me.MultipleEntryToolStripMenuItem.Size = New System.Drawing.Size(173, 24)
+        Me.MultipleEntryToolStripMenuItem.Size = New System.Drawing.Size(184, 26)
         Me.MultipleEntryToolStripMenuItem.Text = "Multiple Entry"
         '
         'GRADESHEETToolStripMenuItem
@@ -900,7 +731,7 @@ Partial Class ftmdiMainForm
         Me.ManageCourseOrGradeLevelToolStripMenuItem.AccessibleName = "25"
         Me.ManageCourseOrGradeLevelToolStripMenuItem.Image = CType(resources.GetObject("ManageCourseOrGradeLevelToolStripMenuItem.Image"), System.Drawing.Image)
         Me.ManageCourseOrGradeLevelToolStripMenuItem.Name = "ManageCourseOrGradeLevelToolStripMenuItem"
-        Me.ManageCourseOrGradeLevelToolStripMenuItem.Size = New System.Drawing.Size(299, 24)
+        Me.ManageCourseOrGradeLevelToolStripMenuItem.Size = New System.Drawing.Size(303, 26)
         Me.ManageCourseOrGradeLevelToolStripMenuItem.Text = "Manage Course or Grade Level"
         '
         'ManageBatchOrSectionToolStripMenuItem
@@ -908,7 +739,7 @@ Partial Class ftmdiMainForm
         Me.ManageBatchOrSectionToolStripMenuItem.AccessibleName = "26"
         Me.ManageBatchOrSectionToolStripMenuItem.Image = CType(resources.GetObject("ManageBatchOrSectionToolStripMenuItem.Image"), System.Drawing.Image)
         Me.ManageBatchOrSectionToolStripMenuItem.Name = "ManageBatchOrSectionToolStripMenuItem"
-        Me.ManageBatchOrSectionToolStripMenuItem.Size = New System.Drawing.Size(299, 24)
+        Me.ManageBatchOrSectionToolStripMenuItem.Size = New System.Drawing.Size(303, 26)
         Me.ManageBatchOrSectionToolStripMenuItem.Text = "Manage Batch or Section"
         '
         'ASSIGNINGFEESToolStripMenuItem
@@ -916,14 +747,14 @@ Partial Class ftmdiMainForm
         Me.ASSIGNINGFEESToolStripMenuItem.AccessibleName = "59"
         Me.ASSIGNINGFEESToolStripMenuItem.Image = CType(resources.GetObject("ASSIGNINGFEESToolStripMenuItem.Image"), System.Drawing.Image)
         Me.ASSIGNINGFEESToolStripMenuItem.Name = "ASSIGNINGFEESToolStripMenuItem"
-        Me.ASSIGNINGFEESToolStripMenuItem.Size = New System.Drawing.Size(299, 24)
+        Me.ASSIGNINGFEESToolStripMenuItem.Size = New System.Drawing.Size(303, 26)
         Me.ASSIGNINGFEESToolStripMenuItem.Text = "Assigning FEES"
         '
         'LinkGroupCoursesToolStripMenuItem
         '
         Me.LinkGroupCoursesToolStripMenuItem.AccessibleName = "27"
         Me.LinkGroupCoursesToolStripMenuItem.Name = "LinkGroupCoursesToolStripMenuItem"
-        Me.LinkGroupCoursesToolStripMenuItem.Size = New System.Drawing.Size(299, 24)
+        Me.LinkGroupCoursesToolStripMenuItem.Size = New System.Drawing.Size(303, 26)
         Me.LinkGroupCoursesToolStripMenuItem.Text = "Link/Group Courses"
         Me.LinkGroupCoursesToolStripMenuItem.Visible = False
         '
@@ -942,14 +773,14 @@ Partial Class ftmdiMainForm
         '
         Me.RoomsToolStripMenuItem1.Image = CType(resources.GetObject("RoomsToolStripMenuItem1.Image"), System.Drawing.Image)
         Me.RoomsToolStripMenuItem1.Name = "RoomsToolStripMenuItem1"
-        Me.RoomsToolStripMenuItem1.Size = New System.Drawing.Size(204, 24)
+        Me.RoomsToolStripMenuItem1.Size = New System.Drawing.Size(208, 26)
         Me.RoomsToolStripMenuItem1.Text = "Rooms"
         '
         'TimeScheduleToolStripMenuItem1
         '
         Me.TimeScheduleToolStripMenuItem1.Image = CType(resources.GetObject("TimeScheduleToolStripMenuItem1.Image"), System.Drawing.Image)
         Me.TimeScheduleToolStripMenuItem1.Name = "TimeScheduleToolStripMenuItem1"
-        Me.TimeScheduleToolStripMenuItem1.Size = New System.Drawing.Size(204, 24)
+        Me.TimeScheduleToolStripMenuItem1.Size = New System.Drawing.Size(208, 26)
         Me.TimeScheduleToolStripMenuItem1.Text = "Time Schedule"
         '
         'CreditDistributionToolStripMenuItem
@@ -957,7 +788,7 @@ Partial Class ftmdiMainForm
         Me.CreditDistributionToolStripMenuItem.AccessibleName = "29"
         Me.CreditDistributionToolStripMenuItem.Image = CType(resources.GetObject("CreditDistributionToolStripMenuItem.Image"), System.Drawing.Image)
         Me.CreditDistributionToolStripMenuItem.Name = "CreditDistributionToolStripMenuItem"
-        Me.CreditDistributionToolStripMenuItem.Size = New System.Drawing.Size(204, 24)
+        Me.CreditDistributionToolStripMenuItem.Size = New System.Drawing.Size(208, 26)
         Me.CreditDistributionToolStripMenuItem.Text = "Credit Distribution"
         '
         'ManageSubjectToolStripMenuItem
@@ -965,7 +796,7 @@ Partial Class ftmdiMainForm
         Me.ManageSubjectToolStripMenuItem.AccessibleName = "30"
         Me.ManageSubjectToolStripMenuItem.Image = CType(resources.GetObject("ManageSubjectToolStripMenuItem.Image"), System.Drawing.Image)
         Me.ManageSubjectToolStripMenuItem.Name = "ManageSubjectToolStripMenuItem"
-        Me.ManageSubjectToolStripMenuItem.Size = New System.Drawing.Size(204, 24)
+        Me.ManageSubjectToolStripMenuItem.Size = New System.Drawing.Size(208, 26)
         Me.ManageSubjectToolStripMenuItem.Tag = "1"
         Me.ManageSubjectToolStripMenuItem.Text = "Manage Subject"
         '
@@ -1315,6 +1146,175 @@ Partial Class ftmdiMainForm
         Me.ExitToolStripMenuItem3.Name = "ExitToolStripMenuItem3"
         Me.ExitToolStripMenuItem3.Size = New System.Drawing.Size(138, 28)
         Me.ExitToolStripMenuItem3.Text = "&Exit"
+        '
+        'AboutToolStripMenuItem2
+        '
+        Me.AboutToolStripMenuItem2.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ToolStripMenuItemCheckUpdate, Me.ToolStripSeparator2, Me.ToolStripMenuItem6, Me.ToolStripMenuItem7})
+        Me.AboutToolStripMenuItem2.Name = "AboutToolStripMenuItem2"
+        Me.AboutToolStripMenuItem2.ShortcutKeys = CType((System.Windows.Forms.Keys.Control Or System.Windows.Forms.Keys.A), System.Windows.Forms.Keys)
+        Me.AboutToolStripMenuItem2.Size = New System.Drawing.Size(62, 28)
+        Me.AboutToolStripMenuItem2.Text = "&Help"
+        Me.AboutToolStripMenuItem2.Visible = False
+        '
+        'ToolStripMenuItemCheckUpdate
+        '
+        Me.ToolStripMenuItemCheckUpdate.Name = "ToolStripMenuItemCheckUpdate"
+        Me.ToolStripMenuItemCheckUpdate.Size = New System.Drawing.Size(234, 28)
+        Me.ToolStripMenuItemCheckUpdate.Text = "Check for Updates"
+        '
+        'ToolStripSeparator2
+        '
+        Me.ToolStripSeparator2.Name = "ToolStripSeparator2"
+        Me.ToolStripSeparator2.Size = New System.Drawing.Size(231, 6)
+        '
+        'ToolStripMenuItem6
+        '
+        Me.ToolStripMenuItem6.Enabled = False
+        Me.ToolStripMenuItem6.Name = "ToolStripMenuItem6"
+        Me.ToolStripMenuItem6.Size = New System.Drawing.Size(234, 28)
+        Me.ToolStripMenuItem6.Text = "Online Help"
+        '
+        'ToolStripMenuItem7
+        '
+        Me.ToolStripMenuItem7.Name = "ToolStripMenuItem7"
+        Me.ToolStripMenuItem7.Size = New System.Drawing.Size(234, 28)
+        Me.ToolStripMenuItem7.Text = "About"
+        '
+        'PointOfSaleToolStripMenuItem
+        '
+        Me.PointOfSaleToolStripMenuItem.Name = "PointOfSaleToolStripMenuItem"
+        Me.PointOfSaleToolStripMenuItem.Size = New System.Drawing.Size(136, 22)
+        Me.PointOfSaleToolStripMenuItem.Text = "&Point of Sale"
+        '
+        'TransactionToolStripMenuItem
+        '
+        Me.TransactionToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.CLOSEDAYToolStripMenuItem, Me.VOIDTRANSACTIONSToolStripMenuItem})
+        Me.TransactionToolStripMenuItem.Name = "TransactionToolStripMenuItem"
+        Me.TransactionToolStripMenuItem.Size = New System.Drawing.Size(132, 22)
+        Me.TransactionToolStripMenuItem.Text = "Transa&ction"
+        '
+        'CLOSEDAYToolStripMenuItem
+        '
+        Me.CLOSEDAYToolStripMenuItem.Name = "CLOSEDAYToolStripMenuItem"
+        Me.CLOSEDAYToolStripMenuItem.Size = New System.Drawing.Size(183, 22)
+        Me.CLOSEDAYToolStripMenuItem.Text = "CLOSE DAY"
+        '
+        'VOIDTRANSACTIONSToolStripMenuItem
+        '
+        Me.VOIDTRANSACTIONSToolStripMenuItem.Name = "VOIDTRANSACTIONSToolStripMenuItem"
+        Me.VOIDTRANSACTIONSToolStripMenuItem.Size = New System.Drawing.Size(183, 22)
+        Me.VOIDTRANSACTIONSToolStripMenuItem.Text = "VIEW TRANSACTION"
+        '
+        'PurchaseOrdersToolStripMenuItem
+        '
+        Me.PurchaseOrdersToolStripMenuItem.Name = "PurchaseOrdersToolStripMenuItem"
+        Me.PurchaseOrdersToolStripMenuItem.Size = New System.Drawing.Size(169, 22)
+        Me.PurchaseOrdersToolStripMenuItem.Text = "P&urchase Orders"
+        '
+        'InventoryToolStripMenuItem
+        '
+        Me.InventoryToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.NewToolStripMenuItem, Me.AddToolStripMenuItem})
+        Me.InventoryToolStripMenuItem.Name = "InventoryToolStripMenuItem"
+        Me.InventoryToolStripMenuItem.Size = New System.Drawing.Size(116, 22)
+        Me.InventoryToolStripMenuItem.Text = "&Inventory"
+        '
+        'NewToolStripMenuItem
+        '
+        Me.NewToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(192, Byte), Integer))
+        Me.NewToolStripMenuItem.Name = "NewToolStripMenuItem"
+        Me.NewToolStripMenuItem.Size = New System.Drawing.Size(162, 22)
+        Me.NewToolStripMenuItem.Text = "Listing"
+        '
+        'AddToolStripMenuItem
+        '
+        Me.AddToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(192, Byte), Integer))
+        Me.AddToolStripMenuItem.Name = "AddToolStripMenuItem"
+        Me.AddToolStripMenuItem.Size = New System.Drawing.Size(162, 22)
+        Me.AddToolStripMenuItem.Text = "Replenish Stocks"
+        '
+        'SettingsToolStripMenuItem
+        '
+        Me.SettingsToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ITEMSETUPToolStripMenuItem, Me.USERSETUPToolStripMenuItem, Me.SUPPLIERSETUPToolStripMenuItem, Me.RECIEPTSETUPToolStripMenuItem})
+        Me.SettingsToolStripMenuItem.Name = "SettingsToolStripMenuItem"
+        Me.SettingsToolStripMenuItem.Size = New System.Drawing.Size(100, 22)
+        Me.SettingsToolStripMenuItem.Text = "S&ettings"
+        '
+        'ITEMSETUPToolStripMenuItem
+        '
+        Me.ITEMSETUPToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(192, Byte), Integer))
+        Me.ITEMSETUPToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.UNITMEASUREToolStripMenuItem, Me.PRODUCTToolStripMenuItem})
+        Me.ITEMSETUPToolStripMenuItem.Name = "ITEMSETUPToolStripMenuItem"
+        Me.ITEMSETUPToolStripMenuItem.Size = New System.Drawing.Size(160, 22)
+        Me.ITEMSETUPToolStripMenuItem.Text = "ITEM SETUP"
+        '
+        'UNITMEASUREToolStripMenuItem
+        '
+        Me.UNITMEASUREToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(192, Byte), Integer))
+        Me.UNITMEASUREToolStripMenuItem.Name = "UNITMEASUREToolStripMenuItem"
+        Me.UNITMEASUREToolStripMenuItem.Size = New System.Drawing.Size(155, 22)
+        Me.UNITMEASUREToolStripMenuItem.Text = "UNIT MEASURE"
+        '
+        'PRODUCTToolStripMenuItem
+        '
+        Me.PRODUCTToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(192, Byte), Integer))
+        Me.PRODUCTToolStripMenuItem.Name = "PRODUCTToolStripMenuItem"
+        Me.PRODUCTToolStripMenuItem.Size = New System.Drawing.Size(155, 22)
+        Me.PRODUCTToolStripMenuItem.Text = "PRODUCT"
+        '
+        'USERSETUPToolStripMenuItem
+        '
+        Me.USERSETUPToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(192, Byte), Integer))
+        Me.USERSETUPToolStripMenuItem.Name = "USERSETUPToolStripMenuItem"
+        Me.USERSETUPToolStripMenuItem.Size = New System.Drawing.Size(160, 22)
+        Me.USERSETUPToolStripMenuItem.Text = "USER SETUP"
+        '
+        'SUPPLIERSETUPToolStripMenuItem
+        '
+        Me.SUPPLIERSETUPToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(192, Byte), Integer))
+        Me.SUPPLIERSETUPToolStripMenuItem.Name = "SUPPLIERSETUPToolStripMenuItem"
+        Me.SUPPLIERSETUPToolStripMenuItem.Size = New System.Drawing.Size(160, 22)
+        Me.SUPPLIERSETUPToolStripMenuItem.Text = "SUPPLIER SETUP"
+        '
+        'RECIEPTSETUPToolStripMenuItem
+        '
+        Me.RECIEPTSETUPToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(192, Byte), Integer))
+        Me.RECIEPTSETUPToolStripMenuItem.Name = "RECIEPTSETUPToolStripMenuItem"
+        Me.RECIEPTSETUPToolStripMenuItem.Size = New System.Drawing.Size(160, 22)
+        Me.RECIEPTSETUPToolStripMenuItem.Text = "RECIEPT SETUP"
+        '
+        'ReportToolStripMenuItem
+        '
+        Me.ReportToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.INVENTORYLISTToolStripMenuItem, Me.SALESREPORTToolStripMenuItem})
+        Me.ReportToolStripMenuItem.Name = "ReportToolStripMenuItem"
+        Me.ReportToolStripMenuItem.Size = New System.Drawing.Size(90, 22)
+        Me.ReportToolStripMenuItem.Text = "&Report"
+        '
+        'INVENTORYLISTToolStripMenuItem
+        '
+        Me.INVENTORYLISTToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(192, Byte), Integer))
+        Me.INVENTORYLISTToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.LISTToolStripMenuItem, Me.OUTOFSTOCKToolStripMenuItem})
+        Me.INVENTORYLISTToolStripMenuItem.Name = "INVENTORYLISTToolStripMenuItem"
+        Me.INVENTORYLISTToolStripMenuItem.Size = New System.Drawing.Size(160, 22)
+        Me.INVENTORYLISTToolStripMenuItem.Text = "INVENTORY LIST"
+        '
+        'LISTToolStripMenuItem
+        '
+        Me.LISTToolStripMenuItem.Name = "LISTToolStripMenuItem"
+        Me.LISTToolStripMenuItem.Size = New System.Drawing.Size(153, 22)
+        Me.LISTToolStripMenuItem.Text = "LIST"
+        '
+        'OUTOFSTOCKToolStripMenuItem
+        '
+        Me.OUTOFSTOCKToolStripMenuItem.Name = "OUTOFSTOCKToolStripMenuItem"
+        Me.OUTOFSTOCKToolStripMenuItem.Size = New System.Drawing.Size(153, 22)
+        Me.OUTOFSTOCKToolStripMenuItem.Text = "OUT OF STOCK"
+        '
+        'SALESREPORTToolStripMenuItem
+        '
+        Me.SALESREPORTToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(192, Byte), Integer))
+        Me.SALESREPORTToolStripMenuItem.Name = "SALESREPORTToolStripMenuItem"
+        Me.SALESREPORTToolStripMenuItem.Size = New System.Drawing.Size(160, 22)
+        Me.SALESREPORTToolStripMenuItem.Text = "SALES REPORT"
         '
         'ftmdiMainForm
         '

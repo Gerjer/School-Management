@@ -593,7 +593,7 @@ Public Class GradeSheetListPresenter
             'Add Column
 
             Dim dt_column As New DataTable
-            dt_column = ListModel.getColumn(13)
+            dt_column = ListModel.getColumn(_view.cmbStudentCategory.SelectedValue)
             If dt_column.Rows.Count > 0 Then
                 For Each colRoww As DataRow In dt_column.Rows
                     If ColumnExisting = False Then

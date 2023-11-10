@@ -13,7 +13,7 @@
         Dim SQLEX As String = "SELECT id, username, first_name,last_name,Type_User AS 'type'"
         SQLEX += " FROM users"
         'SQLEX += " FROM users WHERE id <> 1"
-        SQLEX += " ORDER BY id DESC"
+        SQLEX += " ORDER BY first_name"
 
 
         tdbViewer.DataSource = Nothing
@@ -34,12 +34,15 @@
 
 
                 .DisplayColumns("first_name").DataColumn.Caption = "FIRST NAME"
-                .DisplayColumns("first_name").Width = 400
+                .DisplayColumns("first_name").Width = 500
                 .DisplayColumns("first_name").HeadingStyle.HorizontalAlignment = C1.Win.C1TrueDBGrid.AlignHorzEnum.Center
                 .DisplayColumns("first_name").Style.HorizontalAlignment = C1.Win.C1TrueDBGrid.AlignHorzEnum.Near
 
+                '.DisplayColumns("first_name").AutoComplete = True
+                '.DisplayColumns("first_name").AutoSize()
+
                 .DisplayColumns("last_name").DataColumn.Caption = "LAST NAME"
-                .DisplayColumns("last_name").Width = 400
+                .DisplayColumns("last_name").Width = 500
                 .DisplayColumns("last_name").HeadingStyle.HorizontalAlignment = C1.Win.C1TrueDBGrid.AlignHorzEnum.Center
                 .DisplayColumns("last_name").Style.HorizontalAlignment = C1.Win.C1TrueDBGrid.AlignHorzEnum.Near
 

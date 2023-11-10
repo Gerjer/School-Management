@@ -718,8 +718,13 @@ Public Class AdmissionRecordPresenter
             'Update End Time
             UpdateEndTime(student_class_roll_no)
 
+            'Double Checking ClassRollNo
+            Dim CheckingRollNo = getCheckingClassRollNo()
+            If ClassRollNo <> CheckingRollNo Then
+                ClassRollNo = CheckingRollNo
+            End If
 
-                SQLIN = "INSERT INTO students(admission_no,class_roll_no,admission_date,"
+            SQLIN = "INSERT INTO students(admission_no,class_roll_no,admission_date,"
                 SQLIN += " batch_id,student_category_id,academice_year,"
                 SQLIN += " user_id,stature,std_number,"
                 SQLIN += " scholarshipgrant,has_paid_fees,person_id,year_level,semester,status_description,course_id,"
@@ -759,7 +764,13 @@ Public Class AdmissionRecordPresenter
             'Update End Time
             UpdateEndTime(student_class_roll_no)
 
-                SQLIN = "INSERT INTO students(admission_no,class_roll_no,admission_date,"
+            'Double Checking ClassRollNo
+            Dim CheckingRollNo = getCheckingClassRollNo()
+            If ClassRollNo <> CheckingRollNo Then
+                ClassRollNo = CheckingRollNo
+            End If
+
+            SQLIN = "INSERT INTO students(admission_no,class_roll_no,admission_date,"
                 SQLIN += " batch_id,student_category_id,academice_year,"
                 SQLIN += " user_id,stature,std_number,"
                 SQLIN += " person_id,year_level,semester,enrollmentAS,course_id,"
@@ -769,8 +780,8 @@ Public Class AdmissionRecordPresenter
                 SQLIN += String.Format("'{0}','{1}','{2}',", _view.txtAdmNum.Text, ClassRollNo, Format(_view.dtpAdmDate.Value, "yyyy-MM-dd"))
                 SQLIN += String.Format("'{0}','{1}','{2}',", _view.cmbBatch.SelectedValue, _view.cmbCategory.SelectedValue, _view.cmbYearFrom.Text & "-" & _view.cmbYearTo.Text)
                 SQLIN += String.Format("'{0}','{1}','{2}',", LoginUserID, _view.cmbStature.Text, _view.txtIDNum.Text)
-            SQLIN += String.Format("'{0}','{1}','{2}','{3}','{4}',", PERSON_ID, _view.cmbYearLevel.Text, _view.cmbSemester.Text, _view.cmbStatus.Text, _view.cmbCourseGrade.SelectedValue) '
-            If _view.chkBBal.Checked = True Then
+                SQLIN += String.Format("'{0}','{1}','{2}','{3}','{4}',", PERSON_ID, _view.cmbYearLevel.Text, _view.cmbSemester.Text, _view.cmbStatus.Text, _view.cmbCourseGrade.SelectedValue) '
+                If _view.chkBBal.Checked = True Then
                     SQLIN += String.Format("'{0}','{1}','{2}','{3}'", 0, _view.cmbTrack.Text, _view.cmbStrand.Text, _view.txtGrant.Text.Replace("'", "`"))
                 Else
                     SQLIN += String.Format("'{0}','{1}','{2}','{3}'", 0, _view.cmbTrack.Text, _view.cmbStrand.Text, _view.txtGrant.Text.Replace("'", "`"))
@@ -790,6 +801,20 @@ Public Class AdmissionRecordPresenter
 
 
     End Sub
+
+    Private Function getCheckingClassRollNo() As Object
+        Dim sql As String = ""
+        sql = "SELECT
+	                IFNULL( MAX( CAST( `students`.`class_roll_no` AS UNSIGNED )+ 1 ), '' ) 
+                FROM
+	                `students`
+	                INNER JOIN `person` ON (
+		                `students`.`person_id` = `person`.`person_id` 
+		                AND `person`.status_type_id = 1 
+	                AND `person`.end_time IS NULL 
+	                )"
+        Return DataObject(Sql)
+    End Function
 
     Private Sub UpdateEndTime(student_class_roll_no As String)
         Dim id As Integer = DataObject(String.Format("SELECT 	IFNULL(Max(id),1)  FROM	students WHERE	status_type_id = 1 	AND class_roll_no = '" & student_class_roll_no & "'"))

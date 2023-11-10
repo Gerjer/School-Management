@@ -352,7 +352,7 @@ Public Class frmProgramStudy
         Else
             If cmbCategory.SelectedIndex > -1 And cmbCourse.SelectedIndex > -1 Then
                 where = "WHERE
-	                    program_of_study.cat_id = '" & catId & "' 
+	                    program_of_study.cat_id = '" & catId & "' GROUP BY program_of_study.descriptive_title 
 	                   --  AND program_of_study.course_grade = '" & cmbCourse.Text & "' "
 
                 dt = getRecord(where)

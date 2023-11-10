@@ -651,25 +651,26 @@ Partial Class fmaIncomeListForm
         '
         'btnClose
         '
+        Me.btnClose.BackColor = System.Drawing.Color.PowderBlue
         Me.btnClose.Dock = System.Windows.Forms.DockStyle.Right
         Me.btnClose.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnClose.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnClose.Image = Global.SchoolMGT.My.Resources.Resources.close
         Me.btnClose.ImageAlign = System.Drawing.ContentAlignment.TopCenter
-        Me.btnClose.Location = New System.Drawing.Point(1053, 0)
+        Me.btnClose.Location = New System.Drawing.Point(1032, 0)
         Me.btnClose.Name = "btnClose"
-        Me.btnClose.Size = New System.Drawing.Size(86, 32)
+        Me.btnClose.Size = New System.Drawing.Size(107, 32)
         Me.btnClose.TabIndex = 24
         Me.btnClose.Text = "Close"
-        Me.btnClose.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         Me.btnClose.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
-        Me.btnClose.UseVisualStyleBackColor = True
+        Me.btnClose.UseVisualStyleBackColor = False
         '
         'btnDelete
         '
         Me.btnDelete.Dock = System.Windows.Forms.DockStyle.Left
         Me.btnDelete.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnDelete.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnDelete.Image = Global.SchoolMGT.My.Resources.Resources.close
+        Me.btnDelete.Image = Global.SchoolMGT.My.Resources.Resources.cancel
         Me.btnDelete.Location = New System.Drawing.Point(86, 0)
         Me.btnDelete.Name = "btnDelete"
         Me.btnDelete.Size = New System.Drawing.Size(86, 32)

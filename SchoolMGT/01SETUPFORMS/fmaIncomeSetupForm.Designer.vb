@@ -51,6 +51,7 @@ Partial Class fmaIncomeSetupForm
         Me.btnSave = New DevComponents.DotNetBar.ButtonX()
         Me.btnCancel = New DevComponents.DotNetBar.ButtonX()
         Me.GroupPanel1 = New DevComponents.DotNetBar.Controls.GroupPanel()
+        Me.LabelX16 = New DevComponents.DotNetBar.LabelX()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.chkActive = New System.Windows.Forms.CheckBox()
         Me.txtcourse = New DevComponents.DotNetBar.Controls.TextBoxX()
@@ -81,7 +82,6 @@ Partial Class fmaIncomeSetupForm
         Me.cmbCollType = New DevComponents.DotNetBar.Controls.ComboBoxEx()
         Me.ComboItem9 = New DevComponents.Editors.ComboItem()
         Me.ComboItem10 = New DevComponents.Editors.ComboItem()
-        Me.LabelX16 = New DevComponents.DotNetBar.LabelX()
         Me.PanelEx1.SuspendLayout()
         Me.GroupPanel2.SuspendLayout()
         Me.GroupPanel3.SuspendLayout()
@@ -539,6 +539,17 @@ Partial Class fmaIncomeSetupForm
         Me.GroupPanel1.TabIndex = 188
         Me.GroupPanel1.Text = "PAYEE DETAIL"
         '
+        'LabelX16
+        '
+        Me.LabelX16.AutoSize = True
+        Me.LabelX16.Location = New System.Drawing.Point(478, -1)
+        Me.LabelX16.Name = "LabelX16"
+        Me.LabelX16.Size = New System.Drawing.Size(67, 41)
+        Me.LabelX16.TabIndex = 254
+        Me.LabelX16.Text = "<font color=""#ED1C24"">Manual Entry</font>" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "<br>of not existing</br>" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "<br> Payee</" &
+    "br> " & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10)
+        Me.LabelX16.TextLineAlignment = System.Drawing.StringAlignment.Near
+        '
         'Label1
         '
         Me.Label1.AutoSize = True
@@ -913,17 +924,6 @@ Partial Class fmaIncomeSetupForm
         'ComboItem10
         '
         Me.ComboItem10.Text = "INCOME"
-        '
-        'LabelX16
-        '
-        Me.LabelX16.AutoSize = True
-        Me.LabelX16.Location = New System.Drawing.Point(478, -1)
-        Me.LabelX16.Name = "LabelX16"
-        Me.LabelX16.Size = New System.Drawing.Size(75, 54)
-        Me.LabelX16.TabIndex = 254
-        Me.LabelX16.Text = "<font color=""#ED1C24"">Manual Entry</font>" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "<br>of Payee</br>" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "<br> is not recorde" &
-    "d</br> " & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "<br>in the system</br>"
-        Me.LabelX16.TextLineAlignment = System.Drawing.StringAlignment.Near
         '
         'fmaIncomeSetupForm
         '
