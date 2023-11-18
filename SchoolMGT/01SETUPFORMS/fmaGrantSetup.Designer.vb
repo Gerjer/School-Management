@@ -29,6 +29,8 @@ Partial Class fmaGrantSetup
         Me.ComboItem2 = New DevComponents.Editors.ComboItem()
         Me.ComboItem1 = New DevComponents.Editors.ComboItem()
         Me.GroupPanel2 = New DevComponents.DotNetBar.Controls.GroupPanel()
+        Me.txtdescription = New DevComponents.DotNetBar.Controls.TextBoxX()
+        Me.LabelX4 = New DevComponents.DotNetBar.LabelX()
         Me.txtfullDeduct = New System.Windows.Forms.ComboBox()
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.btnCancel = New DevComponents.DotNetBar.ButtonX()
@@ -43,9 +45,14 @@ Partial Class fmaGrantSetup
         Me.btnList = New DevComponents.DotNetBar.ButtonX()
         Me.txtSysPK_Item = New DevComponents.DotNetBar.Controls.TextBoxX()
         Me.PanelEx1 = New DevComponents.DotNetBar.PanelEx()
+        Me.LabelX5 = New DevComponents.DotNetBar.LabelX()
+        Me.txtgrant_amount = New System.Windows.Forms.NumericUpDown()
+        Me.txtRefundable = New System.Windows.Forms.ComboBox()
+        Me.LabelX6 = New DevComponents.DotNetBar.LabelX()
         Me.GroupPanel2.SuspendLayout()
         Me.Panel1.SuspendLayout()
         Me.PanelEx1.SuspendLayout()
+        CType(Me.txtgrant_amount, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'WinLabel
@@ -80,6 +87,12 @@ Partial Class fmaGrantSetup
         Me.GroupPanel2.AutoScroll = True
         Me.GroupPanel2.CanvasColor = System.Drawing.SystemColors.Control
         Me.GroupPanel2.ColorSchemeStyle = DevComponents.DotNetBar.eDotNetBarStyle.Office2007
+        Me.GroupPanel2.Controls.Add(Me.txtRefundable)
+        Me.GroupPanel2.Controls.Add(Me.LabelX6)
+        Me.GroupPanel2.Controls.Add(Me.txtgrant_amount)
+        Me.GroupPanel2.Controls.Add(Me.LabelX5)
+        Me.GroupPanel2.Controls.Add(Me.txtdescription)
+        Me.GroupPanel2.Controls.Add(Me.LabelX4)
         Me.GroupPanel2.Controls.Add(Me.txtfullDeduct)
         Me.GroupPanel2.Controls.Add(Me.Panel1)
         Me.GroupPanel2.Controls.Add(Me.LabelX3)
@@ -87,9 +100,9 @@ Partial Class fmaGrantSetup
         Me.GroupPanel2.Controls.Add(Me.txtname)
         Me.GroupPanel2.Controls.Add(Me.LabelX1)
         Me.GroupPanel2.Controls.Add(Me.txtcode)
+        Me.GroupPanel2.Controls.Add(Me.txtSysPK_Item)
         Me.GroupPanel2.Controls.Add(Me.btnModify)
         Me.GroupPanel2.Controls.Add(Me.btnList)
-        Me.GroupPanel2.Controls.Add(Me.txtSysPK_Item)
         Me.GroupPanel2.Dock = System.Windows.Forms.DockStyle.Fill
         Me.GroupPanel2.Location = New System.Drawing.Point(0, 28)
         Me.GroupPanel2.Name = "GroupPanel2"
@@ -116,14 +129,42 @@ Partial Class fmaGrantSetup
         Me.GroupPanel2.Style.TextLineAlignment = DevComponents.DotNetBar.eStyleTextAlignment.Near
         Me.GroupPanel2.TabIndex = 15
         '
+        'txtdescription
+        '
+        Me.txtdescription.AccessibleName = "scholarship_grant"
+        '
+        '
+        '
+        Me.txtdescription.Border.Class = "TextBoxBorder"
+        Me.txtdescription.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
+        Me.txtdescription.FocusHighlightColor = System.Drawing.Color.LightBlue
+        Me.txtdescription.FocusHighlightEnabled = True
+        Me.txtdescription.ForeColor = System.Drawing.Color.MidnightBlue
+        Me.txtdescription.Location = New System.Drawing.Point(121, 70)
+        Me.txtdescription.MaxLength = 30
+        Me.txtdescription.Multiline = True
+        Me.txtdescription.Name = "txtdescription"
+        Me.txtdescription.Size = New System.Drawing.Size(229, 59)
+        Me.txtdescription.TabIndex = 152
+        '
+        'LabelX4
+        '
+        Me.LabelX4.AutoSize = True
+        Me.LabelX4.BackColor = System.Drawing.Color.Transparent
+        Me.LabelX4.Location = New System.Drawing.Point(25, 70)
+        Me.LabelX4.Name = "LabelX4"
+        Me.LabelX4.Size = New System.Drawing.Size(73, 15)
+        Me.LabelX4.TabIndex = 151
+        Me.LabelX4.Text = "DISCRIPTION"
+        '
         'txtfullDeduct
         '
         Me.txtfullDeduct.AccessibleName = "scholarship_grant"
         Me.txtfullDeduct.FormattingEnabled = True
         Me.txtfullDeduct.Items.AddRange(New Object() {"NO", "YES"})
-        Me.txtfullDeduct.Location = New System.Drawing.Point(175, 75)
+        Me.txtfullDeduct.Location = New System.Drawing.Point(182, 173)
         Me.txtfullDeduct.Name = "txtfullDeduct"
-        Me.txtfullDeduct.Size = New System.Drawing.Size(163, 21)
+        Me.txtfullDeduct.Size = New System.Drawing.Size(166, 21)
         Me.txtfullDeduct.TabIndex = 150
         '
         'Panel1
@@ -181,7 +222,7 @@ Partial Class fmaGrantSetup
         '
         Me.LabelX3.AutoSize = True
         Me.LabelX3.BackColor = System.Drawing.Color.Transparent
-        Me.LabelX3.Location = New System.Drawing.Point(25, 81)
+        Me.LabelX3.Location = New System.Drawing.Point(25, 179)
         Me.LabelX3.Name = "LabelX3"
         Me.LabelX3.Size = New System.Drawing.Size(114, 15)
         Me.LabelX3.TabIndex = 19
@@ -208,7 +249,7 @@ Partial Class fmaGrantSetup
         Me.txtname.FocusHighlightColor = System.Drawing.Color.LightBlue
         Me.txtname.FocusHighlightEnabled = True
         Me.txtname.ForeColor = System.Drawing.Color.MidnightBlue
-        Me.txtname.Location = New System.Drawing.Point(109, 44)
+        Me.txtname.Location = New System.Drawing.Point(120, 44)
         Me.txtname.MaxLength = 30
         Me.txtname.Name = "txtname"
         Me.txtname.Size = New System.Drawing.Size(229, 20)
@@ -235,7 +276,7 @@ Partial Class fmaGrantSetup
         Me.txtcode.FocusHighlightColor = System.Drawing.Color.LightBlue
         Me.txtcode.FocusHighlightEnabled = True
         Me.txtcode.ForeColor = System.Drawing.Color.MidnightBlue
-        Me.txtcode.Location = New System.Drawing.Point(109, 19)
+        Me.txtcode.Location = New System.Drawing.Point(120, 19)
         Me.txtcode.Name = "txtcode"
         Me.txtcode.Size = New System.Drawing.Size(229, 20)
         Me.txtcode.TabIndex = 2
@@ -246,7 +287,7 @@ Partial Class fmaGrantSetup
         Me.btnModify.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton
         Me.btnModify.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground
         Me.btnModify.Image = CType(resources.GetObject("btnModify.Image"), System.Drawing.Image)
-        Me.btnModify.Location = New System.Drawing.Point(25, 150)
+        Me.btnModify.Location = New System.Drawing.Point(223, 91)
         Me.btnModify.Name = "btnModify"
         Me.btnModify.Shortcuts.Add(DevComponents.DotNetBar.eShortcut.CtrlD)
         Me.btnModify.Size = New System.Drawing.Size(49, 31)
@@ -259,7 +300,7 @@ Partial Class fmaGrantSetup
         Me.btnList.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton
         Me.btnList.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground
         Me.btnList.Image = CType(resources.GetObject("btnList.Image"), System.Drawing.Image)
-        Me.btnList.Location = New System.Drawing.Point(25, 113)
+        Me.btnList.Location = New System.Drawing.Point(223, 54)
         Me.btnList.Name = "btnList"
         Me.btnList.Shortcuts.Add(DevComponents.DotNetBar.eShortcut.CtrlL)
         Me.btnList.Size = New System.Drawing.Size(49, 31)
@@ -304,6 +345,47 @@ Partial Class fmaGrantSetup
         Me.PanelEx1.Style.GradientAngle = 90
         Me.PanelEx1.TabIndex = 0
         '
+        'LabelX5
+        '
+        Me.LabelX5.AutoSize = True
+        Me.LabelX5.BackColor = System.Drawing.Color.Transparent
+        Me.LabelX5.Location = New System.Drawing.Point(25, 145)
+        Me.LabelX5.Name = "LabelX5"
+        Me.LabelX5.Size = New System.Drawing.Size(73, 15)
+        Me.LabelX5.TabIndex = 153
+        Me.LabelX5.Text = "DISCRIPTION"
+        '
+        'txtgrant_amount
+        '
+        Me.txtgrant_amount.AccessibleName = "scholarship_grant"
+        Me.txtgrant_amount.DecimalPlaces = 2
+        Me.txtgrant_amount.Location = New System.Drawing.Point(182, 144)
+        Me.txtgrant_amount.Maximum = New Decimal(New Integer() {1215752191, 23, 0, 0})
+        Me.txtgrant_amount.Name = "txtgrant_amount"
+        Me.txtgrant_amount.Size = New System.Drawing.Size(166, 20)
+        Me.txtgrant_amount.TabIndex = 154
+        Me.txtgrant_amount.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
+        '
+        'txtRefundable
+        '
+        Me.txtRefundable.AccessibleName = "scholarship_grant"
+        Me.txtRefundable.FormattingEnabled = True
+        Me.txtRefundable.Items.AddRange(New Object() {"NO", "YES"})
+        Me.txtRefundable.Location = New System.Drawing.Point(182, 202)
+        Me.txtRefundable.Name = "txtRefundable"
+        Me.txtRefundable.Size = New System.Drawing.Size(166, 21)
+        Me.txtRefundable.TabIndex = 156
+        '
+        'LabelX6
+        '
+        Me.LabelX6.AutoSize = True
+        Me.LabelX6.BackColor = System.Drawing.Color.Transparent
+        Me.LabelX6.Location = New System.Drawing.Point(25, 208)
+        Me.LabelX6.Name = "LabelX6"
+        Me.LabelX6.Size = New System.Drawing.Size(76, 15)
+        Me.LabelX6.TabIndex = 155
+        Me.LabelX6.Text = "REFUNDABLE"
+        '
         'fmaGrantSetup
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -322,6 +404,7 @@ Partial Class fmaGrantSetup
         Me.GroupPanel2.PerformLayout()
         Me.Panel1.ResumeLayout(False)
         Me.PanelEx1.ResumeLayout(False)
+        CType(Me.txtgrant_amount, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
@@ -345,4 +428,10 @@ Partial Class fmaGrantSetup
     Friend WithEvents Panel1 As Panel
     Friend WithEvents PanelEx1 As DevComponents.DotNetBar.PanelEx
     Friend WithEvents txtfullDeduct As ComboBox
+    Friend WithEvents txtdescription As DevComponents.DotNetBar.Controls.TextBoxX
+    Friend WithEvents LabelX4 As DevComponents.DotNetBar.LabelX
+    Friend WithEvents txtRefundable As ComboBox
+    Friend WithEvents LabelX6 As DevComponents.DotNetBar.LabelX
+    Friend WithEvents txtgrant_amount As NumericUpDown
+    Friend WithEvents LabelX5 As DevComponents.DotNetBar.LabelX
 End Class

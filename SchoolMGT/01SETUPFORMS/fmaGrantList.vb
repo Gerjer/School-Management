@@ -17,7 +17,7 @@
         Dim LimitValue As Integer = PgCount.Value
 
 
-        Dim SQL As String = "SELECT SysPK_Item,code,name,fullDeduct "
+        Dim SQL As String = "SELECT SysPK_Item,code,name,ifnull(description,'')'description',fullDeduct,FORMAT(ifnull(grant_amount,0),2)'grant_amount',Refundable "
         SQL += " FROM " & TABLENAME
         SQL += " ORDER BY name "
         SQL += String.Format(" LIMIT {0},{1}", 0, LimitValue)
@@ -33,17 +33,33 @@
                 .DisplayColumns("code").DataColumn.Caption = "CODE"
                 .DisplayColumns("code").Width = 100
                 .DisplayColumns("code").HeadingStyle.HorizontalAlignment = C1.Win.C1TrueDBGrid.AlignHorzEnum.Center
-                .DisplayColumns("code").Style.HorizontalAlignment = C1.Win.C1TrueDBGrid.AlignHorzEnum.Near
+                .DisplayColumns("code").Style.HorizontalAlignment = C1.Win.C1TrueDBGrid.AlignHorzEnum.Center
 
                 .DisplayColumns("name").DataColumn.Caption = "GRANT TYPE NAME"
-                .DisplayColumns("name").Width = 250
+                .DisplayColumns("name").Width = 300
                 .DisplayColumns("name").HeadingStyle.HorizontalAlignment = C1.Win.C1TrueDBGrid.AlignHorzEnum.Center
                 .DisplayColumns("name").Style.HorizontalAlignment = C1.Win.C1TrueDBGrid.AlignHorzEnum.Near
 
+                .DisplayColumns("description").DataColumn.Caption = "DESCRIPTION"
+                .DisplayColumns("description").Width = 400
+                .DisplayColumns("description").HeadingStyle.HorizontalAlignment = C1.Win.C1TrueDBGrid.AlignHorzEnum.Center
+                .DisplayColumns("description").Style.HorizontalAlignment = C1.Win.C1TrueDBGrid.AlignHorzEnum.Near
+
                 .DisplayColumns("fullDeduct").DataColumn.Caption = "FULLY DEDUCTABLE"
-                .DisplayColumns("fullDeduct").Width = 250
+                .DisplayColumns("fullDeduct").Width = 300
                 .DisplayColumns("fullDeduct").HeadingStyle.HorizontalAlignment = C1.Win.C1TrueDBGrid.AlignHorzEnum.Center
-                .DisplayColumns("fullDeduct").Style.HorizontalAlignment = C1.Win.C1TrueDBGrid.AlignHorzEnum.Near
+                .DisplayColumns("fullDeduct").Style.HorizontalAlignment = C1.Win.C1TrueDBGrid.AlignHorzEnum.Center
+
+                .DisplayColumns("grant_amount").DataColumn.Caption = "GRANT AMOUNT"
+                .DisplayColumns("grant_amount").Width = 300
+                .DisplayColumns("grant_amount").HeadingStyle.HorizontalAlignment = C1.Win.C1TrueDBGrid.AlignHorzEnum.Center
+                .DisplayColumns("grant_amount").Style.HorizontalAlignment = C1.Win.C1TrueDBGrid.AlignHorzEnum.Far
+
+                .DisplayColumns("Refundable").DataColumn.Caption = "REFUNDABLE"
+                .DisplayColumns("Refundable").Width = 300
+                .DisplayColumns("Refundable").HeadingStyle.HorizontalAlignment = C1.Win.C1TrueDBGrid.AlignHorzEnum.Center
+                .DisplayColumns("Refundable").Style.HorizontalAlignment = C1.Win.C1TrueDBGrid.AlignHorzEnum.Center
+
 
             End With
         Catch ex As Exception

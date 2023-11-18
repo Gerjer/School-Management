@@ -17,9 +17,9 @@ Public Class fmaGrantSetup
         clsGroup.AttachControl = Me.txtcode
         clsGroup.AttachControl = Me.txtname
         clsGroup.AttachControl = Me.txtfullDeduct
-
-
-
+        clsGroup.AttachControl = Me.txtdescription
+        clsGroup.AttachControl = Me.txtgrant_amount
+        clsGroup.AttachControl = Me.txtRefundable
 
         'Handles Add,Save and Delete
         clsGroup.AttachAddButton = Me.btnAdd
@@ -96,4 +96,6 @@ Public Class fmaGrantSetup
     Private Sub btnAdd_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnAdd.Click
         txtcode.Focus()
     End Sub
+
+
 End Class

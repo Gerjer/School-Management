@@ -114,7 +114,8 @@
 	                                    scholarship_grant.`name`, 
 	                                    scholarship_grant.fullDeduct, 
 	                                    scholarship_grant.grant_amount, 
-	                                    scholarship_grant.Refundable
+	                                    scholarship_grant.Refundable,
+                                        scholarship_grant.code   
                                     FROM
 	                                    scholarship_grant"))
         cmbScholarship.ValueMember = "id"
@@ -195,6 +196,7 @@
         Return DataSource(sql)
     End Function
 
+    Dim scholarship_code As String = ""
     Private Sub cmbScholarship_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cmbScholarship.SelectedIndexChanged
         If FirstLoad = False Then
             Try
@@ -202,6 +204,7 @@
                 txtFullDedecution.Text = drv.Item("fullDeduct").ToString
                 txtGrandAmt.Text = drv.Item("grant_amount").ToString
                 txtRefundable.Text = drv.Item("Refundable").ToString
+                scholarship_code = drv.Item("code").ToString
             Catch ex As Exception
 
             End Try
@@ -220,7 +223,44 @@
                     'Check ScholarShip
                     If ExistInScholarShip(_studentID) = True Then
                         DataSource(String.Format("UPDATE  scholarship SET scholarship_any= '" & cmbScholarship.Text & "',scholarship_grant_id= '" & cmbScholarship.SelectedValue & "' WHERE id = '" & scholarship_id & "' ;"))
+
                     End If
+
+                    If ExistingSchorshipGrantDetails(_studentID) = True Then
+                        DataSource(String.Format(" UPDATE scholarship_grant_details SET scholarship_code = '" & scholarship_code & "',grant_amount = '" & txtGrandAmt.Text & "' WHERE id = '" & scholarship_id & "'"))
+                        '           MessageBox.Show("Record Updated...", "Successfully!")
+                    Else
+                        DataSource(String.Format("INSERT INTO scholarship_grant_details (student_id,scholarship_code,grant_amount,status)VALUES('" & _studentID & "','" & scholarship_code & "','" & txtGrandAmt.Text & "','Active')"))
+                        MessageBox.Show("Record Added...", "Successfully!")
+                    End If
+
+                    ''Update Statement Assessment
+                    'If scholarship_code = 6 Then
+                    '    'Check Assessment
+                    '    Try
+                    '        If ExistingAssessment(_studentID) = True Then
+                    '            Dim Total As Double = DataObject(String.Format("SELECT total'Total'  FROM students_assessment WHERE stat LIKE '++' AND student_id = '" & _studentID & "'"))
+                    '            Dim DiscountedPayable As Double = Total - FormatNumber(txtGrandAmt.Text, 2, TriState.UseDefault, TriState.True)
+                    '            Dim DiscountID As Integer = DataObject(String.Format("SELECT id FROM students_assessment WHERE stat LIKE '--' AND student_id = '" & _studentID & "'"))
+                    '            Dim TotalPaybleID As Integer = DataObject(String.Format("SELECT id FROM students_assessment WHERE stat LIKE 'T+' AND student_id = '" & _studentID & "'"))
+
+                    '            'Update Discount Field
+                    '            DataSource(String.Format("UPDATE students_assessment SET total = '" & FormatNumber(txtGrandAmt.Text, 2, TriState.UseDefault, TriState.True) & "' WHERE id = '" & DiscountID & "'"))
+
+                    '            'Update TotalPayable
+                    '            DataSource(String.Format("UPDATE students_assessment SET total = '" & DiscountedPayable & "' WHERE id = '" & TotalPaybleID & "'"))
+
+                    '        End If
+
+
+                    '    Catch ex As Exception
+
+                    '    End Try
+
+
+
+                    'End If
+
 
                     'DataSource(String.Format("DELETE FROM `scholarship` WHERE `id` = '" & _studentID & "' ;"))
 
@@ -241,7 +281,7 @@
 
                     '                        "))
 
-                    MessageBox.Show("Record Updated...", "Successfully!")
+                    '          MessageBox.Show("Record Updated...", "Successfully!")
                 Catch ex As Exception
                     MsgBox(ex.Message)
                     Exit Sub
@@ -325,6 +365,29 @@
 
         End Select
     End Sub
+
+    Private Function ExistingAssessment(studentID As Integer) As Boolean
+        Dim dt As New DataTable
+        Dim sql As String = ""
+        sql = "SELECT * FROM students_assessment WHERE student_id = '" & studentID & "'"
+        dt = DataSource(String.Format(sql))
+        If dt.Rows.Count > 0 Then
+            Return True
+        Else
+            Return False
+        End If
+    End Function
+
+    Private Function ExistingSchorshipGrantDetails(studentID As Integer) As Boolean
+        Dim id As Integer = 0
+        id = DataObject(String.Format("SELECT id FROM scholarship_grant_details WHERE `status`= 'Active' AND student_id = '" & studentID & "'"))
+        If id > 0 Then
+            scholarship_id = id
+            Return True
+        Else
+            Return False
+        End If
+    End Function
 
     Private Function ExistInScholarShip(studentID As Integer) As Boolean
 

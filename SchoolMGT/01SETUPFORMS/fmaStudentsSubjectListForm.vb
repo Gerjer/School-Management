@@ -725,7 +725,9 @@ Public Class fmaStudentsSubjectListForm
 
         getDetails_Students(txtStudentID.Text)
 
-        With fmaStudentAssessmentForm
+        Dim frm As New fmaStudentAssessmentForm
+
+        With frm
             .txtCategoryID.Text = dt_StdDetails(0)("categoryid").ToString
             .txtAdmissionNo.Text = dt_StdDetails(0)("admission_no").ToString
             .txtIDNumber.Text = dt_StdDetails(0)("std_number").ToString
@@ -746,8 +748,8 @@ Public Class fmaStudentsSubjectListForm
 
         '   fmaStudentAssessmentForm.MdiParent = ftmdiMainForm
         ' fmaStudentAssessmentForm.Show()
-        fmaStudentAssessmentForm.BringToFront()
-        fmaStudentAssessmentForm.ShowDialog()
+        frm.BringToFront()
+        frm.ShowDialog()
 
         If fmaStudentAssessmentForm.DialogResult = DialogResult.Cancel Then
             lblEnrollStatus.Text = fmaStudentAssessmentForm.lblStatus.Text

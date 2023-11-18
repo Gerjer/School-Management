@@ -207,14 +207,13 @@ FROM
         Try
             Dim drv As DataRowView = DirectCast(cmbCourse.SelectedItem, DataRowView)
             Me.txtCourseID.Text = drv.Item("id").ToString
-            cmbBatch.Focus()
-
+            '     cmbBatch.Focus()
 
         Catch ex As Exception
             Me.txtCourseID.Text = ""
         End Try
 
-        CheckBox1_Click(sender, e)
+        '   CheckBox1_Click(sender, e)
     End Sub
 
     Private Sub txtCourseID_TextChanged(ByVal sender As Object, ByVal e As System.EventArgs) Handles txtCourseID.TextChanged
@@ -229,11 +228,14 @@ FROM
     End Sub
 
     Private Sub displayBatches()
+
         Dim SQLEX As String = "SELECT batches.id, name FROM batches"
         SQLEX += " INNER JOIN courses"
         SQLEX += " ON (batches.course_id = courses.id)"
         SQLEX += " WHERE batches.is_deleted =0 AND batches.is_active=1"
-        SQLEX += " AND course_name='" & Me.cmbCourse.Text & "'"
+        SQLEX += " AND course_id='" & Me.txtCourseID.Text & "' AND batches.school_year = '" & cmbyearbatch.Text & "' "
+        SQLEX += " ORDER BY semester,year_level"
+
 
         Dim MeData As DataTable
         MeData = clsDBConn.ExecQuery(SQLEX)
@@ -242,16 +244,15 @@ FROM
 
         cmbBatch.ValueMember = "id"
         cmbBatch.DisplayMember = "name"
-
+        cmbBatch.Text = ""
         cmbBatch.SelectedIndex = -1
-        txtBatchID.Text = ""
 
 
     End Sub
 
     Private Sub cmbBatch_SelectedIndexChanged(ByVal sender As Object, ByVal e As System.EventArgs) Handles cmbBatch.SelectedIndexChanged
 
-        If FirstLoad = False Then
+        If cmbBatch.Focused Then
             Try
                 Dim drv As DataRowView = DirectCast(cmbBatch.SelectedItem, DataRowView)
                 Me.txtBatchID.Text = drv.Item("id").ToString
@@ -261,6 +262,7 @@ FROM
                 '     Me.txtBatchID.Text = ""
             End Try
         End If
+
 
     End Sub
 
@@ -276,20 +278,22 @@ FROM
     End Sub
 
     Private Sub displayStudents()
-        Dim SQLEX As String = "SELECT DISTINCT students.id AS studentid,students.admission_no,students.scholarshipgrant,students.class_roll_no"
+        Dim SQLEX As String = "SELECT DISTINCT students.id AS studentid,students.admission_no,CONCAT(students.scholarshipgrant,' ',IFNULL(scholarship_grant_details.grant_amount,''))'scholarshipgrant',students.class_roll_no"
         SQLEX += " , person.display_name AS studentname"
         SQLEX += " , courses.course_name"
         SQLEX += " , batches.`name` AS batchname,students.year_level,batches.school_year,students.semester"
         SQLEX += " , student_categories.`name` AS categoryname"
         SQLEX += " , student_categories.id AS categoryid"
-        SQLEX += " , students.runningbalance"
-        SQLEX += " , students.has_paid_fees,students.person_id "
+        SQLEX += " , students.runningbalance,students.has_paid_fees"
+        SQLEX += " , students.person_id,IFNULL(scholarship_grant_details.grant_amount,0)'grant_amount',IFNULL(scholarship_grant_details.is_grant,2)'is_grant',ifnull(scholarship_grant.fullDeduct,'')'fullDeduct' "
         SQLEX += " FROM person"
         SQLEX += " INNER JOIN students ON students.person_id = person.person_id"
         SQLEX += " INNER JOIN courses ON students.course_id = courses.id "
         SQLEX += " INNER JOIN batches ON students.batch_id = batches.id "
         SQLEX += " INNER JOIN student_categories ON students.student_category_id = student_categories.id"
         SQLEX += " INNER JOIN students_subjects ON students.id = students_subjects.student_id "
+        SQLEX += " LEFT JOIN scholarship_grant_details ON students.id = scholarship_grant_details.student_id "
+        SQLEX += " 	LEFT JOIN scholarship_grant ON scholarship_grant_details.scholarship_code = scholarship_grant.`code` "
         'AND students.batch_id = students_subjects.batch_id
         SQLEX += " WHERE person.status_type_id = 1 AND person.end_time IS NULL AND person.person_type_id = 2 AND "
         SQLEX += " students.course_id = '" & txtCourseID.Text & "'"
@@ -818,7 +822,9 @@ FROM
     End Function
 
 
-
+    Dim is_grant As Integer
+    Dim grand_amount As Double
+    Dim FullDeduct As String
     Private Sub btnSearchCondition_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnSearchCondition.Click
         ''     groupboxStudDetails.Visible = True
         'If cmbStudentList.SelectedIndex = -1 Then
@@ -830,9 +836,32 @@ FROM
 
         cxbxFullPayment.Checked = False
 
+        is_grant = tdbViewer.Columns.Item("is_grant").Value
+        grand_amount = tdbViewer.Columns.Item("grant_amount").Value.ToString
+        FullDeduct = tdbViewer.Columns.Item("fullDeduct").Value.ToString
+        lblGrant.Text = tdbViewer.Columns.Item("scholarshipgrant").Value.ToString
+
+        If lblGrant.Text = "" Then
+            cxbxFullPayment.Visible = False
+            cbxdiscount.Visible = False
+        Else
+            If FullDeduct = "YES" Then
+                cxbxFullPayment.Visible = True
+                cbxdiscount.Visible = False
+            Else
+                If is_grant = 2 Then
+                    cbxdiscount.Visible = False
+                Else
+                    cbxdiscount.Visible = True
+                End If
+            End If
+        End If
+
+
+
         lblAdmNo.Text = tdbViewer.Columns.Item("admission_no").Value.ToString
         lblName.Text = tdbViewer.Columns.Item("studentname").Value.ToString
-        lblGrant.Text = tdbViewer.Columns.Item("scholarshipgrant").Value.ToString
+
         lblCourse.Text = tdbViewer.Columns.Item("course_name").Value.ToString
         lblCategory.Text = tdbViewer.Columns.Item("categoryname").Value.ToString
         lblCategoryID.Text = tdbViewer.Columns.Item("categoryid").Value.ToString
@@ -979,6 +1008,20 @@ FROM
         Else
             PAYMENTDETAILS.isFullPayment = False
         End If
+
+        If cbxdiscount.Checked = True Then
+            PAYMENTDETAILS.isDiscount = True
+            '      PAYMENTDETAILS.txtTotalPayment.Text = diAmount.Value
+            PAYMENTDETAILS.LabelX1.Text = "DISCOUNTED AMOUNT :"
+        Else
+            PAYMENTDETAILS.isDiscount = False
+            PAYMENTDETAILS.txtTotalPayment.Text = ""
+            PAYMENTDETAILS.LabelX1.Text = "AMOUNT TO BE PAID :"
+        End If
+
+
+
+
 
         PAYMENTDETAILS.txtStudentID.Text = Me.txtStudentID.Text
         PAYMENTDETAILS.txtAmount.Text = Format(diAmount.Value, "#,##0.00")
@@ -1244,14 +1287,15 @@ FROM
     End Sub
 
     Private Sub cmbCourse_SelectedValueChanged(sender As Object, e As EventArgs) Handles cmbCourse.SelectedValueChanged
-        Try
-            Dim drv As DataRowView = DirectCast(cmbBatch.SelectedItem, DataRowView)
-            Me.txtBatchID.Text = drv.Item("id").ToString
-            cmbStudentList.Focus()
-        Catch ex As Exception
-            Me.txtBatchID.Text = ""
-        End Try
-        CheckBox1_Click(sender, e)
+
+        'Try
+        '    Dim drv As DataRowView = DirectCast(cmbBatch.SelectedItem, DataRowView)
+        '    Me.txtBatchID.Text = drv.Item("id").ToString
+        '    cmbStudentList.Focus()
+        'Catch ex As Exception
+        '    Me.txtBatchID.Text = ""
+        'End Try
+        'CheckBox1_Click(sender, e)
 
     End Sub
 
@@ -1291,29 +1335,24 @@ FROM
 
     End Sub
 
+
     Private Sub cmbyearbatch_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cmbyearbatch.SelectedIndexChanged
-        Try
 
-            Dim SQLEX As String = "SELECT batches.id, name FROM batches"
-            SQLEX += " INNER JOIN courses"
-            SQLEX += " ON (batches.course_id = courses.id)"
-            SQLEX += " WHERE batches.is_deleted =0 AND batches.is_active=1"
-            SQLEX += " AND course_id='" & Me.txtCourseID.Text & "' AND batches.school_year = '" & cmbyearbatch.Text & "' "
-            SQLEX += " ORDER BY semester,year_level"
+        If cmbyearbatch.Focused Then
+            Try
+
+                Dim drv As DataRowView = DirectCast(cmbyearbatch.SelectedItem, DataRowView)
+                _school_year = drv.Item("name").ToString
+                Me.cmbyearbatch.Text = drv.Item("name").ToString
+                displayBatches()
 
 
-            Dim MeData As DataTable
-            MeData = clsDBConn.ExecQuery(SQLEX)
+            Catch ex As Exception
+                cmbyearbatch.Text = ""
+            End Try
+        End If
 
-            cmbBatch.DataSource = MeData
 
-            cmbBatch.ValueMember = "id"
-            cmbBatch.DisplayMember = "name"
-            cmbBatch.Text = ""
-            cmbBatch.SelectedIndex = -1
-        Catch ex As Exception
-
-        End Try
     End Sub
 
     Private Sub PAYMENTDETAILS_FORM_CLOSING() Handles PAYMENTDETAILS.FORM_CLOSING
@@ -1370,10 +1409,19 @@ ORDER BY
     Private Sub lblGrant_TextChanged(sender As Object, e As EventArgs) Handles lblGrant.TextChanged
         If lblGrant.Text = "" Then
             cxbxFullPayment.Visible = False
+            cbxdiscount.Visible = False
         Else
-            cxbxFullPayment.Visible = True
-
+            If FullDeduct = "Yes" Then
+                cxbxFullPayment.Visible = True
+            Else
+                If is_grant = 0 Then
+                    cbxdiscount.Visible = True
+                Else
+                    cbxdiscount.Visible = False
+                End If
+            End If
         End If
+
     End Sub
 
 
@@ -1427,4 +1475,21 @@ ORDER BY
         displayCourse()
     End Sub
 
+    Private Sub cbxdiscount_CheckStateChanged(sender As Object, e As EventArgs) Handles cbxdiscount.CheckStateChanged
+        If cbxdiscount.Checked = True Then
+
+            txtRemarks.Text = "Scholarship Grant:" & lblGrant.Text
+
+            diAmount.Value = grand_amount
+            btnPost.Enabled = True
+            btnPost.PerformClick()
+        Else
+            txtORNo.Text = ""
+            txtRemarks.Text = ""
+
+            diAmount.Value = 0
+
+
+        End If
+    End Sub
 End Class

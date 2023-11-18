@@ -4,6 +4,7 @@
 
     Public isCash As Boolean = True
     Public isFullPayment As Boolean = False
+    Public isDiscount As Boolean = False
     Dim dt_student_assement As New DataTable
     Public creatAnother As Boolean = False
     Public _sender As Object
@@ -183,21 +184,6 @@
 
             dgvFEES.Item(colIndex, rowIndex).Value = Format(CDbl(dgvFEES.Item(colIndex, rowIndex).Value), "#,##0.00")
 
-            'Dim ctr As Integer = 0
-            'For x As Integer = rowIndex To dgvFEES.Rows.Count
-            '    MasterFee = dgvFEES.Item(0, rowIndex).Value.ToString
-            '    If MasterFee <> "" Then
-
-            '        Dim StudetnAssessmentRows As DataRow() = dt_student_assement.Select("masterfee = '" & MasterFee & "' AND student_id = '" & txtStudentID.Text & "'")
-
-            '        For Each row In StudetnAssessmentRows.ToList
-            '            MasterFeeId = row.Item("id").ToString
-            '        Next
-            '        Exit For
-            '    End If
-
-            '    rowIndex -= 1
-            'Next
 
         Catch ex As Exception
             MsgBox(ex.Message)
@@ -427,8 +413,6 @@
                 End If
 
 
-
-
                 'UPDATE RUNNING BALANCE FROM STUDENTS
                 Dim SQLUP As String = "UPDATE students SET runningbalance=runningbalance - '" & CDbl(Me.txtTotalPayment.Text) & "'"
                 SQLUP += " WHERE id='" & txtStudentID.Text & "'"
@@ -452,7 +436,8 @@
 
                 clsDBConn.Execute(SQLINDebit)
 
-
+                Dim is_grant As Integer = 0
+                Dim discountedAmt As Double = 0
 
                 'insert DEBIT First into 0_gl_trans END
 
@@ -477,57 +462,82 @@
                             Continue For
                         End If
 
+                        'Update Scholarship Grand Details
+                        If isDiscount = True Or isFullPayment = True Then
+
+                            discountedAmt += value
+
+                            Dim remarks As String = ""
+                            If discountedAmt >= txtAmount.Text Then
+                                is_grant = 1
+                                remarks = "FULL"
+                            Else
+                                is_grant = 0
+                                remarks = "PARTIAL"
+                            End If
+
+                            DataSource(String.Format("UPDATE scholarship_grant_details SET deducted_amount = '" & discountedAmt & "',remarks = '" & remarks & "',is_grant = '" & is_grant & "' WHERE student_id = '" & Me.txtStudentID.Text & "'"))
+
+                        End If
+
                         Dim URBSQL As String = "UPDATE students_assessment SET running_balance=running_balance - " & CDbl(value)
-                        URBSQL += " WHERE student_id='" & Me.txtStudentID.Text & "'"
-                        URBSQL += " AND finance_fee_particular_id='" & feeId & "'"
+                            URBSQL += " WHERE student_id='" & Me.txtStudentID.Text & "'"
+                            URBSQL += " AND finance_fee_particular_id='" & feeId & "'"
 
-                        If Not clsDBConn.Execute(URBSQL) Then
-                            MsgBox("Error in updating running balance")
+                            If Not clsDBConn.Execute(URBSQL) Then
+                                MsgBox("Error in updating running balance")
+
+                            End If
+
+
+                            'insert details of payment
+                            Dim DET_INSQL As String = "INSERT INTO finance_transactions_onetime_payments(class_roll_no,finance_fee_paticulars_id,amount,student_id,finance_transaction_id)"
+                            DET_INSQL += " VALUES("
+                            DET_INSQL += String.Format("'{0}', '{1}'", txtClassRollNo.Text, feeId)
+                            DET_INSQL += String.Format(",'{0}', '{1}','{2}')", CDbl(value), Me.txtStudentID.Text, ft_id)
+
+
+                            dt_fees.Rows.Add(New String() {credit_coa_code, feeCatName, CDbl(value)})
+                            total_subdet += CDbl(value)
+
+
+
+                            If Not clsDBConn.Execute(DET_INSQL) Then
+                                MsgBox("Error in Inserting finance_transactions_onetime_payments")
+                            End If
+
+
+                            'write to accounting GL
+
+                            'insert to 0_gl_trans credit
+
+                            Dim creditAmount As Double = value
+
+                            creditAmount = Math.Abs(creditAmount) * -1
+
+                            Dim SQLINCredit As String = "INSERT INTO djemfcst_acctng2022.0_gl_trans(TYPE,type_no,tran_date,account,memo_,amount)"
+                            SQLINCredit += " VALUES("
+
+                            SQLINCredit += String.Format("'{0}', '{1}',", "0", type_no)
+                            SQLINCredit += String.Format("'{0}', '{1}','{2}','{3}')", Me.txtPaymentDate.Text, credit_coa_code, "CR-" & txtStudentName.Text, creditAmount)
+
+                            clsDBConn.Execute(SQLINCredit)
+
+
+                        Else
+                            If isDiscount = True And flag = "--" Then
+
+                            'Update Discount Grid
+                            dgvFEES.Item(3, nCtr).Value = txtAmount.Text
+
+                            Dim DiscountID As Integer = DataObject(String.Format("SELECT id FROM students_assessment WHERE stat LIKE '" & flag & "' AND student_id = '" & Me.txtStudentID.Text & "'"))
+
+                            'Update Discount Field
+                            DataSource(String.Format("UPDATE students_assessment SET total = '" & txtAmount.Text & "' WHERE id = '" & DiscountID & "'"))
 
                         End If
-
-
-                        'insert details of payment
-                        Dim DET_INSQL As String = "INSERT INTO finance_transactions_onetime_payments(class_roll_no,finance_fee_paticulars_id,amount,student_id,finance_transaction_id)"
-                        DET_INSQL += " VALUES("
-                        DET_INSQL += String.Format("'{0}', '{1}'", txtClassRollNo.Text, feeId)
-                        DET_INSQL += String.Format(",'{0}', '{1}','{2}')", CDbl(value), Me.txtStudentID.Text, ft_id)
-
-
-                        dt_fees.Rows.Add(New String() {credit_coa_code, feeCatName, CDbl(value)})
-                        total_subdet += CDbl(value)
-
-
-
-                        If Not clsDBConn.Execute(DET_INSQL) Then
-                            MsgBox("Error in Inserting finance_transactions_onetime_payments")
-                        End If
-
-
-                        'write to accounting GL
-
-                        'insert to 0_gl_trans credit
-
-                        Dim creditAmount As Double = value
-
-                        creditAmount = Math.Abs(creditAmount) * -1
-
-                        Dim SQLINCredit As String = "INSERT INTO djemfcst_acctng2022.0_gl_trans(TYPE,type_no,tran_date,account,memo_,amount)"
-                        SQLINCredit += " VALUES("
-
-                        SQLINCredit += String.Format("'{0}', '{1}',", "0", type_no)
-                        SQLINCredit += String.Format("'{0}', '{1}','{2}','{3}')", Me.txtPaymentDate.Text, credit_coa_code, "CR-" & txtStudentName.Text, creditAmount)
-
-                        clsDBConn.Execute(SQLINCredit)
-
-
-
 
                     End If
-
-
-
-
 
                 Next
 

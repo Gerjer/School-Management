@@ -599,13 +599,11 @@ Public Class fmaStudentAssessmentForm
         End If
 
 
-
         TOTAL_FEES += TuitionFee_lab + TuitionFee_Lec
 
         Dim balance As Double = CDbl(getPreviousBalance())
         Dim discount As Double = CDbl(getDiscount())
         Dim TOTAL_BAL As Double = (TOTAL_FEES + balance) - discount
-
 
 
         dgvFEES.Rows.Add(New String() {"", "", "TOTAL", Format(TOTAL_FEES, "#,##0.00"), "++"})
@@ -749,12 +747,16 @@ Public Class fmaStudentAssessmentForm
 
 
     Private Function getDiscount() As String
-        Dim SQLEX As String = "SELECT additional_info, student_additional_fields.id"
-        SQLEX += " FROM student_additional_details"
-        SQLEX += " INNER JOIN student_additional_fields"
-        SQLEX += " ON (student_additional_details.additional_field_id = student_additional_fields.id)"
-        SQLEX += " WHERE student_additional_fields.id ='2'"
-        SQLEX += " and student_id='" & txtStudentID.Text & "'"
+
+
+        'Dim SQLEX As String = "SELECT additional_info, student_additional_fields.id"
+        'SQLEX += " FROM student_additional_details"
+        'SQLEX += " INNER JOIN student_additional_fields"
+        'SQLEX += " ON (student_additional_details.additional_field_id = student_additional_fields.id)"
+        'SQLEX += " WHERE student_additional_fields.id ='2'"
+        'SQLEX += " and student_id='" & txtStudentID.Text & "'"
+
+        Dim SQLEX As String = "	SELECT grant_amount,IFNULL(deducted_amount,0)'deducted_amount' FROM scholarship_grant_details WHERE student_id = '" & txtStudentID.Text & "'"
 
         Dim MeData As DataTable
         MeData = clsDBConn.ExecQuery(SQLEX)
@@ -762,11 +764,12 @@ Public Class fmaStudentAssessmentForm
         Dim prevBal As String = "0.00"
         If MeData.Rows.Count > 0 Then
             Dim value As Double = 0
-
+            Dim deducted As Double = CDbl(MeData.Rows(0).Item("deducted_amount").ToString)
             Try
-                value = CDbl(MeData.Rows(0).Item("additional_info").ToString)
-                prevBal = Format(value, "#,##0.00")
-
+                If deducted > 0 Then
+                    value = CDbl(MeData.Rows(0).Item("grant_amount").ToString)
+                    prevBal = Format(value, "#,##0.00")
+                End If
             Catch ex As Exception
 
             End Try

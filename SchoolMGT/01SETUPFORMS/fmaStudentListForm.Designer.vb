@@ -660,7 +660,7 @@ Partial Class fmaStudentListForm
         Me.CMenuStripOperations.ImageScalingSize = New System.Drawing.Size(20, 20)
         Me.CMenuStripOperations.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.AssignScheduleToolStripMenuItem, Me.ViewAssessmentToolStripMenuItem, Me.ViewGradesToolStripMenuItem, Me.PreviewCORToolStripMenuItem, Me.ModifyBatchToolStripMenuItem, Me.ModifyScholarshipGrantToolStripMenuItem, Me.ModifyCourseGradeToolStripMenuItem, Me.MarkAsEnrolledToolStripMenuItem, Me.EnrolledAsToolStripMenuItem, Me.ModifyYearLevelToolStripMenuItem, Me.ModifySemesterToolStripMenuItem, Me.ModifyAdmissionNumberToolStripMenuItem, Me.ADDDROPSubjectToolStripMenuItem})
         Me.CMenuStripOperations.Name = "CMenuStripOperations"
-        Me.CMenuStripOperations.Size = New System.Drawing.Size(219, 312)
+        Me.CMenuStripOperations.Size = New System.Drawing.Size(219, 290)
         '
         'AssignScheduleToolStripMenuItem
         '
@@ -707,13 +707,13 @@ Partial Class fmaStudentListForm
         'GrantToolStripMenuItem
         '
         Me.GrantToolStripMenuItem.Name = "GrantToolStripMenuItem"
-        Me.GrantToolStripMenuItem.Size = New System.Drawing.Size(117, 22)
+        Me.GrantToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
         Me.GrantToolStripMenuItem.Text = "Grant"
         '
         'RemoveToolStripMenuItem
         '
         Me.RemoveToolStripMenuItem.Name = "RemoveToolStripMenuItem"
-        Me.RemoveToolStripMenuItem.Size = New System.Drawing.Size(117, 22)
+        Me.RemoveToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
         Me.RemoveToolStripMenuItem.Text = "Remove"
         '
         'ModifyCourseGradeToolStripMenuItem

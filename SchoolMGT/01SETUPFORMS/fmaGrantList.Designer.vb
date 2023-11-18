@@ -88,9 +88,8 @@ Partial Class fmaGrantList
         Me.GroupPanel2.Controls.Add(Me.PanelEx1)
         Me.GroupPanel2.Dock = System.Windows.Forms.DockStyle.Fill
         Me.GroupPanel2.Location = New System.Drawing.Point(0, 0)
-        Me.GroupPanel2.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.GroupPanel2.Name = "GroupPanel2"
-        Me.GroupPanel2.Size = New System.Drawing.Size(1033, 379)
+        Me.GroupPanel2.Size = New System.Drawing.Size(775, 308)
         '
         '
         '
@@ -130,9 +129,8 @@ Partial Class fmaGrantList
         Me.tdbViewer.ForeColor = System.Drawing.Color.MidnightBlue
         Me.tdbViewer.GroupByCaption = "Drag a column header here to group by that column"
         Me.tdbViewer.Images.Add(CType(resources.GetObject("tdbViewer.Images"), System.Drawing.Image))
-        Me.tdbViewer.Location = New System.Drawing.Point(0, 146)
+        Me.tdbViewer.Location = New System.Drawing.Point(0, 119)
         Me.tdbViewer.MaintainRowCurrency = True
-        Me.tdbViewer.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.tdbViewer.MarqueeStyle = C1.Win.C1TrueDBGrid.MarqueeEnum.HighlightRow
         Me.tdbViewer.Name = "tdbViewer"
         Me.tdbViewer.PictureAddnewRow = CType(resources.GetObject("tdbViewer.PictureAddnewRow"), System.Drawing.Image)
@@ -146,7 +144,7 @@ Partial Class fmaGrantList
         Me.tdbViewer.RowDivider.Style = C1.Win.C1TrueDBGrid.LineStyleEnum.None
         Me.tdbViewer.RowHeight = 15
         Me.tdbViewer.RowSubDividerColor = System.Drawing.Color.Navy
-        Me.tdbViewer.Size = New System.Drawing.Size(1027, 227)
+        Me.tdbViewer.Size = New System.Drawing.Size(769, 183)
         Me.tdbViewer.TabAcrossSplits = True
         Me.tdbViewer.TabIndex = 21
         Me.tdbViewer.Text = "C1TrueDBGrid1"
@@ -171,9 +169,8 @@ Partial Class fmaGrantList
         Me.PanelEx1.Dock = System.Windows.Forms.DockStyle.Top
         Me.PanelEx1.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.PanelEx1.Location = New System.Drawing.Point(0, 0)
-        Me.PanelEx1.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.PanelEx1.Name = "PanelEx1"
-        Me.PanelEx1.Size = New System.Drawing.Size(1027, 146)
+        Me.PanelEx1.Size = New System.Drawing.Size(769, 119)
         Me.PanelEx1.Style.Alignment = System.Drawing.StringAlignment.Center
         Me.PanelEx1.Style.BackColor1.Color = System.Drawing.Color.Azure
         Me.PanelEx1.Style.BackColor2.Color = System.Drawing.Color.MediumAquamarine
@@ -189,10 +186,9 @@ Partial Class fmaGrantList
         '
         '
         Me.txtFilterText.Border.Class = "TextBoxBorder"
-        Me.txtFilterText.Location = New System.Drawing.Point(233, 4)
-        Me.txtFilterText.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.txtFilterText.Location = New System.Drawing.Point(175, 3)
         Me.txtFilterText.Name = "txtFilterText"
-        Me.txtFilterText.Size = New System.Drawing.Size(435, 30)
+        Me.txtFilterText.Size = New System.Drawing.Size(326, 26)
         Me.txtFilterText.TabIndex = 29
         Me.txtFilterText.Visible = False
         '
@@ -201,11 +197,9 @@ Partial Class fmaGrantList
         Me.grpBoxSearch.Controls.Add(Me.btnSearchCondition)
         Me.grpBoxSearch.Controls.Add(Me.RadioButton2)
         Me.grpBoxSearch.Controls.Add(Me.RadioButton1)
-        Me.grpBoxSearch.Location = New System.Drawing.Point(12, 32)
-        Me.grpBoxSearch.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.grpBoxSearch.Location = New System.Drawing.Point(9, 26)
         Me.grpBoxSearch.Name = "grpBoxSearch"
-        Me.grpBoxSearch.Padding = New System.Windows.Forms.Padding(4, 4, 4, 4)
-        Me.grpBoxSearch.Size = New System.Drawing.Size(271, 64)
+        Me.grpBoxSearch.Size = New System.Drawing.Size(203, 52)
         Me.grpBoxSearch.TabIndex = 28
         Me.grpBoxSearch.TabStop = False
         Me.grpBoxSearch.Text = "Search Conditions"
@@ -216,10 +210,9 @@ Partial Class fmaGrantList
         Me.btnSearchCondition.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton
         Me.btnSearchCondition.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground
         Me.btnSearchCondition.Image = Global.SchoolMGT.My.Resources.Resources.zoom
-        Me.btnSearchCondition.Location = New System.Drawing.Point(215, 18)
-        Me.btnSearchCondition.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.btnSearchCondition.Location = New System.Drawing.Point(161, 15)
         Me.btnSearchCondition.Name = "btnSearchCondition"
-        Me.btnSearchCondition.Size = New System.Drawing.Size(47, 38)
+        Me.btnSearchCondition.Size = New System.Drawing.Size(35, 31)
         Me.btnSearchCondition.TabIndex = 28
         Me.btnSearchCondition.Tooltip = "Search"
         '
@@ -228,10 +221,9 @@ Partial Class fmaGrantList
         Me.RadioButton2.AutoSize = True
         Me.RadioButton2.Checked = True
         Me.RadioButton2.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.RadioButton2.Location = New System.Drawing.Point(109, 30)
-        Me.RadioButton2.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.RadioButton2.Location = New System.Drawing.Point(82, 24)
         Me.RadioButton2.Name = "RadioButton2"
-        Me.RadioButton2.Size = New System.Drawing.Size(99, 21)
+        Me.RadioButton2.Size = New System.Drawing.Size(80, 17)
         Me.RadioButton2.TabIndex = 1
         Me.RadioButton2.TabStop = True
         Me.RadioButton2.Text = "CONTAINS"
@@ -241,10 +233,9 @@ Partial Class fmaGrantList
         '
         Me.RadioButton1.AutoSize = True
         Me.RadioButton1.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.RadioButton1.Location = New System.Drawing.Point(11, 30)
-        Me.RadioButton1.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.RadioButton1.Location = New System.Drawing.Point(8, 24)
         Me.RadioButton1.Name = "RadioButton1"
-        Me.RadioButton1.Size = New System.Drawing.Size(85, 21)
+        Me.RadioButton1.Size = New System.Drawing.Size(68, 17)
         Me.RadioButton1.TabIndex = 0
         Me.RadioButton1.TabStop = True
         Me.RadioButton1.Text = "EQUALS"
@@ -253,10 +244,9 @@ Partial Class fmaGrantList
         'txtTo
         '
         Me.txtTo.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtTo.Location = New System.Drawing.Point(963, 4)
-        Me.txtTo.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.txtTo.Location = New System.Drawing.Point(722, 3)
         Me.txtTo.Name = "txtTo"
-        Me.txtTo.Size = New System.Drawing.Size(40, 23)
+        Me.txtTo.Size = New System.Drawing.Size(31, 20)
         Me.txtTo.TabIndex = 27
         Me.txtTo.Text = "10"
         Me.txtTo.Visible = False
@@ -264,10 +254,9 @@ Partial Class fmaGrantList
         'txtFrom
         '
         Me.txtFrom.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtFrom.Location = New System.Drawing.Point(913, 4)
-        Me.txtFrom.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.txtFrom.Location = New System.Drawing.Point(685, 3)
         Me.txtFrom.Name = "txtFrom"
-        Me.txtFrom.Size = New System.Drawing.Size(40, 23)
+        Me.txtFrom.Size = New System.Drawing.Size(31, 20)
         Me.txtFrom.TabIndex = 26
         Me.txtFrom.Text = "1"
         Me.txtFrom.Visible = False
@@ -278,10 +267,9 @@ Partial Class fmaGrantList
         Me.btnRight.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnRight.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnRight.ImageAlign = System.Drawing.ContentAlignment.TopCenter
-        Me.btnRight.Location = New System.Drawing.Point(963, 62)
-        Me.btnRight.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.btnRight.Location = New System.Drawing.Point(722, 50)
         Me.btnRight.Name = "btnRight"
-        Me.btnRight.Size = New System.Drawing.Size(43, 27)
+        Me.btnRight.Size = New System.Drawing.Size(32, 22)
         Me.btnRight.TabIndex = 25
         Me.btnRight.Text = ">>"
         Me.btnRight.UseVisualStyleBackColor = False
@@ -293,10 +281,9 @@ Partial Class fmaGrantList
         Me.btnLeft.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnLeft.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnLeft.ImageAlign = System.Drawing.ContentAlignment.TopCenter
-        Me.btnLeft.Location = New System.Drawing.Point(912, 62)
-        Me.btnLeft.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.btnLeft.Location = New System.Drawing.Point(684, 50)
         Me.btnLeft.Name = "btnLeft"
-        Me.btnLeft.Size = New System.Drawing.Size(43, 27)
+        Me.btnLeft.Size = New System.Drawing.Size(32, 22)
         Me.btnLeft.TabIndex = 24
         Me.btnLeft.Text = "<<"
         Me.btnLeft.UseVisualStyleBackColor = False
@@ -308,10 +295,9 @@ Partial Class fmaGrantList
         Me.recordCount.AutoSize = True
         Me.recordCount.BackColor = System.Drawing.Color.Transparent
         Me.recordCount.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.recordCount.Location = New System.Drawing.Point(762, 66)
-        Me.recordCount.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.recordCount.Location = New System.Drawing.Point(570, 54)
         Me.recordCount.Name = "recordCount"
-        Me.recordCount.Size = New System.Drawing.Size(135, 21)
+        Me.recordCount.Size = New System.Drawing.Size(108, 17)
         Me.recordCount.TabIndex = 22
         Me.recordCount.Text = "Records Per Page"
         '
@@ -326,10 +312,9 @@ Partial Class fmaGrantList
         Me.GroupPanel1.Controls.Add(Me.btnDelete)
         Me.GroupPanel1.Controls.Add(Me.btnAdd)
         Me.GroupPanel1.Dock = System.Windows.Forms.DockStyle.Bottom
-        Me.GroupPanel1.Location = New System.Drawing.Point(0, 99)
-        Me.GroupPanel1.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.GroupPanel1.Location = New System.Drawing.Point(0, 81)
         Me.GroupPanel1.Name = "GroupPanel1"
-        Me.GroupPanel1.Size = New System.Drawing.Size(1027, 47)
+        Me.GroupPanel1.Size = New System.Drawing.Size(769, 38)
         '
         '
         '
@@ -359,10 +344,9 @@ Partial Class fmaGrantList
         Me.btnPrint.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnPrint.Image = Global.SchoolMGT.My.Resources.Resources.Print_24x24
         Me.btnPrint.ImageAlign = System.Drawing.ContentAlignment.TopCenter
-        Me.btnPrint.Location = New System.Drawing.Point(522, 0)
-        Me.btnPrint.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.btnPrint.Location = New System.Drawing.Point(391, 0)
         Me.btnPrint.Name = "btnPrint"
-        Me.btnPrint.Size = New System.Drawing.Size(115, 41)
+        Me.btnPrint.Size = New System.Drawing.Size(86, 32)
         Me.btnPrint.TabIndex = 27
         Me.btnPrint.Text = "Print"
         Me.btnPrint.TextAlign = System.Drawing.ContentAlignment.MiddleRight
@@ -376,10 +360,9 @@ Partial Class fmaGrantList
         Me.btnSearch.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnSearch.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnSearch.Image = Global.SchoolMGT.My.Resources.Resources.zoom
-        Me.btnSearch.Location = New System.Drawing.Point(345, 0)
-        Me.btnSearch.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.btnSearch.Location = New System.Drawing.Point(258, 0)
         Me.btnSearch.Name = "btnSearch"
-        Me.btnSearch.Size = New System.Drawing.Size(177, 41)
+        Me.btnSearch.Size = New System.Drawing.Size(133, 32)
         Me.btnSearch.TabIndex = 26
         Me.btnSearch.Text = "Show Filter Bar"
         Me.btnSearch.TextAlign = System.Drawing.ContentAlignment.MiddleRight
@@ -392,10 +375,9 @@ Partial Class fmaGrantList
         Me.btnEdit.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnEdit.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnEdit.Image = CType(resources.GetObject("btnEdit.Image"), System.Drawing.Image)
-        Me.btnEdit.Location = New System.Drawing.Point(230, 0)
-        Me.btnEdit.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.btnEdit.Location = New System.Drawing.Point(172, 0)
         Me.btnEdit.Name = "btnEdit"
-        Me.btnEdit.Size = New System.Drawing.Size(115, 41)
+        Me.btnEdit.Size = New System.Drawing.Size(86, 32)
         Me.btnEdit.TabIndex = 25
         Me.btnEdit.Text = "Edit"
         Me.btnEdit.TextAlign = System.Drawing.ContentAlignment.MiddleRight
@@ -410,10 +392,9 @@ Partial Class fmaGrantList
         Me.btnClose.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnClose.Image = Global.SchoolMGT.My.Resources.Resources.close
         Me.btnClose.ImageAlign = System.Drawing.ContentAlignment.TopCenter
-        Me.btnClose.Location = New System.Drawing.Point(906, 0)
-        Me.btnClose.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.btnClose.Location = New System.Drawing.Point(677, 0)
         Me.btnClose.Name = "btnClose"
-        Me.btnClose.Size = New System.Drawing.Size(115, 41)
+        Me.btnClose.Size = New System.Drawing.Size(86, 32)
         Me.btnClose.TabIndex = 24
         Me.btnClose.Text = "Close"
         Me.btnClose.TextAlign = System.Drawing.ContentAlignment.MiddleRight
@@ -426,10 +407,9 @@ Partial Class fmaGrantList
         Me.btnDelete.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnDelete.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnDelete.Image = Global.SchoolMGT.My.Resources.Resources.cancel
-        Me.btnDelete.Location = New System.Drawing.Point(115, 0)
-        Me.btnDelete.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.btnDelete.Location = New System.Drawing.Point(86, 0)
         Me.btnDelete.Name = "btnDelete"
-        Me.btnDelete.Size = New System.Drawing.Size(115, 41)
+        Me.btnDelete.Size = New System.Drawing.Size(86, 32)
         Me.btnDelete.TabIndex = 21
         Me.btnDelete.Text = "Delete"
         Me.btnDelete.TextAlign = System.Drawing.ContentAlignment.MiddleRight
@@ -444,9 +424,8 @@ Partial Class fmaGrantList
         Me.btnAdd.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnAdd.Image = Global.SchoolMGT.My.Resources.Resources.add
         Me.btnAdd.Location = New System.Drawing.Point(0, 0)
-        Me.btnAdd.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.btnAdd.Name = "btnAdd"
-        Me.btnAdd.Size = New System.Drawing.Size(115, 41)
+        Me.btnAdd.Size = New System.Drawing.Size(86, 32)
         Me.btnAdd.TabIndex = 20
         Me.btnAdd.Text = "Add"
         Me.btnAdd.TextAlign = System.Drawing.ContentAlignment.MiddleRight
@@ -463,13 +442,12 @@ Partial Class fmaGrantList
         Me.PgCount.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.PgCount.ForeColor = System.Drawing.SystemColors.MenuHighlight
         Me.PgCount.Increment = 10
-        Me.PgCount.Location = New System.Drawing.Point(914, 32)
-        Me.PgCount.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.PgCount.Location = New System.Drawing.Point(684, 26)
         Me.PgCount.MaxValue = 99999
         Me.PgCount.MinValue = 10
         Me.PgCount.Name = "PgCount"
         Me.PgCount.ShowUpDown = True
-        Me.PgCount.Size = New System.Drawing.Size(107, 26)
+        Me.PgCount.Size = New System.Drawing.Size(80, 22)
         Me.PgCount.TabIndex = 17
         Me.PgCount.Value = 20
         '
@@ -479,10 +457,9 @@ Partial Class fmaGrantList
         Me.LabelX1.AutoSize = True
         Me.LabelX1.BackColor = System.Drawing.Color.Transparent
         Me.LabelX1.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LabelX1.Location = New System.Drawing.Point(762, 38)
-        Me.LabelX1.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.LabelX1.Location = New System.Drawing.Point(570, 31)
         Me.LabelX1.Name = "LabelX1"
-        Me.LabelX1.Size = New System.Drawing.Size(135, 21)
+        Me.LabelX1.Size = New System.Drawing.Size(108, 17)
         Me.LabelX1.TabIndex = 16
         Me.LabelX1.Text = "Records Per Page"
         '
@@ -491,9 +468,8 @@ Partial Class fmaGrantList
         Me.WinTitle.AutoSize = True
         Me.WinTitle.Dock = System.Windows.Forms.DockStyle.Top
         Me.WinTitle.Location = New System.Drawing.Point(0, 0)
-        Me.WinTitle.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.WinTitle.Name = "WinTitle"
-        Me.WinTitle.Size = New System.Drawing.Size(115, 25)
+        Me.WinTitle.Size = New System.Drawing.Size(90, 20)
         Me.WinTitle.TabIndex = 0
         Me.WinTitle.Text = "DATA LIST"
         '
@@ -503,7 +479,7 @@ Partial Class fmaGrantList
         Me.CMenuStripOperations.ImageScalingSize = New System.Drawing.Size(20, 20)
         Me.CMenuStripOperations.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.DeleteSelectedToolStripMenuItem, Me.DeleteSelectedToolStripMenuItem1})
         Me.CMenuStripOperations.Name = "CMenuStripOperations"
-        Me.CMenuStripOperations.Size = New System.Drawing.Size(217, 68)
+        Me.CMenuStripOperations.Size = New System.Drawing.Size(184, 56)
         '
         'DeleteSelectedToolStripMenuItem
         '
@@ -511,7 +487,7 @@ Partial Class fmaGrantList
         Me.DeleteSelectedToolStripMenuItem.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.DeleteSelectedToolStripMenuItem.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
         Me.DeleteSelectedToolStripMenuItem.Name = "DeleteSelectedToolStripMenuItem"
-        Me.DeleteSelectedToolStripMenuItem.Size = New System.Drawing.Size(216, 32)
+        Me.DeleteSelectedToolStripMenuItem.Size = New System.Drawing.Size(183, 26)
         Me.DeleteSelectedToolStripMenuItem.Text = "Delete Selected"
         '
         'DeleteSelectedToolStripMenuItem1
@@ -519,19 +495,18 @@ Partial Class fmaGrantList
         Me.DeleteSelectedToolStripMenuItem1.BackColor = System.Drawing.Color.Transparent
         Me.DeleteSelectedToolStripMenuItem1.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.DeleteSelectedToolStripMenuItem1.Name = "DeleteSelectedToolStripMenuItem1"
-        Me.DeleteSelectedToolStripMenuItem1.Size = New System.Drawing.Size(216, 32)
+        Me.DeleteSelectedToolStripMenuItem1.Size = New System.Drawing.Size(183, 26)
         Me.DeleteSelectedToolStripMenuItem1.Text = "Edit Selected"
         '
         'fmaGrantList
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.SkyBlue
         Me.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.ClientSize = New System.Drawing.Size(1033, 379)
+        Me.ClientSize = New System.Drawing.Size(775, 308)
         Me.Controls.Add(Me.GroupPanel2)
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
-        Me.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.Name = "fmaGrantList"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Scholarship Grant List"

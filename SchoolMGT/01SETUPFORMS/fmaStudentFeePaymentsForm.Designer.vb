@@ -116,14 +116,15 @@ Partial Class fmaStudentFeePaymentsForm
         Me.tdbViewerSubjects = New C1.Win.C1TrueDBGrid.C1TrueDBGrid()
         Me.tdbViewer = New C1.Win.C1TrueDBGrid.C1TrueDBGrid()
         Me.GroupBox2 = New System.Windows.Forms.GroupBox()
+        Me.Label3 = New System.Windows.Forms.Label()
+        Me.lbluser = New System.Windows.Forms.Label()
         Me.stillSpinner = New System.Windows.Forms.PictureBox()
         Me.lblStatus = New DevComponents.DotNetBar.LabelX()
         Me.rollingSpinner = New System.Windows.Forms.PictureBox()
         Me.CMenuStripOperations = New System.Windows.Forms.ContextMenuStrip(Me.components)
         Me.ViewAssessmentToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.StatementOfAccountToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.Label3 = New System.Windows.Forms.Label()
-        Me.lbluser = New System.Windows.Forms.Label()
+        Me.cbxdiscount = New System.Windows.Forms.CheckBox()
         Me.GroupPanel2.SuspendLayout()
         Me.GroupBox6.SuspendLayout()
         Me.GroupBox7.SuspendLayout()
@@ -446,6 +447,7 @@ Partial Class fmaStudentFeePaymentsForm
         '
         Me.groupboxPayment.CanvasColor = System.Drawing.SystemColors.Control
         Me.groupboxPayment.ColorSchemeStyle = DevComponents.DotNetBar.eDotNetBarStyle.Office2007
+        Me.groupboxPayment.Controls.Add(Me.cbxdiscount)
         Me.groupboxPayment.Controls.Add(Me.cxbxFullPayment)
         Me.groupboxPayment.Controls.Add(Me.btnPost)
         Me.groupboxPayment.Controls.Add(Me.diAmount)
@@ -1339,6 +1341,30 @@ Partial Class fmaStudentFeePaymentsForm
         Me.GroupBox2.TabIndex = 24
         Me.GroupBox2.TabStop = False
         '
+        'Label3
+        '
+        Me.Label3.AutoSize = True
+        Me.Label3.Dock = System.Windows.Forms.DockStyle.Right
+        Me.Label3.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label3.Location = New System.Drawing.Point(1165, 16)
+        Me.Label3.Name = "Label3"
+        Me.Label3.Size = New System.Drawing.Size(54, 17)
+        Me.Label3.TabIndex = 120
+        Me.Label3.Text = "USER :"
+        '
+        'lbluser
+        '
+        Me.lbluser.AutoSize = True
+        Me.lbluser.Dock = System.Windows.Forms.DockStyle.Right
+        Me.lbluser.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, CType(((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic) _
+                Or System.Drawing.FontStyle.Underline), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lbluser.ForeColor = System.Drawing.Color.Firebrick
+        Me.lbluser.Location = New System.Drawing.Point(1219, 16)
+        Me.lbluser.Name = "lbluser"
+        Me.lbluser.Size = New System.Drawing.Size(69, 20)
+        Me.lbluser.TabIndex = 121
+        Me.lbluser.Text = "USER :"
+        '
         'stillSpinner
         '
         Me.stillSpinner.Image = Global.SchoolMGT.My.Resources.Resources.spinner_static
@@ -1387,29 +1413,17 @@ Partial Class fmaStudentFeePaymentsForm
         Me.StatementOfAccountToolStripMenuItem.Size = New System.Drawing.Size(190, 22)
         Me.StatementOfAccountToolStripMenuItem.Text = "Statement of Account"
         '
-        'Label3
+        'cbxdiscount
         '
-        Me.Label3.AutoSize = True
-        Me.Label3.Dock = System.Windows.Forms.DockStyle.Right
-        Me.Label3.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label3.Location = New System.Drawing.Point(1165, 16)
-        Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(54, 17)
-        Me.Label3.TabIndex = 120
-        Me.Label3.Text = "USER :"
-        '
-        'lbluser
-        '
-        Me.lbluser.AutoSize = True
-        Me.lbluser.Dock = System.Windows.Forms.DockStyle.Right
-        Me.lbluser.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, CType(((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic) _
-                Or System.Drawing.FontStyle.Underline), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lbluser.ForeColor = System.Drawing.Color.Firebrick
-        Me.lbluser.Location = New System.Drawing.Point(1219, 16)
-        Me.lbluser.Name = "lbluser"
-        Me.lbluser.Size = New System.Drawing.Size(69, 20)
-        Me.lbluser.TabIndex = 121
-        Me.lbluser.Text = "USER :"
+        Me.cbxdiscount.AutoSize = True
+        Me.cbxdiscount.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.cbxdiscount.Location = New System.Drawing.Point(384, 34)
+        Me.cbxdiscount.Name = "cbxdiscount"
+        Me.cbxdiscount.Size = New System.Drawing.Size(105, 20)
+        Me.cbxdiscount.TabIndex = 10
+        Me.cbxdiscount.Text = "DISCOUNT"
+        Me.cbxdiscount.UseVisualStyleBackColor = True
+        Me.cbxdiscount.Visible = False
         '
         'fmaStudentFeePaymentsForm
         '
@@ -1556,4 +1570,5 @@ Partial Class fmaStudentFeePaymentsForm
     Friend WithEvents expReasonChange As DevComponents.DotNetBar.ExpandablePanel
     Friend WithEvents Label3 As Label
     Friend WithEvents lbluser As Label
+    Friend WithEvents cbxdiscount As CheckBox
 End Class
