@@ -45,7 +45,9 @@ Public Class AdmissionRecordPresenter
         AddHandler _view.cmbCategory.SelectionChangeCommitted, AddressOf cmbCategory_SelectionChangeCommitted
         AddHandler _view.cmbCourseGrade.SelectionChangeCommitted, AddressOf cmbCourseGrade_SelectionChangeCommitted
         AddHandler _view.cmbBatchYear.SelectionChangeCommitted, AddressOf cmbBatchYear_SelectionChangeCommitted
-        AddHandler _view.cmbBatch.SelectionChangeCommitted, AddressOf cmbBatch_SelectionChangeCommitted
+        '      AddHandler _view.cmbBatch.SelectionChangeCommitted, AddressOf cmbBatch_SelectionChangeCommitted
+        AddHandler _view.cmbBatch.SelectedIndexChanged, AddressOf cmbBatch_SelectedIndexChanged
+
         AddHandler _view.cmbYearLevel.SelectionChangeCommitted, AddressOf cmbYearLevel_SelectionChangeCommitted
         AddHandler _view.cmbStatus.SelectionChangeCommitted, AddressOf cmbStatus_SelectionChangeCommitted
 
@@ -101,6 +103,7 @@ Public Class AdmissionRecordPresenter
 
     Private Sub cmbStatus_SelectionChangeCommitted(sender As Object, e As EventArgs)
         '     _view.cmbStature.Enabled = True
+        _view.cmbStature.Enabled = True
     End Sub
 
     Dim year_level As String
@@ -109,26 +112,44 @@ Public Class AdmissionRecordPresenter
         Try
             Dim drv As DataRowView = DirectCast(_view.cmbYearLevel.SelectedItem, DataRowView)
             year_level = drv.Item("name").ToString
-            loadBatch()
+
+            '    loadBatch()
+            _view.cmbStatus.Enabled = True
         Catch ex As Exception
 
         End Try
 
     End Sub
 
-    Private Sub cmbBatch_SelectionChangeCommitted(sender As Object, e As EventArgs)
 
-        _view.cmbStatus.Enabled = True
-        _view.cmbStature.Enabled = True
+    Private Sub cmbBatch_SelectedIndexChanged(sender As Object, e As EventArgs)
 
-        '  loadYearLevel()
+        If _view.cmbBatch.Focused Then
+            Try
+                Dim drv As DataRowView = DirectCast(_view.cmbBatch.SelectedItem, DataRowView)
+                _batchID = drv.Item("id").ToString
+                _batchyear = drv.Item("school_year").ToString
+                _year_level = drv.Item("year_level").ToString
 
-        _view.txtAdmNum.Text = generateAdmissionNum()
-        '      loadBatch()
+                _view.cmbBatchYear.Enabled = True
+                loadBatchYear()
+                _view.cmbYearLevel.Enabled = True
+                loadYearLevel()
 
-        If EnrollmentStatus = 1 Then
-            _view.txtIDNum.Text = generateStudentNumber()
+                _view.cmbBatchYear.Text = _batchyear
+                _view.cmbYearLevel.Text = _year_level
+
+                _view.txtAdmNum.Text = generateAdmissionNum()
+                If EnrollmentStatus = 1 Then
+                    _view.txtIDNum.Text = generateStudentNumber()
+                End If
+
+            Catch ex As Exception
+
+            End Try
         End If
+
+
     End Sub
 
     Dim UserName As String = ""
@@ -146,7 +167,7 @@ Public Class AdmissionRecordPresenter
 
         ClassRollNo = lastNumber
 
-        lastNumber = String.Format("{0:D4}", CInt(lastNumber))
+        lastNumber = String.Format("{0: d4}", CInt(lastNumber))
         StdNumber = String.Format("{0}{1}{2}{3}{4}", year, "-", sem, "-", lastNumber)
 
         UserName = year + sem + lastNumber
@@ -282,7 +303,8 @@ Public Class AdmissionRecordPresenter
     Private Sub cmbCourseGrade_SelectionChangeCommitted(sender As Object, e As EventArgs)
         Try
             CourseID = _view.cmbCourseGrade.SelectedValue
-            loadBatchYear()
+            _courseID = CourseID
+            loadBatch()
 
         Catch ex As Exception
 
@@ -294,9 +316,17 @@ Public Class AdmissionRecordPresenter
             CatID = _view.cmbCategory.SelectedValue
             _student_category_id = _view.cmbCategory.SelectedValue
             loadCourseGrade(CatID)
+
             If CatID = 16 Then
                 _view.GroupControl4.Enabled = True
+                _view.expSeniorHigh.Visible = True
+                _view.expSeniorHigh.Expanded = True
+            Else
+                _view.expSeniorHigh.Expanded = False
+                _view.expSeniorHigh.Visible = False
             End If
+
+
 
         Catch ex As Exception
             CatID = 0
@@ -308,8 +338,9 @@ Public Class AdmissionRecordPresenter
         Try
             Dim drv As DataRowView = DirectCast(_view.cmbBatchYear.SelectedItem, DataRowView)
             Year_batch = drv.Item("name")
+            _batchyear = drv.Item("name")
             '    loadBatch
-            _view.cmbYearLevel.Enabled = True
+            _view.cmbBatchYear.Enabled = True
         Catch ex As Exception
 
         End Try
@@ -319,7 +350,7 @@ Public Class AdmissionRecordPresenter
 
         _view.cmbBatch.Enabled = True
         Dim dt As New DataTable
-        dt = recordModel.getBatch(CourseID, Year_batch, _view.cmbSemester.Text, year_level)
+        dt = recordModel.getBatch(CourseID, _view.cmbSemester.Text, _view.cmbYearFrom.Text, _view.cmbYearTo.Text)
 
         If dt.Rows.Count > 0 Then
             _view.cmbBatch.DataSource = dt
@@ -339,8 +370,9 @@ Public Class AdmissionRecordPresenter
             'Dim drv As DataRowView = DirectCast(_view.cmbCourseGrade.SelectedItem, DataRowView)
             'CourseID = drv.Item("id")
             CourseID = _view.cmbCourseGrade.SelectedValue
-            loadBatchYear()
-
+            _courseID = CourseID
+            '        loadBatchYear()
+            loadBatch()
         Catch ex As Exception
 
         End Try
@@ -359,18 +391,26 @@ Public Class AdmissionRecordPresenter
     Dim CatID As Integer = 0
     Private Sub cmbCategory_SelectedIndexChanged(sender As Object, e As EventArgs)
 
-        Try
-            'If _view.cmbCategory.SelectedValue > 0 Then
-            '    Dim drv As DataRowView = DirectCast(_view.cmbCategory.SelectedItem, DataRowView)
-            '    CatID = drv.Item("id")
-            '    loadCourseGrade(CatID)
-            'End If
-            CatID = _view.cmbCategory.SelectedValue
-            loadCourseGrade(CatID)
+        If _view.cmbCategory.Focused Then
 
-        Catch ex As Exception
-            CatID = 0
-        End Try
+            Try
+                'If _view.cmbCategory.SelectedValue > 0 Then
+                '    Dim drv As DataRowView = DirectCast(_view.cmbCategory.SelectedItem, DataRowView)
+                '    CatID = drv.Item("id")
+                '    loadCourseGrade(CatID)
+                'End If
+
+
+                CatID = _view.cmbCategory.SelectedValue
+                _student_category_id = _view.cmbCategory.SelectedValue
+                loadCourseGrade(CatID)
+
+            Catch ex As Exception
+                CatID = 0
+            End Try
+
+
+        End If
 
     End Sub
 
@@ -497,11 +537,14 @@ Public Class AdmissionRecordPresenter
     Dim student_userID As Integer
     Dim _sender As New Object
     Dim _e As New EventArgs
+    Dim previous_stdID As Integer = 0
 
     Private Sub SelectedRowAssingValue(selectedRow As DataRow)
         Dim CategoryID As Integer = 0
         Dim CourseID As Integer = 0
         If selectedRow IsNot Nothing Then
+
+            _view.cmbBatch.Enabled = True
 
             student_class_roll_no = If(IsDBNull(selectedRow("class_roll_no")), 0, selectedRow("class_roll_no"))
             ClassRollNo = student_class_roll_no
@@ -515,7 +558,7 @@ Public Class AdmissionRecordPresenter
             _view.txtContactNumber.Text = If(IsDBNull(selectedRow("ContactNumber")), "", selectedRow("ContactNumber"))
             _view.txtCurrentAddress.Text = If(IsDBNull(selectedRow("Address")), "", selectedRow("Address"))
             _view.txtRemainingBalance.Text = If(IsDBNull(selectedRow("runningbalance")), "", selectedRow("runningbalance"))
-            _view.txtRemainingBalance.Text = If(IsDBNull(selectedRow("scholarshipgrant")), "", selectedRow("scholarshipgrant"))
+            _view.txtGrant.Text = If(IsDBNull(selectedRow("scholarshipgrant")), "", selectedRow("scholarshipgrant"))
 
             gender = If(IsDBNull(selectedRow("gender")), "", selectedRow("gender"))
 
@@ -524,10 +567,13 @@ Public Class AdmissionRecordPresenter
             _view.txtPhotoFileName.Text = If(IsDBNull(selectedRow("photo_file_name")), "", selectedRow("photo_file_name"))
 
             _view.cmbStature.Text = If(IsDBNull(selectedRow("stature")), "", selectedRow("stature"))
+            _view.cmbStatus.Text = If(IsDBNull(selectedRow("enrollmentAS")), "", selectedRow("enrollmentAS"))
+
             CategoryID = If(IsDBNull(selectedRow("student_category_id")), 0, selectedRow("student_category_id"))
             If CategoryID > 0 Then
                 _view.cmbCategory.SelectedValue = CategoryID
                 cmbCategory_SelectionChangeCommitted(_sender, _e)
+                _view.cmbCategory.SelectedIndex = 0
             Else
                 _view.cmbCategory.SelectedIndex = -1
             End If
@@ -539,8 +585,28 @@ Public Class AdmissionRecordPresenter
                 _view.cmbCourseGrade.SelectedIndex = -1
             End If
 
+
             student_userID = If(IsDBNull(selectedRow("user_id")), 0, selectedRow("user_id"))
             PERSON_ID = selectedRow("person_id")
+            previous_stdID = If(IsDBNull(selectedRow("id")), "", selectedRow("id"))
+
+            'Fees Status
+            Try
+                Dim dt As DataTable = recordModel.getTotalPayments(PERSON_ID)
+                If dt.Rows.Count > 0 Then
+                    _view.txtCntpayments.Text = dt(0)("count")
+                    _view.txtRemainingPayments.Text = dt(0)("amount")
+                Else
+                    _view.txtCntpayments.Text = ""
+                    _view.txtRemainingPayments.Text = ""
+                End If
+
+            Catch ex As Exception
+                _view.txtCntpayments.Text = ""
+                _view.txtRemainingPayments.Text = ""
+            End Try
+
+
 
             '  If Not _view.txtPhotoFileName.Text.Length = 0 Then
             'Dim curPath = Directory.GetCurrentDirectory
@@ -716,7 +782,7 @@ Public Class AdmissionRecordPresenter
 
 
             'Update End Time
-            UpdateEndTime(student_class_roll_no)
+            UpdateEndTime(previous_stdID)
 
             'Double Checking ClassRollNo
             Dim CheckingRollNo = getCheckingClassRollNo()
@@ -725,30 +791,30 @@ Public Class AdmissionRecordPresenter
             End If
 
             SQLIN = "INSERT INTO students(admission_no,class_roll_no,admission_date,"
-                SQLIN += " batch_id,student_category_id,academice_year,"
-                SQLIN += " user_id,stature,std_number,"
-                SQLIN += " scholarshipgrant,has_paid_fees,person_id,year_level,semester,status_description,course_id,"
-                SQLIN += " runningbalance,track,strand "
-                SQLIN += ")"
-                SQLIN += " VALUES("
-                SQLIN += String.Format("'{0}','{1}','{2}',", _view.txtAdmNum.Text, ClassRollNo, Format(_view.dtpAdmDate.Value, "yyyy-MM-dd"))
-                SQLIN += String.Format("'{0}','{1}','{2}',", _view.cmbBatch.SelectedValue, _view.cmbCategory.SelectedValue, _view.cmbYearFrom.Text & "-" & _view.cmbYearTo.Text)
-                SQLIN += String.Format("'{0}','{1}','{2}',", LoginUserID, _view.cmbStature.Text, _view.txtIDNum.Text)
-                SQLIN += String.Format("'{0}','{1}','{2}','{3}','{4}','{5}','{6}',", _view.txtGrant.Text.Replace("'", "`"), "1", SelectedRow("person_id"), _view.cmbYearLevel.Text, _view.cmbSemester.Text, _view.cmbStatus.Text, _view.cmbCourseGrade.SelectedValue) '
-                If _view.chkBBal.Checked = True Then
-                    SQLIN += String.Format("'{0}','{1}','{2}'", _view.txtRemainingBalance.Text, _view.cmbTrack.Text, _view.cmbStrand.Text)
-                Else
-                    SQLIN += String.Format("'{0}','{1}','{2}'", 0, _view.cmbTrack.Text, _view.cmbStrand.Text)
-                End If
-                SQLIN += ")"
-                If clsDBConn.Execute(SQLIN) Then
-                    MsgBox("Student data has been saved.", MsgBoxStyle.Information)
-                End If
-
-
+            SQLIN += " batch_id,student_category_id,academice_year,"
+            SQLIN += " user_id,stature,std_number,"
+            SQLIN += " scholarshipgrant,has_paid_fees,person_id,year_level,semester,status_description,course_id,"
+            SQLIN += " runningbalance,track,strand "
+            SQLIN += ")"
+            SQLIN += " VALUES("
+            SQLIN += String.Format("'{0}','{1}','{2}',", _view.txtAdmNum.Text, ClassRollNo, Format(_view.dtpAdmDate.Value, "yyyy-MM-dd"))
+            SQLIN += String.Format("'{0}','{1}','{2}',", _view.cmbBatch.SelectedValue, _view.cmbCategory.SelectedValue, _view.cmbYearFrom.Text & "-" & _view.cmbYearTo.Text)
+            SQLIN += String.Format("'{0}','{1}','{2}',", LoginUserID, _view.cmbStature.Text, _view.txtIDNum.Text)
+            SQLIN += String.Format("'{0}','{1}','{2}','{3}','{4}','{5}','{6}',", _view.txtGrant.Text.Replace("'", "`"), "1", SelectedRow("person_id"), _view.cmbYearLevel.Text, _view.cmbSemester.Text, _view.cmbStatus.Text, _view.cmbCourseGrade.SelectedValue) '
+            If _view.chkBBal.Checked = True Then
+                SQLIN += String.Format("'{0}','{1}','{2}'", _view.txtRemainingBalance.Text, _view.cmbTrack.Text, _view.cmbStrand.Text)
             Else
-                'create new User Account
-                Dim userID As String = ""
+                SQLIN += String.Format("'{0}','{1}','{2}'", 0, _view.cmbTrack.Text, _view.cmbStrand.Text)
+            End If
+            SQLIN += ")"
+            If clsDBConn.Execute(SQLIN) Then
+                MsgBox("Student data has been saved.", MsgBoxStyle.Information)
+            End If
+
+
+        Else
+            'create new User Account
+            Dim userID As String = ""
             If student_userID = 0 Then
                 userID = 0 'createNewUserAccount()
             Else
@@ -762,7 +828,7 @@ Public Class AdmissionRecordPresenter
 
 
             'Update End Time
-            UpdateEndTime(student_class_roll_no)
+            UpdateEndTime(previous_stdID)
 
             'Double Checking ClassRollNo
             Dim CheckingRollNo = getCheckingClassRollNo()
@@ -795,6 +861,8 @@ Public Class AdmissionRecordPresenter
                 End If
             End If
 
+
+
         'If BrowsePic_Selected = True Then
         '    SavePicture()
         'End If
@@ -816,10 +884,12 @@ Public Class AdmissionRecordPresenter
         Return DataObject(Sql)
     End Function
 
-    Private Sub UpdateEndTime(student_class_roll_no As String)
-        Dim id As Integer = DataObject(String.Format("SELECT 	IFNULL(Max(id),1)  FROM	students WHERE	status_type_id = 1 	AND class_roll_no = '" & student_class_roll_no & "'"))
-        If id > 0 Then
-            DataSource(String.Format("UPDATE `students` SET `end_time` = '" & Format(Date.Now, "yyyy-MM-dd H:mm:ss") & "'  WHERE id = '" & id & "'"))
+    Private Sub UpdateEndTime(previous_stdID As Integer)
+
+        'Dim id As Integer = DataObject(String.Format("SELECT 	IFNULL(Max(id),1)  FROM	students WHERE	status_type_id = 1 	AND class_roll_no = '" & student_class_roll_no & "'"))
+
+        If previous_stdID > 0 Then
+            DataSource(String.Format("UPDATE `students` SET `end_time` = '" & Format(Date.Now, "yyyy-MM-dd H:mm:ss") & "'  WHERE id = '" & previous_stdID & "'"))
         End If
 
     End Sub

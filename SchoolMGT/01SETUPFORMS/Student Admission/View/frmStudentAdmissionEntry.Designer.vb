@@ -42,26 +42,27 @@ Partial Class frmStudentAdmissionEntry
         Me.LabelX16 = New DevComponents.DotNetBar.LabelX()
         Me.LabelX17 = New DevComponents.DotNetBar.LabelX()
         Me.gcAdmissionDetails = New DevExpress.XtraEditors.GroupControl()
-        Me.rdbReEntry = New System.Windows.Forms.RadioButton()
+        Me.Panel2 = New System.Windows.Forms.Panel()
+        Me.GroupControl8 = New DevExpress.XtraEditors.GroupControl()
+        Me.LabelX25 = New DevComponents.DotNetBar.LabelX()
+        Me.txtIsFullDeduct = New DevExpress.XtraEditors.TextEdit()
+        Me.txtGrant = New System.Windows.Forms.ComboBox()
+        Me.expSeniorHigh = New DevComponents.DotNetBar.ExpandablePanel()
         Me.GroupControl4 = New DevExpress.XtraEditors.GroupControl()
         Me.LabelX24 = New DevComponents.DotNetBar.LabelX()
         Me.LabelX23 = New DevComponents.DotNetBar.LabelX()
         Me.cmbStrand = New System.Windows.Forms.ComboBox()
         Me.cmbTrack = New System.Windows.Forms.ComboBox()
+        Me.Panel5 = New System.Windows.Forms.Panel()
+        Me.LabelX12 = New DevComponents.DotNetBar.LabelX()
+        Me.LabelX14 = New DevComponents.DotNetBar.LabelX()
         Me.chkManulStdNum = New DevExpress.XtraEditors.CheckEdit()
-        Me.GroupControl8 = New DevExpress.XtraEditors.GroupControl()
-        Me.LabelX25 = New DevComponents.DotNetBar.LabelX()
-        Me.txtIsFullDeduct = New DevExpress.XtraEditors.TextEdit()
-        Me.txtGrant = New System.Windows.Forms.ComboBox()
+        Me.rdbReEntry = New System.Windows.Forms.RadioButton()
+        Me.LabelX13 = New DevComponents.DotNetBar.LabelX()
+        Me.dtpAdmDate = New System.Windows.Forms.DateTimePicker()
         Me.txtIDNum = New DevExpress.XtraEditors.TextEdit()
         Me.txtAdmNum = New DevExpress.XtraEditors.TextEdit()
-        Me.dtpAdmDate = New System.Windows.Forms.DateTimePicker()
-        Me.LabelX12 = New DevComponents.DotNetBar.LabelX()
-        Me.LabelX13 = New DevComponents.DotNetBar.LabelX()
-        Me.LabelX14 = New DevComponents.DotNetBar.LabelX()
         Me.gcClassification = New DevExpress.XtraEditors.GroupControl()
-        Me.LabelX15 = New DevComponents.DotNetBar.LabelX()
-        Me.cxbxGrant = New DevExpress.XtraEditors.CheckEdit()
         Me.cmbCourseGrade = New System.Windows.Forms.ComboBox()
         Me.cmbBatchYear = New System.Windows.Forms.ComboBox()
         Me.cmbBatch = New System.Windows.Forms.ComboBox()
@@ -77,11 +78,15 @@ Partial Class frmStudentAdmissionEntry
         Me.LabelX2 = New DevComponents.DotNetBar.LabelX()
         Me.LabelX3 = New DevComponents.DotNetBar.LabelX()
         Me.gcAccountStatus = New DevExpress.XtraEditors.GroupControl()
+        Me.cxbxGrant = New DevExpress.XtraEditors.CheckEdit()
+        Me.txtCntpayments = New DevExpress.XtraEditors.TextEdit()
+        Me.LabelX26 = New DevComponents.DotNetBar.LabelX()
         Me.txtRemainingPayments = New DevExpress.XtraEditors.TextEdit()
         Me.txtRemainingBalance = New DevExpress.XtraEditors.TextEdit()
         Me.LabelX8 = New DevComponents.DotNetBar.LabelX()
         Me.LabelX9 = New DevComponents.DotNetBar.LabelX()
         Me.chkBBal = New DevExpress.XtraEditors.CheckEdit()
+        Me.LabelX15 = New DevComponents.DotNetBar.LabelX()
         Me.gcEnrollmentStatus = New DevExpress.XtraEditors.GroupControl()
         Me.btnOld = New DevExpress.XtraEditors.SimpleButton()
         Me.btnNew = New DevExpress.XtraEditors.SimpleButton()
@@ -112,19 +117,23 @@ Partial Class frmStudentAdmissionEntry
         CType(Me.txtLName.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.gcAdmissionDetails, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.gcAdmissionDetails.SuspendLayout()
-        CType(Me.GroupControl4, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.GroupControl4.SuspendLayout()
-        CType(Me.chkManulStdNum.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.Panel2.SuspendLayout()
         CType(Me.GroupControl8, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupControl8.SuspendLayout()
         CType(Me.txtIsFullDeduct.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.expSeniorHigh.SuspendLayout()
+        CType(Me.GroupControl4, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.GroupControl4.SuspendLayout()
+        Me.Panel5.SuspendLayout()
+        CType(Me.chkManulStdNum.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.txtIDNum.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.txtAdmNum.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.gcClassification, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.gcClassification.SuspendLayout()
-        CType(Me.cxbxGrant.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.gcAccountStatus, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.gcAccountStatus.SuspendLayout()
+        CType(Me.cxbxGrant.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.txtCntpayments.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.txtRemainingPayments.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.txtRemainingBalance.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.chkBBal.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -369,16 +378,8 @@ Partial Class frmStudentAdmissionEntry
         Me.gcAdmissionDetails.Appearance.Options.UseBackColor = True
         Me.gcAdmissionDetails.Appearance.Options.UseBorderColor = True
         Me.gcAdmissionDetails.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.Style3D
-        Me.gcAdmissionDetails.Controls.Add(Me.rdbReEntry)
-        Me.gcAdmissionDetails.Controls.Add(Me.GroupControl4)
-        Me.gcAdmissionDetails.Controls.Add(Me.chkManulStdNum)
-        Me.gcAdmissionDetails.Controls.Add(Me.GroupControl8)
-        Me.gcAdmissionDetails.Controls.Add(Me.txtIDNum)
-        Me.gcAdmissionDetails.Controls.Add(Me.txtAdmNum)
-        Me.gcAdmissionDetails.Controls.Add(Me.dtpAdmDate)
-        Me.gcAdmissionDetails.Controls.Add(Me.LabelX12)
-        Me.gcAdmissionDetails.Controls.Add(Me.LabelX13)
-        Me.gcAdmissionDetails.Controls.Add(Me.LabelX14)
+        Me.gcAdmissionDetails.Controls.Add(Me.Panel2)
+        Me.gcAdmissionDetails.Controls.Add(Me.Panel5)
         Me.gcAdmissionDetails.GroupStyle = DevExpress.Utils.GroupStyle.Card
         Me.gcAdmissionDetails.Location = New System.Drawing.Point(7, 398)
         Me.gcAdmissionDetails.Name = "gcAdmissionDetails"
@@ -386,95 +387,16 @@ Partial Class frmStudentAdmissionEntry
         Me.gcAdmissionDetails.TabIndex = 33
         Me.gcAdmissionDetails.Text = "ADMISSION DETAILS"
         '
-        'rdbReEntry
+        'Panel2
         '
-        Me.rdbReEntry.AutoSize = True
-        Me.rdbReEntry.BackColor = System.Drawing.Color.Transparent
-        Me.rdbReEntry.CheckAlign = System.Drawing.ContentAlignment.TopLeft
-        Me.rdbReEntry.ForeColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer))
-        Me.rdbReEntry.Location = New System.Drawing.Point(145, 26)
-        Me.rdbReEntry.Margin = New System.Windows.Forms.Padding(2)
-        Me.rdbReEntry.Name = "rdbReEntry"
-        Me.rdbReEntry.Size = New System.Drawing.Size(109, 17)
-        Me.rdbReEntry.TabIndex = 123
-        Me.rdbReEntry.TabStop = True
-        Me.rdbReEntry.Text = "Re-Entry Student"
-        Me.rdbReEntry.UseVisualStyleBackColor = False
-        '
-        'GroupControl4
-        '
-        Me.GroupControl4.AppearanceCaption.BackColor = System.Drawing.Color.Transparent
-        Me.GroupControl4.AppearanceCaption.BackColor2 = System.Drawing.Color.White
-        Me.GroupControl4.AppearanceCaption.BorderColor = System.Drawing.Color.FromArgb(CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer))
-        Me.GroupControl4.AppearanceCaption.Options.UseBackColor = True
-        Me.GroupControl4.AppearanceCaption.Options.UseBorderColor = True
-        Me.GroupControl4.Controls.Add(Me.LabelX24)
-        Me.GroupControl4.Controls.Add(Me.LabelX23)
-        Me.GroupControl4.Controls.Add(Me.cmbStrand)
-        Me.GroupControl4.Controls.Add(Me.cmbTrack)
-        Me.GroupControl4.Enabled = False
-        Me.GroupControl4.GroupStyle = DevExpress.Utils.GroupStyle.Light
-        Me.GroupControl4.Location = New System.Drawing.Point(571, 25)
-        Me.GroupControl4.Name = "GroupControl4"
-        Me.GroupControl4.Size = New System.Drawing.Size(286, 96)
-        Me.GroupControl4.TabIndex = 122
-        Me.GroupControl4.Text = "SENIOR "
-        '
-        'LabelX24
-        '
-        Me.LabelX24.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.LabelX24.AutoSize = True
-        Me.LabelX24.BackColor = System.Drawing.Color.Transparent
-        Me.LabelX24.Location = New System.Drawing.Point(12, 62)
-        Me.LabelX24.Name = "LabelX24"
-        Me.LabelX24.Size = New System.Drawing.Size(43, 16)
-        Me.LabelX24.TabIndex = 116
-        Me.LabelX24.Text = "STRAND"
-        '
-        'LabelX23
-        '
-        Me.LabelX23.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.LabelX23.AutoSize = True
-        Me.LabelX23.BackColor = System.Drawing.Color.Transparent
-        Me.LabelX23.Location = New System.Drawing.Point(12, 35)
-        Me.LabelX23.Name = "LabelX23"
-        Me.LabelX23.Size = New System.Drawing.Size(35, 16)
-        Me.LabelX23.TabIndex = 115
-        Me.LabelX23.Text = "TRACK"
-        '
-        'cmbStrand
-        '
-        Me.cmbStrand.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.cmbStrand.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend
-        Me.cmbStrand.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems
-        Me.cmbStrand.FormattingEnabled = True
-        Me.cmbStrand.Items.AddRange(New Object() {"HUMSS", "ABM", "STEM", "TVL"})
-        Me.cmbStrand.Location = New System.Drawing.Point(69, 60)
-        Me.cmbStrand.Name = "cmbStrand"
-        Me.cmbStrand.Size = New System.Drawing.Size(206, 21)
-        Me.cmbStrand.TabIndex = 43
-        '
-        'cmbTrack
-        '
-        Me.cmbTrack.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.cmbTrack.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend
-        Me.cmbTrack.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems
-        Me.cmbTrack.FormattingEnabled = True
-        Me.cmbTrack.Items.AddRange(New Object() {"ACADEMIC", "ICT"})
-        Me.cmbTrack.Location = New System.Drawing.Point(69, 32)
-        Me.cmbTrack.Name = "cmbTrack"
-        Me.cmbTrack.Size = New System.Drawing.Size(206, 21)
-        Me.cmbTrack.TabIndex = 42
-        '
-        'chkManulStdNum
-        '
-        Me.chkManulStdNum.EditValue = Nothing
-        Me.chkManulStdNum.Location = New System.Drawing.Point(334, 100)
-        Me.chkManulStdNum.Name = "chkManulStdNum"
-        Me.chkManulStdNum.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.Style3D
-        Me.chkManulStdNum.Properties.Caption = ""
-        Me.chkManulStdNum.Size = New System.Drawing.Size(21, 23)
-        Me.chkManulStdNum.TabIndex = 120
+        Me.Panel2.BackColor = System.Drawing.Color.Transparent
+        Me.Panel2.Controls.Add(Me.GroupControl8)
+        Me.Panel2.Controls.Add(Me.expSeniorHigh)
+        Me.Panel2.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.Panel2.Location = New System.Drawing.Point(362, 20)
+        Me.Panel2.Name = "Panel2"
+        Me.Panel2.Size = New System.Drawing.Size(508, 111)
+        Me.Panel2.TabIndex = 124
         '
         'GroupControl8
         '
@@ -486,10 +408,11 @@ Partial Class frmStudentAdmissionEntry
         Me.GroupControl8.Controls.Add(Me.LabelX25)
         Me.GroupControl8.Controls.Add(Me.txtIsFullDeduct)
         Me.GroupControl8.Controls.Add(Me.txtGrant)
+        Me.GroupControl8.Dock = System.Windows.Forms.DockStyle.Fill
         Me.GroupControl8.GroupStyle = DevExpress.Utils.GroupStyle.Light
-        Me.GroupControl8.Location = New System.Drawing.Point(366, 27)
+        Me.GroupControl8.Location = New System.Drawing.Point(0, 0)
         Me.GroupControl8.Name = "GroupControl8"
-        Me.GroupControl8.Size = New System.Drawing.Size(197, 96)
+        Me.GroupControl8.Size = New System.Drawing.Size(478, 111)
         Me.GroupControl8.TabIndex = 119
         Me.GroupControl8.Text = "SCHOLARSHIP PROGRAM"
         '
@@ -505,41 +428,193 @@ Partial Class frmStudentAdmissionEntry
         '
         'txtIsFullDeduct
         '
-        Me.txtIsFullDeduct.Location = New System.Drawing.Point(113, 58)
+        Me.txtIsFullDeduct.Anchor = CType((System.Windows.Forms.AnchorStyles.Left Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.txtIsFullDeduct.Location = New System.Drawing.Point(114, 58)
         Me.txtIsFullDeduct.Name = "txtIsFullDeduct"
         Me.txtIsFullDeduct.Properties.Appearance.ForeColor = System.Drawing.Color.Red
         Me.txtIsFullDeduct.Properties.Appearance.Options.UseForeColor = True
         Me.txtIsFullDeduct.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.Style3D
-        Me.txtIsFullDeduct.Size = New System.Drawing.Size(75, 22)
+        Me.txtIsFullDeduct.Size = New System.Drawing.Size(344, 22)
         Me.txtIsFullDeduct.TabIndex = 122
         '
         'txtGrant
         '
+        Me.txtGrant.Anchor = CType((System.Windows.Forms.AnchorStyles.Left Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.txtGrant.DropDownWidth = 200
         Me.txtGrant.FormattingEnabled = True
         Me.txtGrant.Items.AddRange(New Object() {"Transfered from Public School", "Transferred from Private School", "Grade School Graduate", "Senior High School Graduate", "ALS Passer"})
-        Me.txtGrant.Location = New System.Drawing.Point(13, 32)
+        Me.txtGrant.Location = New System.Drawing.Point(14, 32)
         Me.txtGrant.Name = "txtGrant"
-        Me.txtGrant.Size = New System.Drawing.Size(180, 21)
+        Me.txtGrant.Size = New System.Drawing.Size(444, 21)
         Me.txtGrant.TabIndex = 41
         '
-        'txtIDNum
+        'expSeniorHigh
         '
-        Me.txtIDNum.Enabled = False
-        Me.txtIDNum.Location = New System.Drawing.Point(143, 102)
-        Me.txtIDNum.Name = "txtIDNum"
-        Me.txtIDNum.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.Style3D
-        Me.txtIDNum.Size = New System.Drawing.Size(186, 22)
-        Me.txtIDNum.TabIndex = 118
+        Me.expSeniorHigh.AnimationTime = 1000
+        Me.expSeniorHigh.CanvasColor = System.Drawing.Color.Transparent
+        Me.expSeniorHigh.CollapseDirection = DevComponents.DotNetBar.eCollapseDirection.LeftToRight
+        Me.expSeniorHigh.ColorSchemeStyle = DevComponents.DotNetBar.eDotNetBarStyle.Office2007
+        Me.expSeniorHigh.Controls.Add(Me.GroupControl4)
+        Me.expSeniorHigh.Dock = System.Windows.Forms.DockStyle.Right
+        Me.expSeniorHigh.Expanded = False
+        Me.expSeniorHigh.ExpandedBounds = New System.Drawing.Rectangle(218, 0, 290, 111)
+        Me.expSeniorHigh.ExpandOnTitleClick = True
+        Me.expSeniorHigh.Location = New System.Drawing.Point(478, 0)
+        Me.expSeniorHigh.Name = "expSeniorHigh"
+        Me.expSeniorHigh.Padding = New System.Windows.Forms.Padding(5)
+        Me.expSeniorHigh.Size = New System.Drawing.Size(30, 111)
+        Me.expSeniorHigh.Style.Alignment = System.Drawing.StringAlignment.Center
+        Me.expSeniorHigh.Style.BackColor1.Color = System.Drawing.Color.White
+        Me.expSeniorHigh.Style.BackColor2.Color = System.Drawing.Color.FromArgb(CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer))
+        Me.expSeniorHigh.Style.Border = DevComponents.DotNetBar.eBorderType.SingleLine
+        Me.expSeniorHigh.Style.BorderColor.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.BarDockedBorder
+        Me.expSeniorHigh.Style.ForeColor.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.ItemText
+        Me.expSeniorHigh.Style.GradientAngle = 90
+        Me.expSeniorHigh.TabIndex = 253
+        Me.expSeniorHigh.TitleHeight = 20
+        Me.expSeniorHigh.TitleStyle.Alignment = System.Drawing.StringAlignment.Center
+        Me.expSeniorHigh.TitleStyle.BackColor1.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground
+        Me.expSeniorHigh.TitleStyle.BackColor2.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground2
+        Me.expSeniorHigh.TitleStyle.Border = DevComponents.DotNetBar.eBorderType.RaisedInner
+        Me.expSeniorHigh.TitleStyle.BorderColor.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBorder
+        Me.expSeniorHigh.TitleStyle.ForeColor.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelText
+        Me.expSeniorHigh.TitleStyle.GradientAngle = 90
+        Me.expSeniorHigh.TitleText = "REASON FOR CHANGE"
+        Me.expSeniorHigh.Visible = False
         '
-        'txtAdmNum
+        'GroupControl4
         '
-        Me.txtAdmNum.Enabled = False
-        Me.txtAdmNum.Location = New System.Drawing.Point(143, 74)
-        Me.txtAdmNum.Name = "txtAdmNum"
-        Me.txtAdmNum.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.Style3D
-        Me.txtAdmNum.Size = New System.Drawing.Size(216, 22)
-        Me.txtAdmNum.TabIndex = 117
+        Me.GroupControl4.AppearanceCaption.BackColor = System.Drawing.Color.Transparent
+        Me.GroupControl4.AppearanceCaption.BackColor2 = System.Drawing.Color.White
+        Me.GroupControl4.AppearanceCaption.BorderColor = System.Drawing.Color.FromArgb(CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer))
+        Me.GroupControl4.AppearanceCaption.Options.UseBackColor = True
+        Me.GroupControl4.AppearanceCaption.Options.UseBorderColor = True
+        Me.GroupControl4.Controls.Add(Me.LabelX24)
+        Me.GroupControl4.Controls.Add(Me.LabelX23)
+        Me.GroupControl4.Controls.Add(Me.cmbStrand)
+        Me.GroupControl4.Controls.Add(Me.cmbTrack)
+        Me.GroupControl4.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.GroupControl4.Enabled = False
+        Me.GroupControl4.GroupStyle = DevExpress.Utils.GroupStyle.Light
+        Me.GroupControl4.Location = New System.Drawing.Point(5, 25)
+        Me.GroupControl4.Name = "GroupControl4"
+        Me.GroupControl4.Size = New System.Drawing.Size(20, 81)
+        Me.GroupControl4.TabIndex = 122
+        Me.GroupControl4.Text = "SENIOR "
+        '
+        'LabelX24
+        '
+        Me.LabelX24.AutoSize = True
+        Me.LabelX24.BackColor = System.Drawing.Color.Transparent
+        Me.LabelX24.Location = New System.Drawing.Point(6, 51)
+        Me.LabelX24.Name = "LabelX24"
+        Me.LabelX24.Size = New System.Drawing.Size(43, 16)
+        Me.LabelX24.TabIndex = 116
+        Me.LabelX24.Text = "STRAND"
+        '
+        'LabelX23
+        '
+        Me.LabelX23.AutoSize = True
+        Me.LabelX23.BackColor = System.Drawing.Color.Transparent
+        Me.LabelX23.Location = New System.Drawing.Point(6, 28)
+        Me.LabelX23.Name = "LabelX23"
+        Me.LabelX23.Size = New System.Drawing.Size(35, 16)
+        Me.LabelX23.TabIndex = 115
+        Me.LabelX23.Text = "TRACK"
+        '
+        'cmbStrand
+        '
+        Me.cmbStrand.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend
+        Me.cmbStrand.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems
+        Me.cmbStrand.FormattingEnabled = True
+        Me.cmbStrand.Items.AddRange(New Object() {"HUMSS", "ABM", "STEM", "TVL"})
+        Me.cmbStrand.Location = New System.Drawing.Point(63, 49)
+        Me.cmbStrand.Name = "cmbStrand"
+        Me.cmbStrand.Size = New System.Drawing.Size(206, 21)
+        Me.cmbStrand.TabIndex = 43
+        '
+        'cmbTrack
+        '
+        Me.cmbTrack.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend
+        Me.cmbTrack.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems
+        Me.cmbTrack.FormattingEnabled = True
+        Me.cmbTrack.Items.AddRange(New Object() {"ACADEMIC", "ICT"})
+        Me.cmbTrack.Location = New System.Drawing.Point(63, 25)
+        Me.cmbTrack.Name = "cmbTrack"
+        Me.cmbTrack.Size = New System.Drawing.Size(206, 21)
+        Me.cmbTrack.TabIndex = 42
+        '
+        'Panel5
+        '
+        Me.Panel5.BackColor = System.Drawing.Color.Transparent
+        Me.Panel5.Controls.Add(Me.LabelX12)
+        Me.Panel5.Controls.Add(Me.LabelX14)
+        Me.Panel5.Controls.Add(Me.chkManulStdNum)
+        Me.Panel5.Controls.Add(Me.rdbReEntry)
+        Me.Panel5.Controls.Add(Me.LabelX13)
+        Me.Panel5.Controls.Add(Me.dtpAdmDate)
+        Me.Panel5.Controls.Add(Me.txtIDNum)
+        Me.Panel5.Controls.Add(Me.txtAdmNum)
+        Me.Panel5.Dock = System.Windows.Forms.DockStyle.Left
+        Me.Panel5.Location = New System.Drawing.Point(2, 20)
+        Me.Panel5.Name = "Panel5"
+        Me.Panel5.Size = New System.Drawing.Size(360, 111)
+        Me.Panel5.TabIndex = 125
+        '
+        'LabelX12
+        '
+        Me.LabelX12.AutoSize = True
+        Me.LabelX12.BackColor = System.Drawing.Color.Transparent
+        Me.LabelX12.Location = New System.Drawing.Point(17, 26)
+        Me.LabelX12.Name = "LabelX12"
+        Me.LabelX12.Size = New System.Drawing.Size(91, 16)
+        Me.LabelX12.TabIndex = 114
+        Me.LabelX12.Text = "ADMISSION DATE"
+        '
+        'LabelX14
+        '
+        Me.LabelX14.AutoSize = True
+        Me.LabelX14.BackColor = System.Drawing.Color.Transparent
+        Me.LabelX14.Location = New System.Drawing.Point(17, 51)
+        Me.LabelX14.Name = "LabelX14"
+        Me.LabelX14.Size = New System.Drawing.Size(107, 16)
+        Me.LabelX14.TabIndex = 113
+        Me.LabelX14.Text = "ADMISSION NUMBER"
+        '
+        'chkManulStdNum
+        '
+        Me.chkManulStdNum.EditValue = Nothing
+        Me.chkManulStdNum.Location = New System.Drawing.Point(325, 76)
+        Me.chkManulStdNum.Name = "chkManulStdNum"
+        Me.chkManulStdNum.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.Style3D
+        Me.chkManulStdNum.Properties.Caption = ""
+        Me.chkManulStdNum.Size = New System.Drawing.Size(21, 23)
+        Me.chkManulStdNum.TabIndex = 120
+        '
+        'rdbReEntry
+        '
+        Me.rdbReEntry.AutoSize = True
+        Me.rdbReEntry.BackColor = System.Drawing.Color.Transparent
+        Me.rdbReEntry.CheckAlign = System.Drawing.ContentAlignment.TopLeft
+        Me.rdbReEntry.ForeColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer))
+        Me.rdbReEntry.Location = New System.Drawing.Point(132, 1)
+        Me.rdbReEntry.Margin = New System.Windows.Forms.Padding(2)
+        Me.rdbReEntry.Name = "rdbReEntry"
+        Me.rdbReEntry.Size = New System.Drawing.Size(109, 17)
+        Me.rdbReEntry.TabIndex = 123
+        Me.rdbReEntry.TabStop = True
+        Me.rdbReEntry.Text = "Re-Entry Student"
+        Me.rdbReEntry.UseVisualStyleBackColor = False
+        '
+        'LabelX13
+        '
+        Me.LabelX13.AutoSize = True
+        Me.LabelX13.BackColor = System.Drawing.Color.Transparent
+        Me.LabelX13.Location = New System.Drawing.Point(17, 76)
+        Me.LabelX13.Name = "LabelX13"
+        Me.LabelX13.Size = New System.Drawing.Size(60, 16)
+        Me.LabelX13.TabIndex = 115
+        Me.LabelX13.Text = "ID NUMBER"
         '
         'dtpAdmDate
         '
@@ -548,40 +623,28 @@ Partial Class frmStudentAdmissionEntry
         Me.dtpAdmDate.CustomFormat = "yyyy-MM-dd"
         Me.dtpAdmDate.Enabled = False
         Me.dtpAdmDate.Format = System.Windows.Forms.DateTimePickerFormat.Custom
-        Me.dtpAdmDate.Location = New System.Drawing.Point(145, 46)
+        Me.dtpAdmDate.Location = New System.Drawing.Point(132, 21)
         Me.dtpAdmDate.Name = "dtpAdmDate"
         Me.dtpAdmDate.Size = New System.Drawing.Size(216, 21)
         Me.dtpAdmDate.TabIndex = 116
         '
-        'LabelX12
+        'txtIDNum
         '
-        Me.LabelX12.AutoSize = True
-        Me.LabelX12.BackColor = System.Drawing.Color.Transparent
-        Me.LabelX12.Location = New System.Drawing.Point(30, 51)
-        Me.LabelX12.Name = "LabelX12"
-        Me.LabelX12.Size = New System.Drawing.Size(91, 16)
-        Me.LabelX12.TabIndex = 114
-        Me.LabelX12.Text = "ADMISSION DATE"
+        Me.txtIDNum.Enabled = False
+        Me.txtIDNum.Location = New System.Drawing.Point(130, 77)
+        Me.txtIDNum.Name = "txtIDNum"
+        Me.txtIDNum.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.Style3D
+        Me.txtIDNum.Size = New System.Drawing.Size(186, 22)
+        Me.txtIDNum.TabIndex = 118
         '
-        'LabelX13
+        'txtAdmNum
         '
-        Me.LabelX13.AutoSize = True
-        Me.LabelX13.BackColor = System.Drawing.Color.Transparent
-        Me.LabelX13.Location = New System.Drawing.Point(30, 101)
-        Me.LabelX13.Name = "LabelX13"
-        Me.LabelX13.Size = New System.Drawing.Size(60, 16)
-        Me.LabelX13.TabIndex = 115
-        Me.LabelX13.Text = "ID NUMBER"
-        '
-        'LabelX14
-        '
-        Me.LabelX14.AutoSize = True
-        Me.LabelX14.BackColor = System.Drawing.Color.Transparent
-        Me.LabelX14.Location = New System.Drawing.Point(30, 76)
-        Me.LabelX14.Name = "LabelX14"
-        Me.LabelX14.Size = New System.Drawing.Size(107, 16)
-        Me.LabelX14.TabIndex = 113
-        Me.LabelX14.Text = "ADMISSION NUMBER"
+        Me.txtAdmNum.Enabled = False
+        Me.txtAdmNum.Location = New System.Drawing.Point(130, 49)
+        Me.txtAdmNum.Name = "txtAdmNum"
+        Me.txtAdmNum.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.Style3D
+        Me.txtAdmNum.Size = New System.Drawing.Size(216, 22)
+        Me.txtAdmNum.TabIndex = 117
         '
         'gcClassification
         '
@@ -591,8 +654,6 @@ Partial Class frmStudentAdmissionEntry
         Me.gcClassification.Appearance.Options.UseBackColor = True
         Me.gcClassification.Appearance.Options.UseBorderColor = True
         Me.gcClassification.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.Style3D
-        Me.gcClassification.Controls.Add(Me.LabelX15)
-        Me.gcClassification.Controls.Add(Me.cxbxGrant)
         Me.gcClassification.Controls.Add(Me.cmbCourseGrade)
         Me.gcClassification.Controls.Add(Me.cmbBatchYear)
         Me.gcClassification.Controls.Add(Me.cmbBatch)
@@ -614,34 +675,11 @@ Partial Class frmStudentAdmissionEntry
         Me.gcClassification.TabIndex = 32
         Me.gcClassification.Text = "CLASSIFICATION"
         '
-        'LabelX15
-        '
-        Me.LabelX15.AutoSize = True
-        Me.LabelX15.BackColor = System.Drawing.Color.Transparent
-        Me.LabelX15.ForeColor = System.Drawing.Color.Red
-        Me.LabelX15.Location = New System.Drawing.Point(583, 114)
-        Me.LabelX15.Name = "LabelX15"
-        Me.LabelX15.Size = New System.Drawing.Size(80, 16)
-        Me.LabelX15.TabIndex = 116
-        Me.LabelX15.Text = "WAVE ALL FEES"
-        Me.LabelX15.Visible = False
-        '
-        'cxbxGrant
-        '
-        Me.cxbxGrant.EditValue = Nothing
-        Me.cxbxGrant.Location = New System.Drawing.Point(556, 112)
-        Me.cxbxGrant.Name = "cxbxGrant"
-        Me.cxbxGrant.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.Style3D
-        Me.cxbxGrant.Properties.Caption = ""
-        Me.cxbxGrant.Size = New System.Drawing.Size(21, 23)
-        Me.cxbxGrant.TabIndex = 121
-        Me.cxbxGrant.Visible = False
-        '
         'cmbCourseGrade
         '
         Me.cmbCourseGrade.Enabled = False
         Me.cmbCourseGrade.FormattingEnabled = True
-        Me.cmbCourseGrade.Location = New System.Drawing.Point(143, 59)
+        Me.cmbCourseGrade.Location = New System.Drawing.Point(143, 64)
         Me.cmbCourseGrade.Name = "cmbCourseGrade"
         Me.cmbCourseGrade.Size = New System.Drawing.Size(282, 21)
         Me.cmbCourseGrade.TabIndex = 40
@@ -650,16 +688,16 @@ Partial Class frmStudentAdmissionEntry
         '
         Me.cmbBatchYear.Enabled = False
         Me.cmbBatchYear.FormattingEnabled = True
-        Me.cmbBatchYear.Location = New System.Drawing.Point(143, 86)
+        Me.cmbBatchYear.Location = New System.Drawing.Point(556, 29)
         Me.cmbBatchYear.Name = "cmbBatchYear"
-        Me.cmbBatchYear.Size = New System.Drawing.Size(282, 21)
+        Me.cmbBatchYear.Size = New System.Drawing.Size(297, 21)
         Me.cmbBatchYear.TabIndex = 39
         '
         'cmbBatch
         '
         Me.cmbBatch.Enabled = False
         Me.cmbBatch.FormattingEnabled = True
-        Me.cmbBatch.Location = New System.Drawing.Point(555, 32)
+        Me.cmbBatch.Location = New System.Drawing.Point(143, 95)
         Me.cmbBatch.Name = "cmbBatch"
         Me.cmbBatch.Size = New System.Drawing.Size(282, 21)
         Me.cmbBatch.TabIndex = 38
@@ -668,9 +706,9 @@ Partial Class frmStudentAdmissionEntry
         '
         Me.cmbYearLevel.Enabled = False
         Me.cmbYearLevel.FormattingEnabled = True
-        Me.cmbYearLevel.Location = New System.Drawing.Point(143, 112)
+        Me.cmbYearLevel.Location = New System.Drawing.Point(556, 55)
         Me.cmbYearLevel.Name = "cmbYearLevel"
-        Me.cmbYearLevel.Size = New System.Drawing.Size(282, 21)
+        Me.cmbYearLevel.Size = New System.Drawing.Size(297, 21)
         Me.cmbYearLevel.TabIndex = 37
         '
         'cmbStatus
@@ -678,9 +716,9 @@ Partial Class frmStudentAdmissionEntry
         Me.cmbStatus.Enabled = False
         Me.cmbStatus.FormattingEnabled = True
         Me.cmbStatus.Items.AddRange(New Object() {"NEW", "OLD", "RETURNEE", "TRANSFEREE", "2nd Bachelor's Degree"})
-        Me.cmbStatus.Location = New System.Drawing.Point(555, 58)
+        Me.cmbStatus.Location = New System.Drawing.Point(555, 84)
         Me.cmbStatus.Name = "cmbStatus"
-        Me.cmbStatus.Size = New System.Drawing.Size(282, 21)
+        Me.cmbStatus.Size = New System.Drawing.Size(297, 21)
         Me.cmbStatus.TabIndex = 36
         '
         'cmbStature
@@ -688,16 +726,16 @@ Partial Class frmStudentAdmissionEntry
         Me.cmbStature.Enabled = False
         Me.cmbStature.FormattingEnabled = True
         Me.cmbStature.Items.AddRange(New Object() {"Report Card / Good Moral", "Clearance / Class Card", "Transcript of Record", "Alternative Learning System Passer"})
-        Me.cmbStature.Location = New System.Drawing.Point(555, 86)
+        Me.cmbStature.Location = New System.Drawing.Point(555, 111)
         Me.cmbStature.Name = "cmbStature"
-        Me.cmbStature.Size = New System.Drawing.Size(282, 21)
+        Me.cmbStature.Size = New System.Drawing.Size(297, 21)
         Me.cmbStature.TabIndex = 35
         '
         'cmbCategory
         '
         Me.cmbCategory.Enabled = False
         Me.cmbCategory.FormattingEnabled = True
-        Me.cmbCategory.Location = New System.Drawing.Point(143, 30)
+        Me.cmbCategory.Location = New System.Drawing.Point(143, 35)
         Me.cmbCategory.Name = "cmbCategory"
         Me.cmbCategory.Size = New System.Drawing.Size(282, 21)
         Me.cmbCategory.TabIndex = 33
@@ -708,7 +746,7 @@ Partial Class frmStudentAdmissionEntry
         Me.LabelX7.BackColor = System.Drawing.Color.Transparent
         Me.LabelX7.Font = New System.Drawing.Font("Tahoma", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.LabelX7.ForeColor = System.Drawing.SystemColors.Desktop
-        Me.LabelX7.Location = New System.Drawing.Point(440, 90)
+        Me.LabelX7.Location = New System.Drawing.Point(443, 114)
         Me.LabelX7.Name = "LabelX7"
         Me.LabelX7.Size = New System.Drawing.Size(110, 16)
         Me.LabelX7.TabIndex = 33
@@ -720,7 +758,7 @@ Partial Class frmStudentAdmissionEntry
         Me.LabelX10.BackColor = System.Drawing.Color.Transparent
         Me.LabelX10.Font = New System.Drawing.Font("Tahoma", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.LabelX10.ForeColor = System.Drawing.SystemColors.Desktop
-        Me.LabelX10.Location = New System.Drawing.Point(440, 63)
+        Me.LabelX10.Location = New System.Drawing.Point(443, 88)
         Me.LabelX10.Name = "LabelX10"
         Me.LabelX10.Size = New System.Drawing.Size(76, 16)
         Me.LabelX10.TabIndex = 30
@@ -732,7 +770,7 @@ Partial Class frmStudentAdmissionEntry
         Me.LabelX11.BackColor = System.Drawing.Color.Transparent
         Me.LabelX11.Font = New System.Drawing.Font("Tahoma", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.LabelX11.ForeColor = System.Drawing.SystemColors.Desktop
-        Me.LabelX11.Location = New System.Drawing.Point(28, 113)
+        Me.LabelX11.Location = New System.Drawing.Point(444, 58)
         Me.LabelX11.Name = "LabelX11"
         Me.LabelX11.Size = New System.Drawing.Size(62, 16)
         Me.LabelX11.TabIndex = 29
@@ -744,7 +782,7 @@ Partial Class frmStudentAdmissionEntry
         Me.LabelX5.BackColor = System.Drawing.Color.Transparent
         Me.LabelX5.Font = New System.Drawing.Font("Tahoma", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.LabelX5.ForeColor = System.Drawing.SystemColors.Desktop
-        Me.LabelX5.Location = New System.Drawing.Point(30, 87)
+        Me.LabelX5.Location = New System.Drawing.Point(446, 30)
         Me.LabelX5.Name = "LabelX5"
         Me.LabelX5.Size = New System.Drawing.Size(65, 16)
         Me.LabelX5.TabIndex = 27
@@ -756,7 +794,7 @@ Partial Class frmStudentAdmissionEntry
         Me.LabelX6.BackColor = System.Drawing.Color.Transparent
         Me.LabelX6.Font = New System.Drawing.Font("Tahoma", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.LabelX6.ForeColor = System.Drawing.SystemColors.Desktop
-        Me.LabelX6.Location = New System.Drawing.Point(442, 32)
+        Me.LabelX6.Location = New System.Drawing.Point(27, 95)
         Me.LabelX6.Name = "LabelX6"
         Me.LabelX6.Size = New System.Drawing.Size(92, 16)
         Me.LabelX6.TabIndex = 23
@@ -768,7 +806,7 @@ Partial Class frmStudentAdmissionEntry
         Me.LabelX2.BackColor = System.Drawing.Color.Transparent
         Me.LabelX2.Font = New System.Drawing.Font("Tahoma", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.LabelX2.ForeColor = System.Drawing.SystemColors.Desktop
-        Me.LabelX2.Location = New System.Drawing.Point(30, 59)
+        Me.LabelX2.Location = New System.Drawing.Point(27, 64)
         Me.LabelX2.Name = "LabelX2"
         Me.LabelX2.Size = New System.Drawing.Size(89, 16)
         Me.LabelX2.TabIndex = 22
@@ -780,7 +818,7 @@ Partial Class frmStudentAdmissionEntry
         Me.LabelX3.BackColor = System.Drawing.Color.Transparent
         Me.LabelX3.Font = New System.Drawing.Font("Tahoma", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.LabelX3.ForeColor = System.Drawing.SystemColors.Desktop
-        Me.LabelX3.Location = New System.Drawing.Point(30, 32)
+        Me.LabelX3.Location = New System.Drawing.Point(27, 37)
         Me.LabelX3.Name = "LabelX3"
         Me.LabelX3.Size = New System.Drawing.Size(85, 16)
         Me.LabelX3.TabIndex = 21
@@ -793,65 +831,127 @@ Partial Class frmStudentAdmissionEntry
         Me.gcAccountStatus.AppearanceCaption.BorderColor = System.Drawing.Color.FromArgb(CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer))
         Me.gcAccountStatus.AppearanceCaption.Options.UseBackColor = True
         Me.gcAccountStatus.AppearanceCaption.Options.UseBorderColor = True
+        Me.gcAccountStatus.Controls.Add(Me.cxbxGrant)
+        Me.gcAccountStatus.Controls.Add(Me.txtCntpayments)
+        Me.gcAccountStatus.Controls.Add(Me.LabelX26)
         Me.gcAccountStatus.Controls.Add(Me.txtRemainingPayments)
         Me.gcAccountStatus.Controls.Add(Me.txtRemainingBalance)
         Me.gcAccountStatus.Controls.Add(Me.LabelX8)
         Me.gcAccountStatus.Controls.Add(Me.LabelX9)
         Me.gcAccountStatus.Controls.Add(Me.chkBBal)
+        Me.gcAccountStatus.Controls.Add(Me.LabelX15)
         Me.gcAccountStatus.GroupStyle = DevExpress.Utils.GroupStyle.Light
-        Me.gcAccountStatus.Location = New System.Drawing.Point(452, 150)
+        Me.gcAccountStatus.Location = New System.Drawing.Point(451, 134)
         Me.gcAccountStatus.Name = "gcAccountStatus"
-        Me.gcAccountStatus.Size = New System.Drawing.Size(427, 99)
+        Me.gcAccountStatus.Size = New System.Drawing.Size(427, 118)
         Me.gcAccountStatus.TabIndex = 31
-        Me.gcAccountStatus.Text = "ACCOUNT STATUS"
+        Me.gcAccountStatus.Text = "FEES STATUS"
+        '
+        'cxbxGrant
+        '
+        Me.cxbxGrant.EditValue = Nothing
+        Me.cxbxGrant.Location = New System.Drawing.Point(15, 37)
+        Me.cxbxGrant.Name = "cxbxGrant"
+        Me.cxbxGrant.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.Style3D
+        Me.cxbxGrant.Properties.Caption = ""
+        Me.cxbxGrant.Size = New System.Drawing.Size(21, 23)
+        Me.cxbxGrant.TabIndex = 121
+        Me.cxbxGrant.Visible = False
+        '
+        'txtCntpayments
+        '
+        Me.txtCntpayments.Location = New System.Drawing.Point(174, 24)
+        Me.txtCntpayments.Name = "txtCntpayments"
+        Me.txtCntpayments.Properties.Appearance.ForeColor = System.Drawing.Color.Green
+        Me.txtCntpayments.Properties.Appearance.Options.UseForeColor = True
+        Me.txtCntpayments.Properties.Appearance.Options.UseTextOptions = True
+        Me.txtCntpayments.Properties.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far
+        Me.txtCntpayments.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.Style3D
+        Me.txtCntpayments.Size = New System.Drawing.Size(213, 22)
+        Me.txtCntpayments.TabIndex = 34
+        '
+        'LabelX26
+        '
+        Me.LabelX26.AutoSize = True
+        Me.LabelX26.Font = New System.Drawing.Font("Tahoma", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LabelX26.ForeColor = System.Drawing.SystemColors.Desktop
+        Me.LabelX26.Location = New System.Drawing.Point(51, 25)
+        Me.LabelX26.Name = "LabelX26"
+        Me.LabelX26.Size = New System.Drawing.Size(103, 17)
+        Me.LabelX26.TabIndex = 33
+        Me.LabelX26.Text = "COUNT PAYMENTS"
         '
         'txtRemainingPayments
         '
-        Me.txtRemainingPayments.Location = New System.Drawing.Point(152, 62)
+        Me.txtRemainingPayments.Location = New System.Drawing.Point(173, 53)
         Me.txtRemainingPayments.Name = "txtRemainingPayments"
+        Me.txtRemainingPayments.Properties.Appearance.ForeColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(192, Byte), Integer))
+        Me.txtRemainingPayments.Properties.Appearance.Options.UseForeColor = True
+        Me.txtRemainingPayments.Properties.Appearance.Options.UseTextOptions = True
+        Me.txtRemainingPayments.Properties.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far
         Me.txtRemainingPayments.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.Style3D
-        Me.txtRemainingPayments.Size = New System.Drawing.Size(248, 22)
+        Me.txtRemainingPayments.Properties.Padding = New System.Windows.Forms.Padding(0, 0, 10, 0)
+        Me.txtRemainingPayments.Size = New System.Drawing.Size(213, 22)
         Me.txtRemainingPayments.TabIndex = 31
         '
         'txtRemainingBalance
         '
-        Me.txtRemainingBalance.Location = New System.Drawing.Point(152, 32)
+        Me.txtRemainingBalance.Location = New System.Drawing.Point(173, 84)
         Me.txtRemainingBalance.Name = "txtRemainingBalance"
+        Me.txtRemainingBalance.Properties.Appearance.ForeColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer))
+        Me.txtRemainingBalance.Properties.Appearance.Options.UseForeColor = True
+        Me.txtRemainingBalance.Properties.Appearance.Options.UseTextOptions = True
+        Me.txtRemainingBalance.Properties.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far
         Me.txtRemainingBalance.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.Style3D
-        Me.txtRemainingBalance.Size = New System.Drawing.Size(248, 22)
+        Me.txtRemainingBalance.Properties.Padding = New System.Windows.Forms.Padding(0, 0, 10, 0)
+        Me.txtRemainingBalance.Size = New System.Drawing.Size(213, 22)
         Me.txtRemainingBalance.TabIndex = 30
         '
         'LabelX8
         '
         Me.LabelX8.AutoSize = True
-        Me.LabelX8.Font = New System.Drawing.Font("Tahoma", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LabelX8.Font = New System.Drawing.Font("Tahoma", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.LabelX8.ForeColor = System.Drawing.SystemColors.Desktop
-        Me.LabelX8.Location = New System.Drawing.Point(34, 64)
+        Me.LabelX8.Location = New System.Drawing.Point(51, 83)
         Me.LabelX8.Name = "LabelX8"
-        Me.LabelX8.Size = New System.Drawing.Size(107, 16)
+        Me.LabelX8.Size = New System.Drawing.Size(91, 17)
         Me.LabelX8.TabIndex = 29
-        Me.LabelX8.Text = "RUNNING PAYMENTS"
+        Me.LabelX8.Text = "TOTAL BALANCE"
         '
         'LabelX9
         '
         Me.LabelX9.AutoSize = True
-        Me.LabelX9.Font = New System.Drawing.Font("Tahoma", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LabelX9.Font = New System.Drawing.Font("Tahoma", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.LabelX9.ForeColor = System.Drawing.SystemColors.Desktop
-        Me.LabelX9.Location = New System.Drawing.Point(34, 36)
+        Me.LabelX9.Location = New System.Drawing.Point(51, 54)
         Me.LabelX9.Name = "LabelX9"
-        Me.LabelX9.Size = New System.Drawing.Size(100, 16)
+        Me.LabelX9.Size = New System.Drawing.Size(100, 17)
         Me.LabelX9.TabIndex = 28
-        Me.LabelX9.Text = "ACCOUNT BALANCE"
+        Me.LabelX9.Text = "TOTAL PAYMENTS"
         '
         'chkBBal
         '
         Me.chkBBal.EditValue = Nothing
-        Me.chkBBal.Location = New System.Drawing.Point(6, 46)
+        Me.chkBBal.Location = New System.Drawing.Point(398, 23)
         Me.chkBBal.Name = "chkBBal"
         Me.chkBBal.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.Style3D
         Me.chkBBal.Properties.Caption = ""
         Me.chkBBal.Size = New System.Drawing.Size(21, 23)
         Me.chkBBal.TabIndex = 32
+        Me.chkBBal.Visible = False
+        '
+        'LabelX15
+        '
+        Me.LabelX15.AutoSize = True
+        Me.LabelX15.BackColor = System.Drawing.Color.Transparent
+        Me.LabelX15.Font = New System.Drawing.Font("Tahoma", 10.0!)
+        Me.LabelX15.ForeColor = System.Drawing.Color.Red
+        Me.LabelX15.Location = New System.Drawing.Point(7, 66)
+        Me.LabelX15.Name = "LabelX15"
+        Me.LabelX15.Size = New System.Drawing.Size(97, 19)
+        Me.LabelX15.TabIndex = 116
+        Me.LabelX15.Text = "WAVE ALL FEES"
+        Me.LabelX15.Visible = False
         '
         'gcEnrollmentStatus
         '
@@ -865,7 +965,7 @@ Partial Class frmStudentAdmissionEntry
         Me.gcEnrollmentStatus.GroupStyle = DevExpress.Utils.GroupStyle.Light
         Me.gcEnrollmentStatus.Location = New System.Drawing.Point(452, 62)
         Me.gcEnrollmentStatus.Name = "gcEnrollmentStatus"
-        Me.gcEnrollmentStatus.Size = New System.Drawing.Size(427, 82)
+        Me.gcEnrollmentStatus.Size = New System.Drawing.Size(427, 63)
         Me.gcEnrollmentStatus.TabIndex = 30
         Me.gcEnrollmentStatus.Text = "ENROLLMENT STATUS"
         '
@@ -878,11 +978,11 @@ Partial Class frmStudentAdmissionEntry
         Me.btnOld.AppearancePressed.BackColor = System.Drawing.Color.DarkOrange
         Me.btnOld.AppearancePressed.Options.UseBackColor = True
         Me.btnOld.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.Style3D
-        Me.btnOld.ImageOptions.Image = Global.SchoolMGT.My.Resources.Resources.employee_32x32
+        Me.btnOld.ImageOptions.Image = Global.SchoolMGT.My.Resources.Resources.employee_16x16
         Me.btnOld.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.LeftCenter
-        Me.btnOld.Location = New System.Drawing.Point(234, 28)
+        Me.btnOld.Location = New System.Drawing.Point(234, 26)
         Me.btnOld.Name = "btnOld"
-        Me.btnOld.Size = New System.Drawing.Size(151, 41)
+        Me.btnOld.Size = New System.Drawing.Size(151, 29)
         Me.btnOld.TabIndex = 1
         Me.btnOld.Tag = "2"
         Me.btnOld.Text = "OLD STUDENT"
@@ -896,11 +996,11 @@ Partial Class frmStudentAdmissionEntry
         Me.btnNew.AppearancePressed.BackColor = System.Drawing.Color.MediumAquamarine
         Me.btnNew.AppearancePressed.Options.UseBackColor = True
         Me.btnNew.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.Style3D
-        Me.btnNew.ImageOptions.Image = Global.SchoolMGT.My.Resources.Resources.customer_32x32
+        Me.btnNew.ImageOptions.Image = Global.SchoolMGT.My.Resources.Resources.customer_16x16
         Me.btnNew.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.LeftCenter
-        Me.btnNew.Location = New System.Drawing.Point(50, 28)
+        Me.btnNew.Location = New System.Drawing.Point(50, 26)
         Me.btnNew.Name = "btnNew"
-        Me.btnNew.Size = New System.Drawing.Size(151, 41)
+        Me.btnNew.Size = New System.Drawing.Size(151, 29)
         Me.btnNew.TabIndex = 0
         Me.btnNew.Tag = "1"
         Me.btnNew.Text = "NEW STUDENT"
@@ -1133,24 +1233,28 @@ Partial Class frmStudentAdmissionEntry
         CType(Me.txtLName.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.gcAdmissionDetails, System.ComponentModel.ISupportInitialize).EndInit()
         Me.gcAdmissionDetails.ResumeLayout(False)
-        Me.gcAdmissionDetails.PerformLayout()
-        CType(Me.GroupControl4, System.ComponentModel.ISupportInitialize).EndInit()
-        Me.GroupControl4.ResumeLayout(False)
-        Me.GroupControl4.PerformLayout()
-        CType(Me.chkManulStdNum.Properties, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.Panel2.ResumeLayout(False)
         CType(Me.GroupControl8, System.ComponentModel.ISupportInitialize).EndInit()
         Me.GroupControl8.ResumeLayout(False)
         Me.GroupControl8.PerformLayout()
         CType(Me.txtIsFullDeduct.Properties, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.expSeniorHigh.ResumeLayout(False)
+        CType(Me.GroupControl4, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.GroupControl4.ResumeLayout(False)
+        Me.GroupControl4.PerformLayout()
+        Me.Panel5.ResumeLayout(False)
+        Me.Panel5.PerformLayout()
+        CType(Me.chkManulStdNum.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.txtIDNum.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.txtAdmNum.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.gcClassification, System.ComponentModel.ISupportInitialize).EndInit()
         Me.gcClassification.ResumeLayout(False)
         Me.gcClassification.PerformLayout()
-        CType(Me.cxbxGrant.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.gcAccountStatus, System.ComponentModel.ISupportInitialize).EndInit()
         Me.gcAccountStatus.ResumeLayout(False)
         Me.gcAccountStatus.PerformLayout()
+        CType(Me.cxbxGrant.Properties, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.txtCntpayments.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.txtRemainingPayments.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.txtRemainingBalance.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.chkBBal.Properties, System.ComponentModel.ISupportInitialize).EndInit()
@@ -1256,4 +1360,9 @@ Partial Class frmStudentAdmissionEntry
     Friend WithEvents cmbTrack As ComboBox
     Friend WithEvents LabelX25 As DevComponents.DotNetBar.LabelX
     Friend WithEvents rdbReEntry As RadioButton
+    Friend WithEvents txtCntpayments As DevExpress.XtraEditors.TextEdit
+    Friend WithEvents LabelX26 As DevComponents.DotNetBar.LabelX
+    Friend WithEvents Panel5 As Panel
+    Friend WithEvents Panel2 As Panel
+    Friend WithEvents expSeniorHigh As DevComponents.DotNetBar.ExpandablePanel
 End Class

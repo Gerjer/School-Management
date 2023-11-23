@@ -13,7 +13,7 @@ Imports DevExpress.XtraGrid.Views.Grid
 Public Class fmaStudentListForm
 
     Dim gradingPeriodGrades As New fmaStudentsGradingPeriod
-
+    Dim subjectList As New fmaStudentsSubjectListForm
     Private m_AsyncWorker As New BackgroundWorker()
 
     Private Sub fmaStudentListForm_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
@@ -26,10 +26,10 @@ Public Class fmaStudentListForm
         End If
 
 
-        AssignScheduleToolStripMenuItem.Visible = True
-        ViewAssessmentToolStripMenuItem.Visible = True
-        ViewGradesToolStripMenuItem.Visible = True
-        PreviewCORToolStripMenuItem.Visible = True
+        'AssignScheduleToolStripMenuItem.Visible = True
+        'ASSESSMENTToolStripMenuItem.Visible = True
+        'ViewGradesToolStripMenuItem.Visible = True
+        'PreviewCORToolStripMenuItem.Visible = True
 
 
         If Me.Tag = 1 Then
@@ -38,27 +38,42 @@ Public Class fmaStudentListForm
 
             ViewGradesToolStripMenuItem.Visible = True
             AssignScheduleToolStripMenuItem.Visible = False
-            ViewAssessmentToolStripMenuItem.Visible = False
+            ASSESSMENTToolStripMenuItem.Visible = False
             PreviewCORToolStripMenuItem.Visible = False
+            STUDETNADMISSIONToolStripMenuItem.Visible = False
+            STUDETNADMISSIONToolStripMenuItem.Enabled = False
+            SUBJECTACCESSToolStripMenuItem.Visible = False
+            STUDENTPROFILEToolStripMenuItem.Visible = False
+            SCHOLARSHIPASSIGNINGToolStripMenuItem.Visible = False
+            SUBJECTACCESSToolStripMenuItem.Visible = False
+
 
         ElseIf Me.Tag = 2 Then
-            LabelControl1.Text = "PRE-ADMISSION LIST"
-            LabelX7.Text = "Double Click on Students in the list to Enter Subjects . . ."
+                LabelControl1.Text = "PRE-ADMISSION LIST"
+                LabelX7.Text = "Double Click on Students in the list to Enter Subjects . . ."
 
-            AssignScheduleToolStripMenuItem.Visible = True
-            ViewGradesToolStripMenuItem.Visible = False
-            ViewAssessmentToolStripMenuItem.Visible = False
-            PreviewCORToolStripMenuItem.Visible = False
-
-        Else
-            LabelControl1.Text = "STUDENT ASSESSMENT LIST"
+                AssignScheduleToolStripMenuItem.Visible = True
+                ViewGradesToolStripMenuItem.Visible = False
+                ASSESSMENTToolStripMenuItem.Visible = False
+                PreviewCORToolStripMenuItem.Visible = False
+                STUDETNADMISSIONToolStripMenuItem.Visible = True
+                STUDETNADMISSIONToolStripMenuItem.Enabled = True
+                STUDENTPROFILEToolStripMenuItem.Visible = True
+                SCHOLARSHIPASSIGNINGToolStripMenuItem.Visible = True
+                SUBJECTACCESSToolStripMenuItem.Visible = True
+            Else
+                LabelControl1.Text = "STUDENT ASSESSMENT LIST"
             LabelX7.Text = "Double Click on Students in the to view Assessment . . ."
 
-            ViewAssessmentToolStripMenuItem.Visible = True
+            ASSESSMENTToolStripMenuItem.Visible = True
             AssignScheduleToolStripMenuItem.Visible = False
             ViewGradesToolStripMenuItem.Visible = False
             PreviewCORToolStripMenuItem.Visible = False
-
+            STUDETNADMISSIONToolStripMenuItem.Visible = False
+            STUDETNADMISSIONToolStripMenuItem.Enabled = False
+            STUDENTPROFILEToolStripMenuItem.Visible = False
+            SCHOLARSHIPASSIGNINGToolStripMenuItem.Visible = False
+            SUBJECTACCESSToolStripMenuItem.Visible = False
         End If
 
         lblStatus.Text = "Waiting ..."
@@ -102,7 +117,17 @@ Public Class fmaStudentListForm
         displayBatches()
 
 
-
+        If AuthUserType = "ADMIN" Then
+            AssignScheduleToolStripMenuItem.Visible = True
+            ViewGradesToolStripMenuItem.Visible = True
+            ASSESSMENTToolStripMenuItem.Visible = True
+            PreviewCORToolStripMenuItem.Visible = True
+            STUDETNADMISSIONToolStripMenuItem.Visible = True
+            STUDETNADMISSIONToolStripMenuItem.Enabled = True
+            STUDENTPROFILEToolStripMenuItem.Visible = True
+            SCHOLARSHIPASSIGNINGToolStripMenuItem.Visible = True
+            SUBJECTACCESSToolStripMenuItem.Visible = True
+        End If
 
 
 
@@ -676,23 +701,31 @@ Public Class fmaStudentListForm
         _batch_name = tdbViewer.Columns.Item("batchname").Value.ToString
         _batchID = tdbViewer.Columns.Item("batch_id").Value.ToString
 
+
+
         With fmaStudentsSubjectListForm
             .txtCategory.Text = tdbViewer.Columns.Item("categoryname").Value.ToString
             .txtStudentID.Text = tdbViewer.Columns.Item("id").Value.ToString
             .txtCoursename.Text = tdbViewer.Columns.Item("course_name").Value.ToString
             .txtBatchName.Text = tdbViewer.Columns.Item("batchname").Value.ToString
             .txtStudentName.Text = tdbViewer.Columns.Item("last_name").Value.ToString _
-                                   & ", " & tdbViewer.Columns.Item("first_name").Value.ToString() _
-                                   & " " & tdbViewer.Columns.Item("middle_name").Value.ToString()
+                                       & ", " & tdbViewer.Columns.Item("first_name").Value.ToString() _
+                                       & " " & tdbViewer.Columns.Item("middle_name").Value.ToString()
             .txtAdmissionNo.Text = tdbViewer.Columns.Item("admission_no").Value.ToString
         End With
 
         '     fmaStudentsSubjectListForm.MdiParent = ftmdiMainForm
-        fmaStudentsSubjectListForm.Show()
+        ' fmaStudentsSubjectListForm.Show()
+
+        fmaStudentsSubjectListForm.ShowDialog()
         fmaStudentsSubjectListForm.BringToFront()
+
+
+
+
     End Sub
 
-    Private Sub ViewAssessmentToolStripMenuItem_Click_1(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles ViewAssessmentToolStripMenuItem.Click
+    Private Sub ViewAssessmentToolStripMenuItem_Click_1(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles ASSESSMENTToolStripMenuItem.Click
         With fmaStudentAssessmentForm
             .txtCategoryID.Text = tdbViewer.Columns.Item("categoryid").Value.ToString
             .txtAdmissionNo.Text = tdbViewer.Columns.Item("admission_no").Value.ToString
@@ -1079,6 +1112,7 @@ WHERE
         _batch_name = tdbViewer.Columns.Item("batchname").Value.ToString
         _batchID = tdbViewer.Columns.Item("batch_id").Value.ToString
 
+
         If Me.Tag = 1 Then
             'STUDENT GRADES
             If gradingPeriodGrades Is Nothing Then
@@ -1318,7 +1352,6 @@ WHERE
     End Sub
 
     Private Sub NdBachelorsDegreeToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles NdBachelorsDegreeToolStripMenuItem.Click
-        changeEnrollAs(NdBachelorsDegreeToolStripMenuItem.Text)
     End Sub
     Private Sub changeEnrollAs(text As String)
         DataSource(String.Format("UPDATE students SET enrollmentAS = '" & text & "' WHERE id = '" & _studentID & "'"))
@@ -1328,7 +1361,7 @@ WHERE
 
     Private Sub GrantToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles GrantToolStripMenuItem.Click
         Dim frm As New frmModify
-        frm.tagID = ModifyScholarshipGrantToolStripMenuItem.Tag
+        frm.tagID = GrantToolStripMenuItem.Tag
         frm.scholarship_grant = scholarship_grant
         frm.BringToFront()
         frm.ShowDialog()
@@ -1578,6 +1611,17 @@ FROM
 
     Private Sub LabelX2_Click(sender As Object, e As EventArgs) Handles LabelX2.Click
 
+    End Sub
+
+    Private Sub LaboratorySubjectSetup_Click(sender As Object, e As EventArgs) Handles LaboratorySubjectSetup.Click
+        Dim frm As New frmModify
+        frm.tagID = LaboratorySubjectSetup.Tag
+        frm.batch_name = cmbBatch.Text
+        frm.BringToFront()
+        frm.ShowDialog()
+        If frm.DialogResult = DialogResult.OK Then
+            displayFilterCategory()
+        End If
     End Sub
 
 

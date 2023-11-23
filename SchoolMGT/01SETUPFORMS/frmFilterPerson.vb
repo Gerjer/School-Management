@@ -191,10 +191,12 @@ Public Class frmFilterPerson
         For i As Integer = 0 To GridView1.Columns.Count - 1
             GridView1.Columns(i).AppearanceCell.Font = New Font("Tahoma", 10, FontStyle.Bold)
             Select Case i
-                Case 0, 1, 2, 3, 4, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 17, 18, 19
-                    GridView1.Columns(i).Visible = False
+                Case 5
+                    GridView1.Columns(i).AppearanceCell.TextOptions.HAlignment = HorzAlignment.Near
                 Case 16
                     GridView1.Columns(i).AppearanceCell.TextOptions.HAlignment = HorzAlignment.Center
+                Case Else
+                    GridView1.Columns(i).Visible = False
             End Select
         Next
     End Sub

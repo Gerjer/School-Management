@@ -65,29 +65,34 @@ Partial Class fmaStudentListForm
         Me.cmbCourse = New DevComponents.DotNetBar.Controls.ComboBoxEx()
         Me.LabelX1 = New DevComponents.DotNetBar.LabelX()
         Me.CMenuStripOperations = New System.Windows.Forms.ContextMenuStrip(Me.components)
-        Me.AssignScheduleToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.ViewAssessmentToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.ViewGradesToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.PreviewCORToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.STUDENTPROFILEToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ModifyBatchToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.ModifyScholarshipGrantToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.GrantToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.RemoveToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ModifyCourseGradeToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.MarkAsEnrolledToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ModifySemesterToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ModifyYearLevelToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.STUDETNADMISSIONToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
         Me.ENROLLEDToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.NOTENROLLEDToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.WITHDRAWNToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.EnrolledAsToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ToolStripMenuItem2 = New System.Windows.Forms.ToolStripMenuItem()
         Me.NEWToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.OLDToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.RETURNEEToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.TRANFEREEToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.NdBachelorsDegreeToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.ModifyYearLevelToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.ModifySemesterToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ModifyAdmissionNumberToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ToolStripSeparator1 = New System.Windows.Forms.ToolStripSeparator()
+        Me.SCHOLARSHIPASSIGNINGToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.GrantToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.RemoveToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.SUBJECTACCESSToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.AssignScheduleToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ADDDROPSubjectToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.LaboratorySubjectSetup = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ASSESSMENTToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.PreviewCORToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ViewGradesToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ToolTip1 = New System.Windows.Forms.ToolTip(Me.components)
         Me.GroupPanel2.SuspendLayout()
         Me.Panel2.SuspendLayout()
@@ -132,7 +137,7 @@ Partial Class fmaStudentListForm
         Me.GroupPanel2.Dock = System.Windows.Forms.DockStyle.Fill
         Me.GroupPanel2.Location = New System.Drawing.Point(0, 0)
         Me.GroupPanel2.Name = "GroupPanel2"
-        Me.GroupPanel2.Size = New System.Drawing.Size(1139, 446)
+        Me.GroupPanel2.Size = New System.Drawing.Size(1443, 446)
         '
         '
         '
@@ -163,7 +168,7 @@ Partial Class fmaStudentListForm
         Me.Panel2.Location = New System.Drawing.Point(0, 180)
         Me.Panel2.Margin = New System.Windows.Forms.Padding(2)
         Me.Panel2.Name = "Panel2"
-        Me.Panel2.Size = New System.Drawing.Size(1133, 213)
+        Me.Panel2.Size = New System.Drawing.Size(1437, 213)
         Me.Panel2.TabIndex = 26
         '
         'tdbViewer
@@ -198,7 +203,7 @@ Partial Class fmaStudentListForm
         Me.tdbViewer.RowDivider.Style = C1.Win.C1TrueDBGrid.LineStyleEnum.None
         Me.tdbViewer.RowHeight = 25
         Me.tdbViewer.RowSubDividerColor = System.Drawing.Color.Navy
-        Me.tdbViewer.Size = New System.Drawing.Size(1133, 213)
+        Me.tdbViewer.Size = New System.Drawing.Size(1437, 213)
         Me.tdbViewer.TabAcrossSplits = True
         Me.tdbViewer.TabIndex = 25
         Me.tdbViewer.Text = "C1TrueDBGrid1"
@@ -213,7 +218,7 @@ Partial Class fmaStudentListForm
         Me.GroupBox2.Dock = System.Windows.Forms.DockStyle.Bottom
         Me.GroupBox2.Location = New System.Drawing.Point(0, 393)
         Me.GroupBox2.Name = "GroupBox2"
-        Me.GroupBox2.Size = New System.Drawing.Size(1133, 47)
+        Me.GroupBox2.Size = New System.Drawing.Size(1437, 47)
         Me.GroupBox2.TabIndex = 24
         Me.GroupBox2.TabStop = False
         '
@@ -268,7 +273,7 @@ Partial Class fmaStudentListForm
         Me.GroupBox1.Dock = System.Windows.Forms.DockStyle.Top
         Me.GroupBox1.Location = New System.Drawing.Point(0, 0)
         Me.GroupBox1.Name = "GroupBox1"
-        Me.GroupBox1.Size = New System.Drawing.Size(1133, 180)
+        Me.GroupBox1.Size = New System.Drawing.Size(1437, 180)
         Me.GroupBox1.TabIndex = 22
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "FILTER"
@@ -347,10 +352,10 @@ Partial Class fmaStudentListForm
         '
         Me.LabelX3.Anchor = CType((System.Windows.Forms.AnchorStyles.Left Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.LabelX3.AutoSize = True
-        Me.LabelX3.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LabelX3.Location = New System.Drawing.Point(888, 56)
+        Me.LabelX3.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LabelX3.Location = New System.Drawing.Point(876, 53)
         Me.LabelX3.Name = "LabelX3"
-        Me.LabelX3.Size = New System.Drawing.Size(205, 21)
+        Me.LabelX3.Size = New System.Drawing.Size(171, 18)
         Me.LabelX3.TabIndex = 112
         Me.LabelX3.Text = "SEARCH STUDENT NAME"
         '
@@ -374,7 +379,7 @@ Partial Class fmaStudentListForm
         Me.GroupPanel4.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.GroupPanel4.Location = New System.Drawing.Point(3, 16)
         Me.GroupPanel4.Name = "GroupPanel4"
-        Me.GroupPanel4.Size = New System.Drawing.Size(1127, 35)
+        Me.GroupPanel4.Size = New System.Drawing.Size(1431, 35)
         '
         '
         '
@@ -398,10 +403,10 @@ Partial Class fmaStudentListForm
         '
         'LabelControl1
         '
-        Me.LabelControl1.Anchor = CType((System.Windows.Forms.AnchorStyles.Left Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.LabelControl1.Anchor = System.Windows.Forms.AnchorStyles.Top
         Me.LabelControl1.Appearance.Font = New System.Drawing.Font("Tahoma", 15.0!)
         Me.LabelControl1.Appearance.Options.UseFont = True
-        Me.LabelControl1.Location = New System.Drawing.Point(464, 5)
+        Me.LabelControl1.Location = New System.Drawing.Point(616, 5)
         Me.LabelControl1.Name = "LabelControl1"
         Me.LabelControl1.Size = New System.Drawing.Size(173, 24)
         Me.LabelControl1.TabIndex = 45
@@ -423,7 +428,7 @@ Partial Class fmaStudentListForm
         Me.GroupPanel1.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.GroupPanel1.Location = New System.Drawing.Point(3, 138)
         Me.GroupPanel1.Name = "GroupPanel1"
-        Me.GroupPanel1.Size = New System.Drawing.Size(1127, 39)
+        Me.GroupPanel1.Size = New System.Drawing.Size(1431, 39)
         '
         '
         '
@@ -559,7 +564,7 @@ Partial Class fmaStudentListForm
         Me.btnRemove.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground
         Me.btnRemove.Dock = System.Windows.Forms.DockStyle.Right
         Me.btnRemove.Image = Global.SchoolMGT.My.Resources.Resources.close
-        Me.btnRemove.Location = New System.Drawing.Point(1007, 0)
+        Me.btnRemove.Location = New System.Drawing.Point(1311, 0)
         Me.btnRemove.Name = "btnRemove"
         Me.btnRemove.Size = New System.Drawing.Size(114, 33)
         Me.btnRemove.TabIndex = 132
@@ -571,7 +576,7 @@ Partial Class fmaStudentListForm
         Me.Label1.Anchor = CType((System.Windows.Forms.AnchorStyles.Left Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.Label1.AutoSize = True
         Me.Label1.ForeColor = System.Drawing.Color.DarkGray
-        Me.Label1.Location = New System.Drawing.Point(949, 118)
+        Me.Label1.Location = New System.Drawing.Point(949, 121)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(134, 13)
         Me.Label1.TabIndex = 116
@@ -580,12 +585,11 @@ Partial Class fmaStudentListForm
         '
         'txtStudentName
         '
-        Me.txtStudentName.Anchor = CType((System.Windows.Forms.AnchorStyles.Left Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.txtStudentName.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtStudentName.Location = New System.Drawing.Point(876, 83)
+        Me.txtStudentName.Location = New System.Drawing.Point(876, 71)
         Me.txtStudentName.Multiline = True
         Me.txtStudentName.Name = "txtStudentName"
-        Me.txtStudentName.Size = New System.Drawing.Size(251, 32)
+        Me.txtStudentName.Size = New System.Drawing.Size(434, 50)
         Me.txtStudentName.TabIndex = 113
         Me.txtStudentName.TabStop = False
         Me.txtStudentName.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
@@ -658,56 +662,145 @@ Partial Class fmaStudentListForm
         '
         Me.CMenuStripOperations.BackColor = System.Drawing.Color.PaleTurquoise
         Me.CMenuStripOperations.ImageScalingSize = New System.Drawing.Size(20, 20)
-        Me.CMenuStripOperations.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.AssignScheduleToolStripMenuItem, Me.ViewAssessmentToolStripMenuItem, Me.ViewGradesToolStripMenuItem, Me.PreviewCORToolStripMenuItem, Me.ModifyBatchToolStripMenuItem, Me.ModifyScholarshipGrantToolStripMenuItem, Me.ModifyCourseGradeToolStripMenuItem, Me.MarkAsEnrolledToolStripMenuItem, Me.EnrolledAsToolStripMenuItem, Me.ModifyYearLevelToolStripMenuItem, Me.ModifySemesterToolStripMenuItem, Me.ModifyAdmissionNumberToolStripMenuItem, Me.ADDDROPSubjectToolStripMenuItem})
+        Me.CMenuStripOperations.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.STUDENTPROFILEToolStripMenuItem, Me.STUDETNADMISSIONToolStripMenuItem, Me.ToolStripSeparator1, Me.SCHOLARSHIPASSIGNINGToolStripMenuItem, Me.SUBJECTACCESSToolStripMenuItem, Me.ASSESSMENTToolStripMenuItem, Me.PreviewCORToolStripMenuItem, Me.ViewGradesToolStripMenuItem})
         Me.CMenuStripOperations.Name = "CMenuStripOperations"
-        Me.CMenuStripOperations.Size = New System.Drawing.Size(219, 290)
+        Me.CMenuStripOperations.Size = New System.Drawing.Size(220, 192)
         '
-        'AssignScheduleToolStripMenuItem
+        'STUDENTPROFILEToolStripMenuItem
         '
-        Me.AssignScheduleToolStripMenuItem.Name = "AssignScheduleToolStripMenuItem"
-        Me.AssignScheduleToolStripMenuItem.Size = New System.Drawing.Size(218, 22)
-        Me.AssignScheduleToolStripMenuItem.Text = "View Subjects"
-        Me.AssignScheduleToolStripMenuItem.Visible = False
-        '
-        'ViewAssessmentToolStripMenuItem
-        '
-        Me.ViewAssessmentToolStripMenuItem.Name = "ViewAssessmentToolStripMenuItem"
-        Me.ViewAssessmentToolStripMenuItem.Size = New System.Drawing.Size(218, 22)
-        Me.ViewAssessmentToolStripMenuItem.Text = "View Assessment"
-        '
-        'ViewGradesToolStripMenuItem
-        '
-        Me.ViewGradesToolStripMenuItem.Name = "ViewGradesToolStripMenuItem"
-        Me.ViewGradesToolStripMenuItem.Size = New System.Drawing.Size(218, 22)
-        Me.ViewGradesToolStripMenuItem.Text = "View Grades"
-        Me.ViewGradesToolStripMenuItem.Visible = False
-        '
-        'PreviewCORToolStripMenuItem
-        '
-        Me.PreviewCORToolStripMenuItem.Name = "PreviewCORToolStripMenuItem"
-        Me.PreviewCORToolStripMenuItem.Size = New System.Drawing.Size(218, 22)
-        Me.PreviewCORToolStripMenuItem.Text = "Preview COR"
-        Me.PreviewCORToolStripMenuItem.Visible = False
+        Me.STUDENTPROFILEToolStripMenuItem.BackColor = System.Drawing.Color.LightGray
+        Me.STUDENTPROFILEToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ModifyBatchToolStripMenuItem, Me.ModifyCourseGradeToolStripMenuItem, Me.ModifySemesterToolStripMenuItem, Me.ModifyYearLevelToolStripMenuItem})
+        Me.STUDENTPROFILEToolStripMenuItem.Image = CType(resources.GetObject("STUDENTPROFILEToolStripMenuItem.Image"), System.Drawing.Image)
+        Me.STUDENTPROFILEToolStripMenuItem.Name = "STUDENTPROFILEToolStripMenuItem"
+        Me.STUDENTPROFILEToolStripMenuItem.Size = New System.Drawing.Size(219, 26)
+        Me.STUDENTPROFILEToolStripMenuItem.Text = "STUDENT PROFILE"
         '
         'ModifyBatchToolStripMenuItem
         '
         Me.ModifyBatchToolStripMenuItem.Name = "ModifyBatchToolStripMenuItem"
-        Me.ModifyBatchToolStripMenuItem.Size = New System.Drawing.Size(218, 22)
-        Me.ModifyBatchToolStripMenuItem.Tag = "1"
-        Me.ModifyBatchToolStripMenuItem.Text = "Modify Batch"
+        Me.ModifyBatchToolStripMenuItem.Size = New System.Drawing.Size(200, 22)
+        Me.ModifyBatchToolStripMenuItem.Tag = "2"
+        Me.ModifyBatchToolStripMenuItem.Text = "Edit Batch"
         '
-        'ModifyScholarshipGrantToolStripMenuItem
+        'ModifyCourseGradeToolStripMenuItem
         '
-        Me.ModifyScholarshipGrantToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.GrantToolStripMenuItem, Me.RemoveToolStripMenuItem})
-        Me.ModifyScholarshipGrantToolStripMenuItem.Name = "ModifyScholarshipGrantToolStripMenuItem"
-        Me.ModifyScholarshipGrantToolStripMenuItem.Size = New System.Drawing.Size(218, 22)
-        Me.ModifyScholarshipGrantToolStripMenuItem.Tag = "2"
-        Me.ModifyScholarshipGrantToolStripMenuItem.Text = "Modify Scholarship"
+        Me.ModifyCourseGradeToolStripMenuItem.Name = "ModifyCourseGradeToolStripMenuItem"
+        Me.ModifyCourseGradeToolStripMenuItem.Size = New System.Drawing.Size(200, 22)
+        Me.ModifyCourseGradeToolStripMenuItem.Tag = "3"
+        Me.ModifyCourseGradeToolStripMenuItem.Text = "Edit Course/Grade Level"
+        '
+        'ModifySemesterToolStripMenuItem
+        '
+        Me.ModifySemesterToolStripMenuItem.Name = "ModifySemesterToolStripMenuItem"
+        Me.ModifySemesterToolStripMenuItem.Size = New System.Drawing.Size(200, 22)
+        Me.ModifySemesterToolStripMenuItem.Tag = "5"
+        Me.ModifySemesterToolStripMenuItem.Text = "Edit Semester"
+        '
+        'ModifyYearLevelToolStripMenuItem
+        '
+        Me.ModifyYearLevelToolStripMenuItem.Name = "ModifyYearLevelToolStripMenuItem"
+        Me.ModifyYearLevelToolStripMenuItem.Size = New System.Drawing.Size(200, 22)
+        Me.ModifyYearLevelToolStripMenuItem.Tag = "4"
+        Me.ModifyYearLevelToolStripMenuItem.Text = "Edit Year Level"
+        '
+        'STUDETNADMISSIONToolStripMenuItem
+        '
+        Me.STUDETNADMISSIONToolStripMenuItem.BackColor = System.Drawing.Color.LightGray
+        Me.STUDETNADMISSIONToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ToolStripMenuItem1, Me.ToolStripMenuItem2, Me.ModifyAdmissionNumberToolStripMenuItem})
+        Me.STUDETNADMISSIONToolStripMenuItem.Image = CType(resources.GetObject("STUDETNADMISSIONToolStripMenuItem.Image"), System.Drawing.Image)
+        Me.STUDETNADMISSIONToolStripMenuItem.Name = "STUDETNADMISSIONToolStripMenuItem"
+        Me.STUDETNADMISSIONToolStripMenuItem.Size = New System.Drawing.Size(219, 26)
+        Me.STUDETNADMISSIONToolStripMenuItem.Text = "STUDETN ADMISSION"
+        '
+        'ToolStripMenuItem1
+        '
+        Me.ToolStripMenuItem1.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ENROLLEDToolStripMenuItem, Me.NOTENROLLEDToolStripMenuItem, Me.WITHDRAWNToolStripMenuItem})
+        Me.ToolStripMenuItem1.Name = "ToolStripMenuItem1"
+        Me.ToolStripMenuItem1.Size = New System.Drawing.Size(180, 22)
+        Me.ToolStripMenuItem1.Text = "Enrolled Status"
+        '
+        'ENROLLEDToolStripMenuItem
+        '
+        Me.ENROLLEDToolStripMenuItem.Name = "ENROLLEDToolStripMenuItem"
+        Me.ENROLLEDToolStripMenuItem.Size = New System.Drawing.Size(140, 22)
+        Me.ENROLLEDToolStripMenuItem.Text = "Enrolled"
+        '
+        'NOTENROLLEDToolStripMenuItem
+        '
+        Me.NOTENROLLEDToolStripMenuItem.Name = "NOTENROLLEDToolStripMenuItem"
+        Me.NOTENROLLEDToolStripMenuItem.Size = New System.Drawing.Size(140, 22)
+        Me.NOTENROLLEDToolStripMenuItem.Text = "Not Enrolled"
+        '
+        'WITHDRAWNToolStripMenuItem
+        '
+        Me.WITHDRAWNToolStripMenuItem.Name = "WITHDRAWNToolStripMenuItem"
+        Me.WITHDRAWNToolStripMenuItem.Size = New System.Drawing.Size(140, 22)
+        Me.WITHDRAWNToolStripMenuItem.Text = "Withdrawn"
+        '
+        'ToolStripMenuItem2
+        '
+        Me.ToolStripMenuItem2.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.NEWToolStripMenuItem, Me.OLDToolStripMenuItem, Me.RETURNEEToolStripMenuItem, Me.TRANFEREEToolStripMenuItem, Me.NdBachelorsDegreeToolStripMenuItem})
+        Me.ToolStripMenuItem2.Name = "ToolStripMenuItem2"
+        Me.ToolStripMenuItem2.Size = New System.Drawing.Size(180, 22)
+        Me.ToolStripMenuItem2.Text = "Admission Status"
+        '
+        'NEWToolStripMenuItem
+        '
+        Me.NEWToolStripMenuItem.Name = "NEWToolStripMenuItem"
+        Me.NEWToolStripMenuItem.Size = New System.Drawing.Size(191, 22)
+        Me.NEWToolStripMenuItem.Text = "New"
+        '
+        'OLDToolStripMenuItem
+        '
+        Me.OLDToolStripMenuItem.Name = "OLDToolStripMenuItem"
+        Me.OLDToolStripMenuItem.Size = New System.Drawing.Size(191, 22)
+        Me.OLDToolStripMenuItem.Text = "Old"
+        '
+        'RETURNEEToolStripMenuItem
+        '
+        Me.RETURNEEToolStripMenuItem.Name = "RETURNEEToolStripMenuItem"
+        Me.RETURNEEToolStripMenuItem.Size = New System.Drawing.Size(191, 22)
+        Me.RETURNEEToolStripMenuItem.Text = "Returnee"
+        '
+        'TRANFEREEToolStripMenuItem
+        '
+        Me.TRANFEREEToolStripMenuItem.Name = "TRANFEREEToolStripMenuItem"
+        Me.TRANFEREEToolStripMenuItem.Size = New System.Drawing.Size(191, 22)
+        Me.TRANFEREEToolStripMenuItem.Text = "Transferee"
+        '
+        'NdBachelorsDegreeToolStripMenuItem
+        '
+        Me.NdBachelorsDegreeToolStripMenuItem.Name = "NdBachelorsDegreeToolStripMenuItem"
+        Me.NdBachelorsDegreeToolStripMenuItem.Size = New System.Drawing.Size(191, 22)
+        Me.NdBachelorsDegreeToolStripMenuItem.Text = "2nd Bachelor's Degree"
+        '
+        'ModifyAdmissionNumberToolStripMenuItem
+        '
+        Me.ModifyAdmissionNumberToolStripMenuItem.Name = "ModifyAdmissionNumberToolStripMenuItem"
+        Me.ModifyAdmissionNumberToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
+        Me.ModifyAdmissionNumberToolStripMenuItem.Tag = "6"
+        Me.ModifyAdmissionNumberToolStripMenuItem.Text = "Edit Admission No."
+        '
+        'ToolStripSeparator1
+        '
+        Me.ToolStripSeparator1.BackColor = System.Drawing.Color.DarkGray
+        Me.ToolStripSeparator1.Name = "ToolStripSeparator1"
+        Me.ToolStripSeparator1.Size = New System.Drawing.Size(216, 6)
+        '
+        'SCHOLARSHIPASSIGNINGToolStripMenuItem
+        '
+        Me.SCHOLARSHIPASSIGNINGToolStripMenuItem.BackColor = System.Drawing.Color.LightGray
+        Me.SCHOLARSHIPASSIGNINGToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.GrantToolStripMenuItem, Me.RemoveToolStripMenuItem})
+        Me.SCHOLARSHIPASSIGNINGToolStripMenuItem.Image = CType(resources.GetObject("SCHOLARSHIPASSIGNINGToolStripMenuItem.Image"), System.Drawing.Image)
+        Me.SCHOLARSHIPASSIGNINGToolStripMenuItem.Name = "SCHOLARSHIPASSIGNINGToolStripMenuItem"
+        Me.SCHOLARSHIPASSIGNINGToolStripMenuItem.Size = New System.Drawing.Size(219, 26)
+        Me.SCHOLARSHIPASSIGNINGToolStripMenuItem.Text = "SCHOLARSHIP ASSIGNING"
         '
         'GrantToolStripMenuItem
         '
         Me.GrantToolStripMenuItem.Name = "GrantToolStripMenuItem"
         Me.GrantToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
+        Me.GrantToolStripMenuItem.Tag = "1"
         Me.GrantToolStripMenuItem.Text = "Grant"
         '
         'RemoveToolStripMenuItem
@@ -716,101 +809,57 @@ Partial Class fmaStudentListForm
         Me.RemoveToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
         Me.RemoveToolStripMenuItem.Text = "Remove"
         '
-        'ModifyCourseGradeToolStripMenuItem
+        'SUBJECTACCESSToolStripMenuItem
         '
-        Me.ModifyCourseGradeToolStripMenuItem.Name = "ModifyCourseGradeToolStripMenuItem"
-        Me.ModifyCourseGradeToolStripMenuItem.Size = New System.Drawing.Size(218, 22)
-        Me.ModifyCourseGradeToolStripMenuItem.Tag = "3"
-        Me.ModifyCourseGradeToolStripMenuItem.Text = "Modify Course / Grade"
+        Me.SUBJECTACCESSToolStripMenuItem.BackColor = System.Drawing.Color.LightGray
+        Me.SUBJECTACCESSToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.AssignScheduleToolStripMenuItem, Me.ADDDROPSubjectToolStripMenuItem, Me.LaboratorySubjectSetup})
+        Me.SUBJECTACCESSToolStripMenuItem.Image = CType(resources.GetObject("SUBJECTACCESSToolStripMenuItem.Image"), System.Drawing.Image)
+        Me.SUBJECTACCESSToolStripMenuItem.Name = "SUBJECTACCESSToolStripMenuItem"
+        Me.SUBJECTACCESSToolStripMenuItem.Size = New System.Drawing.Size(219, 26)
+        Me.SUBJECTACCESSToolStripMenuItem.Text = "SUBJECT"
         '
-        'MarkAsEnrolledToolStripMenuItem
+        'AssignScheduleToolStripMenuItem
         '
-        Me.MarkAsEnrolledToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ENROLLEDToolStripMenuItem, Me.NOTENROLLEDToolStripMenuItem, Me.WITHDRAWNToolStripMenuItem})
-        Me.MarkAsEnrolledToolStripMenuItem.Name = "MarkAsEnrolledToolStripMenuItem"
-        Me.MarkAsEnrolledToolStripMenuItem.Size = New System.Drawing.Size(218, 22)
-        Me.MarkAsEnrolledToolStripMenuItem.Text = "Enroll Status"
-        '
-        'ENROLLEDToolStripMenuItem
-        '
-        Me.ENROLLEDToolStripMenuItem.Name = "ENROLLEDToolStripMenuItem"
-        Me.ENROLLEDToolStripMenuItem.Size = New System.Drawing.Size(157, 22)
-        Me.ENROLLEDToolStripMenuItem.Text = "ENROLLED"
-        '
-        'NOTENROLLEDToolStripMenuItem
-        '
-        Me.NOTENROLLEDToolStripMenuItem.Name = "NOTENROLLEDToolStripMenuItem"
-        Me.NOTENROLLEDToolStripMenuItem.Size = New System.Drawing.Size(157, 22)
-        Me.NOTENROLLEDToolStripMenuItem.Text = "NOT ENROLLED"
-        '
-        'WITHDRAWNToolStripMenuItem
-        '
-        Me.WITHDRAWNToolStripMenuItem.Name = "WITHDRAWNToolStripMenuItem"
-        Me.WITHDRAWNToolStripMenuItem.Size = New System.Drawing.Size(157, 22)
-        Me.WITHDRAWNToolStripMenuItem.Text = "WITHDRAWN"
-        '
-        'EnrolledAsToolStripMenuItem
-        '
-        Me.EnrolledAsToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.NEWToolStripMenuItem, Me.OLDToolStripMenuItem, Me.RETURNEEToolStripMenuItem, Me.TRANFEREEToolStripMenuItem, Me.NdBachelorsDegreeToolStripMenuItem})
-        Me.EnrolledAsToolStripMenuItem.Name = "EnrolledAsToolStripMenuItem"
-        Me.EnrolledAsToolStripMenuItem.Size = New System.Drawing.Size(218, 22)
-        Me.EnrolledAsToolStripMenuItem.Text = "Enrolled As"
-        '
-        'NEWToolStripMenuItem
-        '
-        Me.NEWToolStripMenuItem.Name = "NEWToolStripMenuItem"
-        Me.NEWToolStripMenuItem.Size = New System.Drawing.Size(191, 22)
-        Me.NEWToolStripMenuItem.Text = "NEW"
-        '
-        'OLDToolStripMenuItem
-        '
-        Me.OLDToolStripMenuItem.Name = "OLDToolStripMenuItem"
-        Me.OLDToolStripMenuItem.Size = New System.Drawing.Size(191, 22)
-        Me.OLDToolStripMenuItem.Text = "OLD"
-        '
-        'RETURNEEToolStripMenuItem
-        '
-        Me.RETURNEEToolStripMenuItem.Name = "RETURNEEToolStripMenuItem"
-        Me.RETURNEEToolStripMenuItem.Size = New System.Drawing.Size(191, 22)
-        Me.RETURNEEToolStripMenuItem.Text = "RETURNEE"
-        '
-        'TRANFEREEToolStripMenuItem
-        '
-        Me.TRANFEREEToolStripMenuItem.Name = "TRANFEREEToolStripMenuItem"
-        Me.TRANFEREEToolStripMenuItem.Size = New System.Drawing.Size(191, 22)
-        Me.TRANFEREEToolStripMenuItem.Text = "TRANSFEREE"
-        '
-        'NdBachelorsDegreeToolStripMenuItem
-        '
-        Me.NdBachelorsDegreeToolStripMenuItem.Name = "NdBachelorsDegreeToolStripMenuItem"
-        Me.NdBachelorsDegreeToolStripMenuItem.Size = New System.Drawing.Size(191, 22)
-        Me.NdBachelorsDegreeToolStripMenuItem.Text = "2nd Bachelor's Degree"
-        '
-        'ModifyYearLevelToolStripMenuItem
-        '
-        Me.ModifyYearLevelToolStripMenuItem.Name = "ModifyYearLevelToolStripMenuItem"
-        Me.ModifyYearLevelToolStripMenuItem.Size = New System.Drawing.Size(218, 22)
-        Me.ModifyYearLevelToolStripMenuItem.Tag = "4"
-        Me.ModifyYearLevelToolStripMenuItem.Text = "Modify Year Level"
-        '
-        'ModifySemesterToolStripMenuItem
-        '
-        Me.ModifySemesterToolStripMenuItem.Name = "ModifySemesterToolStripMenuItem"
-        Me.ModifySemesterToolStripMenuItem.Size = New System.Drawing.Size(218, 22)
-        Me.ModifySemesterToolStripMenuItem.Tag = "5"
-        Me.ModifySemesterToolStripMenuItem.Text = "Modify Semester"
-        '
-        'ModifyAdmissionNumberToolStripMenuItem
-        '
-        Me.ModifyAdmissionNumberToolStripMenuItem.Name = "ModifyAdmissionNumberToolStripMenuItem"
-        Me.ModifyAdmissionNumberToolStripMenuItem.Size = New System.Drawing.Size(218, 22)
-        Me.ModifyAdmissionNumberToolStripMenuItem.Tag = "6"
-        Me.ModifyAdmissionNumberToolStripMenuItem.Text = "Modify Admission Number"
+        Me.AssignScheduleToolStripMenuItem.Name = "AssignScheduleToolStripMenuItem"
+        Me.AssignScheduleToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
+        Me.AssignScheduleToolStripMenuItem.Text = "Access Subject"
         '
         'ADDDROPSubjectToolStripMenuItem
         '
         Me.ADDDROPSubjectToolStripMenuItem.Name = "ADDDROPSubjectToolStripMenuItem"
-        Me.ADDDROPSubjectToolStripMenuItem.Size = New System.Drawing.Size(218, 22)
-        Me.ADDDROPSubjectToolStripMenuItem.Text = "ADD/DROP Subject"
+        Me.ADDDROPSubjectToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
+        Me.ADDDROPSubjectToolStripMenuItem.Text = "Add / Drop"
+        '
+        'LaboratorySubjectSetup
+        '
+        Me.LaboratorySubjectSetup.Name = "LaboratorySubjectSetup"
+        Me.LaboratorySubjectSetup.Size = New System.Drawing.Size(180, 22)
+        Me.LaboratorySubjectSetup.Tag = "7"
+        Me.LaboratorySubjectSetup.Text = "Tagging Lab Subject"
+        '
+        'ASSESSMENTToolStripMenuItem
+        '
+        Me.ASSESSMENTToolStripMenuItem.BackColor = System.Drawing.Color.LightGray
+        Me.ASSESSMENTToolStripMenuItem.Image = CType(resources.GetObject("ASSESSMENTToolStripMenuItem.Image"), System.Drawing.Image)
+        Me.ASSESSMENTToolStripMenuItem.Name = "ASSESSMENTToolStripMenuItem"
+        Me.ASSESSMENTToolStripMenuItem.Size = New System.Drawing.Size(219, 26)
+        Me.ASSESSMENTToolStripMenuItem.Text = "ASSESSMENT"
+        '
+        'PreviewCORToolStripMenuItem
+        '
+        Me.PreviewCORToolStripMenuItem.BackColor = System.Drawing.Color.LightGray
+        Me.PreviewCORToolStripMenuItem.Name = "PreviewCORToolStripMenuItem"
+        Me.PreviewCORToolStripMenuItem.Size = New System.Drawing.Size(219, 26)
+        Me.PreviewCORToolStripMenuItem.Text = "Preview COR"
+        Me.PreviewCORToolStripMenuItem.Visible = False
+        '
+        'ViewGradesToolStripMenuItem
+        '
+        Me.ViewGradesToolStripMenuItem.BackColor = System.Drawing.Color.LightGray
+        Me.ViewGradesToolStripMenuItem.Name = "ViewGradesToolStripMenuItem"
+        Me.ViewGradesToolStripMenuItem.Size = New System.Drawing.Size(219, 26)
+        Me.ViewGradesToolStripMenuItem.Text = "View Grades"
+        Me.ViewGradesToolStripMenuItem.Visible = False
         '
         'ToolTip1
         '
@@ -824,7 +873,7 @@ Partial Class fmaStudentListForm
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.Azure
         Me.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.ClientSize = New System.Drawing.Size(1139, 446)
+        Me.ClientSize = New System.Drawing.Size(1443, 446)
         Me.Controls.Add(Me.GroupPanel2)
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "fmaStudentListForm"
@@ -872,8 +921,6 @@ Partial Class fmaStudentListForm
     Friend WithEvents rollingSpinner As System.Windows.Forms.PictureBox
     Friend WithEvents stillSpinner As System.Windows.Forms.PictureBox
     Friend WithEvents CMenuStripOperations As System.Windows.Forms.ContextMenuStrip
-    Friend WithEvents AssignScheduleToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
-    Friend WithEvents ViewAssessmentToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents ViewGradesToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents btnRemove As DevComponents.DotNetBar.ButtonX
     Friend WithEvents Label1 As Label
@@ -889,30 +936,37 @@ Partial Class fmaStudentListForm
     Friend WithEvents LabelX4 As DevComponents.DotNetBar.LabelX
     Friend WithEvents cmbCategory As DevComponents.DotNetBar.Controls.ComboBoxEx
     Friend WithEvents LabelX5 As DevComponents.DotNetBar.LabelX
-    Friend WithEvents ModifyBatchToolStripMenuItem As ToolStripMenuItem
-    Friend WithEvents ModifyScholarshipGrantToolStripMenuItem As ToolStripMenuItem
-    Friend WithEvents ModifyCourseGradeToolStripMenuItem As ToolStripMenuItem
-    Friend WithEvents MarkAsEnrolledToolStripMenuItem As ToolStripMenuItem
-    Friend WithEvents ENROLLEDToolStripMenuItem As ToolStripMenuItem
-    Friend WithEvents NOTENROLLEDToolStripMenuItem As ToolStripMenuItem
-    Friend WithEvents WITHDRAWNToolStripMenuItem As ToolStripMenuItem
-    Friend WithEvents EnrolledAsToolStripMenuItem As ToolStripMenuItem
-    Friend WithEvents NEWToolStripMenuItem As ToolStripMenuItem
-    Friend WithEvents OLDToolStripMenuItem As ToolStripMenuItem
-    Friend WithEvents RETURNEEToolStripMenuItem As ToolStripMenuItem
-    Friend WithEvents TRANFEREEToolStripMenuItem As ToolStripMenuItem
-    Friend WithEvents NdBachelorsDegreeToolStripMenuItem As ToolStripMenuItem
-    Friend WithEvents GrantToolStripMenuItem As ToolStripMenuItem
-    Friend WithEvents RemoveToolStripMenuItem As ToolStripMenuItem
-    Friend WithEvents ModifyYearLevelToolStripMenuItem As ToolStripMenuItem
-    Friend WithEvents ModifySemesterToolStripMenuItem As ToolStripMenuItem
-    Friend WithEvents ADDDROPSubjectToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents Panel2 As Panel
-    Friend WithEvents ModifyAdmissionNumberToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents btnPrint As DevComponents.DotNetBar.ButtonX
     Friend WithEvents GridControl1 As DevExpress.XtraGrid.GridControl
     Friend WithEvents GridView1 As DevExpress.XtraGrid.Views.Grid.GridView
     Friend WithEvents btndelete As DevComponents.DotNetBar.ButtonX
     Friend WithEvents chkViewDeleted As CheckBox
     Friend WithEvents btnRetrieve As DevComponents.DotNetBar.ButtonX
+    Friend WithEvents STUDENTPROFILEToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents ModifyBatchToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents ModifyCourseGradeToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents ModifySemesterToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents ModifyYearLevelToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents STUDETNADMISSIONToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents ToolStripMenuItem1 As ToolStripMenuItem
+    Friend WithEvents ToolStripMenuItem2 As ToolStripMenuItem
+    Friend WithEvents ToolStripSeparator1 As ToolStripSeparator
+    Friend WithEvents SCHOLARSHIPASSIGNINGToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents GrantToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents RemoveToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents SUBJECTACCESSToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents AssignScheduleToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents ASSESSMENTToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents ADDDROPSubjectToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents ENROLLEDToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents NOTENROLLEDToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents WITHDRAWNToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents NEWToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents OLDToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents RETURNEEToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents TRANFEREEToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents NdBachelorsDegreeToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents ModifyAdmissionNumberToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents LaboratorySubjectSetup As ToolStripMenuItem
 End Class

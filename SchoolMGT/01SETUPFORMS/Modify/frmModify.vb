@@ -19,19 +19,19 @@
 
         Select Case tagID
             Case 1
-                TabControl1.TabPages.Remove(TabPage1)
-                'TabControl1.TabPages.Add(TabPage2)
-                TabControl1.TabPages.Remove(TabPage3)
-                TabControl1.TabPages.Remove(TabPage4)
-                TabControl1.TabPages.Remove(TabPage5)
-                TabControl1.TabPages.Remove(TabPage6)
-            Case 2
-                'TabControl1.TabPages.Add(TabPage1)
                 TabControl1.TabPages.Remove(TabPage2)
                 TabControl1.TabPages.Remove(TabPage3)
                 TabControl1.TabPages.Remove(TabPage4)
                 TabControl1.TabPages.Remove(TabPage5)
                 TabControl1.TabPages.Remove(TabPage6)
+                TabControl1.TabPages.Remove(TabPage7)
+            Case 2
+                TabControl1.TabPages.Remove(TabPage1)
+                TabControl1.TabPages.Remove(TabPage3)
+                TabControl1.TabPages.Remove(TabPage4)
+                TabControl1.TabPages.Remove(TabPage5)
+                TabControl1.TabPages.Remove(TabPage6)
+                TabControl1.TabPages.Remove(TabPage7)
             Case 3
                 TabControl1.TabPages.Remove(TabPage1)
                 TabControl1.TabPages.Remove(TabPage2)
@@ -216,7 +216,7 @@
 
 
         Select Case tagID
-            Case 2
+            Case 1
                 Try
                     DataSource(String.Format("UPDATE  students SET scholarshipgrant= '" & cmbScholarship.Text & "' WHERE id = '" & _studentID & "' ;"))
 
@@ -286,7 +286,7 @@
                     MsgBox(ex.Message)
                     Exit Sub
                 End Try
-            Case 1
+            Case 2
                 Try
                     DataSource(String.Format("UPDATE  students SET batch_id = '" & _batchID & "' WHERE id = '" & _studentID & "' ;"))
                     MessageBox.Show("Record Updated...", "Successfully!")

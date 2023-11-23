@@ -301,7 +301,6 @@ Public Class fmaSubjectScheduleSetupForm
     End Sub
     Private Sub _insert()
 
-
         Try
             If Not ClassCodeExist(_class_code) Then
                 DataSource(String.Format("INSERT INTO `subject_class_code`

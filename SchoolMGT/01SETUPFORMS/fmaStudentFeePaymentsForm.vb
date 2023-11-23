@@ -34,8 +34,6 @@ Public Class fmaStudentFeePaymentsForm
             lbluser.Text = AuthUserName & " / CASHIER"
         End If
 
-
-
         NO_ASSESSMENT = False
         dtpPayDate.Value = Date.Now
         FirstLoad = True
@@ -67,6 +65,44 @@ Public Class fmaStudentFeePaymentsForm
         FirstLoad = False
 
         cxbxFullPayment.Visible = False
+
+        If AutoFillControl = True Then
+
+            Try
+                Select Case _student_category_id
+                    Case 13
+                        RadioButton1.Checked = True
+                    Case 14
+                        RadioButton4.Checked = True
+                    Case 15
+                        RadioButton3.Checked = True
+                    Case Else
+                        RadioButton2.Checked = True
+                End Select
+
+                cmbyearbatch.Text = _school_year
+                cmbyearbatch.SelectedIndex = 0
+
+                cmbCourse.SelectedValue = _courseID
+                cmbCourse.SelectedIndex = 0
+
+
+                cmbBatch.SelectedValue = _batchID
+                cmbBatch.SelectedIndex = 0
+
+                cmbStudentList.Text = _student_name
+                cmbStudentList.SelectedValue = _studentID
+                cmbStudentList.SelectedIndex = 0
+
+                btnSearchCondition.PerformClick()
+            Catch ex As Exception
+
+            End Try
+
+
+        End If
+
+
     End Sub
 
     Private Sub loadHandler()
@@ -529,11 +565,13 @@ FROM
         dt_SOA.Columns.Add("TOTAL")
         dt_SOA.Columns.Add("STAT")
 
-
+        Dim discount As Double = 0
         dgvFEES.Rows.Clear()
 
         Dim SQLEX As String = "SELECT masterfee,particulars,amount,total,stat,columnName FROM students_assessment"
         SQLEX += " WHERE student_id ='" & Me.txtStudentID.Text & "'"
+
+        '       Dim SQLEX As String = getAssementDiscount(txtStudentID.Text)
 
         Dim MeData As DataTable
 
@@ -542,14 +580,15 @@ FROM
         If MeData.Rows.Count > 0 Then
 
             For nCtr As Integer = 0 To MeData.Rows.Count - 1
+
                 dgvFEES.Rows.Add(New String() {MeData.Rows(nCtr).Item("masterfee").ToString,
                                           MeData.Rows(nCtr).Item("particulars").ToString,
                                           MeData.Rows(nCtr).Item("amount").ToString,
-                                          MeData.Rows(nCtr).Item("total").ToString})
+                                          If(discount > 0, getDiscunt(discount, CDbl(MeData.Rows(nCtr).Item("total").ToString)), MeData.Rows(nCtr).Item("total").ToString)})
                 dt_fees.Rows.Add(New String() {MeData.Rows(nCtr).Item("masterfee").ToString,
                                           MeData.Rows(nCtr).Item("particulars").ToString,
                                           MeData.Rows(nCtr).Item("amount").ToString,
-                                          MeData.Rows(nCtr).Item("total").ToString})
+                                          If(discount > 0, getDiscunt(discount, CDbl(MeData.Rows(nCtr).Item("total").ToString)), MeData.Rows(nCtr).Item("total").ToString)})
 
                 If MeData.Rows(nCtr).Item("columnName").ToString = "H" Then
                     dt_SOA.Rows.Add(New String() {MeData.Rows(nCtr).Item("masterfee").ToString,
@@ -580,9 +619,10 @@ FROM
 
                     End Try
                 End If
+
                 If MeData.Rows(nCtr).Item("stat").ToString = "--" Then
                     Try
-
+                        discount = CDbl(MeData.Rows(nCtr).Item("total").ToString)
                         dt_SOA.Rows.Add(New String() {MeData.Rows(nCtr).Item("amount").ToString,
                                           "",
                                           "",
@@ -593,12 +633,14 @@ FROM
 
 
                 If MeData.Rows(nCtr).Item("stat").ToString = "T+" Then
+
+
                     Try
-                        Dim bal As Double = CDbl(MeData.Rows(nCtr).Item("total").ToString)
+                        Dim bal As Double = CDbl(MeData.Rows(nCtr).Item("total").ToString) - discount
                         dt_SOA.Rows.Add(New String() {MeData.Rows(nCtr).Item("amount").ToString,
                                           "",
                                           "",
-                                          MeData.Rows(nCtr).Item("total").ToString})
+                                          (CDbl(MeData.Rows(nCtr).Item("total").ToString) - discount)})
                         TOTAL_PAYABLES = bal
                     Catch ex As Exception
 
@@ -630,6 +672,40 @@ FROM
 
     End Sub
 
+    Private Function getDiscunt(discount As Double, TotalPayables As Double) As String
+        Dim discountedPayables As Double
+        discountedPayables = TotalPayables - discount
+        Return FormatNumber(discountedPayables, 2)
+    End Function
+
+    Private Function getAssementDiscount(stdID As String) As String
+        Dim str As String = "      SELECT
+			masterfee,
+			particulars,
+			amount,
+			-- total,
+			CASE WHEN stat = 'T+' and less <> 0 THEN REPLACE(total,',','') - less ELSE total END AS 'total',
+			stat,
+			columnName
+		
+		  FROM(
+					SELECT
+					a.id,
+					a.masterfee,
+					a.particulars,
+					a.amount,
+					a.total,
+					a.stat,
+					a.columnName,
+				 (SELECT REPLACE(IF(total=0,0,total),',','') FROM students_assessment b WHERE b.stat = '--' AND b.id = a.id - 1) 'less'
+		    	FROM 	students_assessment a
+					WHERE
+					a.student_id = '" & stdID & "'
+			)A		
+					
+				"
+        Return str
+    End Function
 
     Private Sub displayStudentFees()
 
@@ -792,14 +868,17 @@ FROM
 
 
     Private Function getDiscount() As String
-        Dim SQLEX As String = "SELECT student_additional_fields.name"
-        SQLEX += " , student_additional_details.student_id"
-        SQLEX += " , student_additional_details.additional_info"
-        SQLEX += " FROM student_additional_details"
-        SQLEX += " INNER JOIN student_additional_fields "
-        SQLEX += " ON (student_additional_details.additional_field_id = student_additional_fields.id)"
-        SQLEX += " WHERE student_additional_fields.id='2'"
-        SQLEX += " and student_id='" & txtStudentID.Text & "'"
+        'Dim SQLEX As String = "SELECT student_additional_fields.name"
+        'SQLEX += " , student_additional_details.student_id"
+        'SQLEX += " , student_additional_details.additional_info"
+        'SQLEX += " FROM student_additional_details"
+        'SQLEX += " INNER JOIN student_additional_fields "
+        'SQLEX += " ON (student_additional_details.additional_field_id = student_additional_fields.id)"
+        'SQLEX += " WHERE student_additional_fields.id='2'"
+        'SQLEX += " and student_id='" & txtStudentID.Text & "'"
+
+        Dim SQLEX As String = "	SELECT grant_amount,IFNULL(deducted_amount,0)'deducted_amount' FROM scholarship_grant_details WHERE student_id = '" & txtStudentID.Text & "'"
+
 
         Dim MeData As DataTable
         MeData = clsDBConn.ExecQuery(SQLEX)
@@ -809,7 +888,7 @@ FROM
             Dim value As Double = 0
 
             Try
-                value = CDbl(MeData.Rows(0).Item("additional_info").ToString)
+                value = CDbl(MeData.Rows(0).Item("deducted_amount").ToString)
                 prevBal = Format(value, "#,##0.00")
 
             Catch ex As Exception
@@ -835,27 +914,27 @@ FROM
         loadPaymentHistory(ListOfID)
 
         cxbxFullPayment.Checked = False
+        cbxdiscount.Visible = False
 
         is_grant = tdbViewer.Columns.Item("is_grant").Value
         grand_amount = tdbViewer.Columns.Item("grant_amount").Value.ToString
         FullDeduct = tdbViewer.Columns.Item("fullDeduct").Value.ToString
         lblGrant.Text = tdbViewer.Columns.Item("scholarshipgrant").Value.ToString
 
-        If lblGrant.Text = "" Then
-            cxbxFullPayment.Visible = False
-            cbxdiscount.Visible = False
-        Else
+        'If lblGrant.Text = "" Then
+        '    cxbxFullPayment.Visible = False
+        '    cbxdiscount.Visible = False
+        'Else
+        If is_grant = 0 Then
             If FullDeduct = "YES" Then
                 cxbxFullPayment.Visible = True
                 cbxdiscount.Visible = False
             Else
-                If is_grant = 2 Then
-                    cbxdiscount.Visible = False
-                Else
-                    cbxdiscount.Visible = True
-                End If
+                cbxdiscount.Visible = True
+                cxbxFullPayment.Visible = False
             End If
         End If
+        '     End If
 
 
 
@@ -887,8 +966,8 @@ FROM
 
         displayStudentsSubj()
         computeTuitionFee()
-        'displayStudentFees()
-        displayStudentAssessment()
+        '     displayStudentFees()
+             displayStudentAssessment()
 
         If NO_ASSESSMENT = False Then
             Exit Sub
@@ -1168,6 +1247,8 @@ FROM
     End Sub
 
     Private Sub ButtonX1_Click(sender As Object, e As EventArgs) Handles ButtonX1.Click
+        AutoFillControl = False
+
         Me.Close()
     End Sub
 

@@ -122,6 +122,15 @@ Public Class DailyCollectionPresenter
                 _view.expTuitionCollection.MaximumSize = New System.Drawing.Size(36, 126)
             End If
 
+        Else
+            If _view.expTuitionCollection.Expanded = True Then
+                _view.expTuitionCollection.Expanded = False
+                _view.expTuitionCollection.Visible = False
+
+                _view.expTuitionCollection.MinimumSize = New System.Drawing.Size(36, 126)
+                _view.expTuitionCollection.MaximumSize = New System.Drawing.Size(36, 126)
+            End If
+
         End If
 
 
@@ -327,8 +336,8 @@ bypass:
 
         CreatGroupSummary(_view.BandedGridView1)
 
-        _view.BandedGridView1.OptionsHint.ShowCellHints = True
-        _view.BandedGridView1.Columns("TUITION").ToolTip = "Price of the product per item"
+        '      _view.BandedGridView1.OptionsHint.ShowCellHints = True
+        '     _view.BandedGridView1.Columns("TUITION").ToolTip = "Price of the product per item"
 
         _view.Label4.Visible = True
         _view.Label5.Visible = True

@@ -2355,10 +2355,12 @@
     <Content Include="Resources\checkbox-ticked-alt-128.png" />
     <Content Include="Resources\clear.png" />
     <None Include="Resources\customer_32x32.png" />
+    <None Include="Resources\customer_16x16.png" />
     <Content Include="Resources\department.png" />
     <Content Include="Resources\department1.png" />
     <None Include="Resources\employee_32x32.png" />
     <None Include="Resources\edit_32x32.png" />
+    <None Include="Resources\employee_16x16.png" />
     <Content Include="Resources\folder-search.png" />
     <Content Include="Resources\Group2_Employees_Light.html" />
     <Content Include="Resources\languages.png" />

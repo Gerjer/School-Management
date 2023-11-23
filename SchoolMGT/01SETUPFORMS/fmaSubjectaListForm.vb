@@ -164,8 +164,8 @@ Public Class fmaSubjectaListForm
 				    COUNT(students_subjects.subject_id)
 				    FROM students_subjects 
 				     WHERE students_subjects.subject_id = subjects.id AND students_subjects.batch_id = batches.id 
-				    ORDER BY  students_subjects.subject_id ASC),0) 'availability',subjects.creditdistribution,subjects.ccid,subject_laboratory.id "
-
+				    ORDER BY  students_subjects.subject_id ASC),0) 'availability',subjects.creditdistribution,subjects.ccid,subject_laboratory.id, "
+        SQLEX += " 	CASE WHEN subject_class_schedule.subject_id IS NULL THEN '' ELSE 'YES' END AS 'sched'"
         SQLEX += " FROM batches"
         SQLEX += " INNER JOIN courses ON (batches.course_id = courses.id)"
         SQLEX += " RIGHT JOIN subjects ON (subjects.batch_id = batches.id)"
@@ -215,7 +215,7 @@ Public Class fmaSubjectaListForm
                     .DisplayColumns("amount").Style.HorizontalAlignment = C1.Win.C1TrueDBGrid.AlignHorzEnum.Far
 
                     .DisplayColumns("lab_name").DataColumn.Caption = "LAB NAME"
-                    .DisplayColumns("lab_name").Width = 80
+                    .DisplayColumns("lab_name").Width = 150
                     .DisplayColumns("lab_name").HeadingStyle.HorizontalAlignment = C1.Win.C1TrueDBGrid.AlignHorzEnum.Center
                     .DisplayColumns("lab_name").Style.HorizontalAlignment = C1.Win.C1TrueDBGrid.AlignHorzEnum.Near
 
@@ -232,7 +232,7 @@ Public Class fmaSubjectaListForm
                     .DisplayColumns("no_exams").DataColumn.Caption = "LEC/LAB"
                     .DisplayColumns("no_exams").Width = 160
                     .DisplayColumns("no_exams").HeadingStyle.HorizontalAlignment = C1.Win.C1TrueDBGrid.AlignHorzEnum.Center
-                    .DisplayColumns("no_exams").Style.HorizontalAlignment = C1.Win.C1TrueDBGrid.AlignHorzEnum.Near
+                    .DisplayColumns("no_exams").Style.HorizontalAlignment = C1.Win.C1TrueDBGrid.AlignHorzEnum.Center
                     'elective_group_id
                     .DisplayColumns("elective").DataColumn.Caption = "TYPE"
                     .DisplayColumns("elective").Width = 180
@@ -242,25 +242,31 @@ Public Class fmaSubjectaListForm
                     .DisplayColumns("limit_subject").DataColumn.Caption = "LIMIT"
                     .DisplayColumns("limit_subject").Width = 100
                     .DisplayColumns("limit_subject").HeadingStyle.HorizontalAlignment = C1.Win.C1TrueDBGrid.AlignHorzEnum.Center
-                    .DisplayColumns("limit_subject").Style.HorizontalAlignment = C1.Win.C1TrueDBGrid.AlignHorzEnum.Near
+                    .DisplayColumns("limit_subject").Style.HorizontalAlignment = C1.Win.C1TrueDBGrid.AlignHorzEnum.Center
 
-                    .DisplayColumns("SubjectEnrolled").DataColumn.Caption = "ENROLL"
+                    .DisplayColumns("SubjectEnrolled").DataColumn.Caption = "ENROLLESS"
                     .DisplayColumns("SubjectEnrolled").Width = 100
                     .DisplayColumns("SubjectEnrolled").HeadingStyle.HorizontalAlignment = C1.Win.C1TrueDBGrid.AlignHorzEnum.Center
-                    .DisplayColumns("SubjectEnrolled").Style.HorizontalAlignment = C1.Win.C1TrueDBGrid.AlignHorzEnum.Near
+                    .DisplayColumns("SubjectEnrolled").Style.HorizontalAlignment = C1.Win.C1TrueDBGrid.AlignHorzEnum.Center
 
                     .DisplayColumns("availability").DataColumn.Caption = "AVAILABILITY"
                     .DisplayColumns("availability").Width = 100
                     .DisplayColumns("availability").HeadingStyle.HorizontalAlignment = C1.Win.C1TrueDBGrid.AlignHorzEnum.Center
-                    .DisplayColumns("availability").Style.HorizontalAlignment = C1.Win.C1TrueDBGrid.AlignHorzEnum.Near
+                    .DisplayColumns("availability").Style.HorizontalAlignment = C1.Win.C1TrueDBGrid.AlignHorzEnum.Center
 
                     .DisplayColumns("creditdistribution").DataColumn.Caption = "CREDIT DISTRIBUTION"
-                    .DisplayColumns("creditdistribution").Width = 250
+                    .DisplayColumns("creditdistribution").Width = 150
                     .DisplayColumns("creditdistribution").HeadingStyle.HorizontalAlignment = C1.Win.C1TrueDBGrid.AlignHorzEnum.Center
                     .DisplayColumns("creditdistribution").Style.HorizontalAlignment = C1.Win.C1TrueDBGrid.AlignHorzEnum.Near
 
                     .DisplayColumns("ccid").Visible = False
                     .DisplayColumns("id").Visible = False
+
+                    .DisplayColumns("sched").DataColumn.Caption = "SCHEDULE?"
+                    .DisplayColumns("sched").Width = 100
+                    .DisplayColumns("sched").HeadingStyle.HorizontalAlignment = C1.Win.C1TrueDBGrid.AlignHorzEnum.Center
+                    .DisplayColumns("sched").Style.HorizontalAlignment = C1.Win.C1TrueDBGrid.AlignHorzEnum.Center
+
 
                     '.DisplayColumns("EMPNAME").DataColumn.Caption = "INSTRUCTOR"
                     '.DisplayColumns("EMPNAME").Width = 150

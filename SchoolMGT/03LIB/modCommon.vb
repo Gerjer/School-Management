@@ -86,6 +86,7 @@ Module modCommon
     Public _batchID As Integer
     Public _batch_name As String
     Public _studentID As Integer
+    Public _student_name As String
     Public _batchyear As String
     Public _class_roll_no As String
     Public _student_category_id As Integer
@@ -122,6 +123,8 @@ Module modCommon
     Public _dt_filter_student As New DataTable
     Public EnrolledStudent As List(Of String) = New List(Of String)
     Public dt_signatory As New DataTable
+
+    Public AutoFillControl As Boolean = False
 
     Public Function getSignatory(FormID As String) As DataTable
         Dim sql As String = ""
@@ -175,46 +178,90 @@ WHERE
     End Sub
 
     Public Sub getFilterStudent_global()
+
+
+
         Dim sql As String = ""
-        sql = "SELECT
-                person.person_id,
-                students.id,
-                person.last_name,
-                person.first_name,
-                person.middle_name,
-                person.display_name 'STUDENT NAME',
-                person.gender,
-                person.date_of_birth,
-                person_address.address 'Address',
-                person.telephone1 'ContactNumber',
-                students.class_roll_no,
-                students.runningbalance,
-                students.scholarshipgrant,
-                person_photo.photo_file_name,
-                person_photo.original_file_name,
-                students.stature,
-                students.std_number 'ID NUMBER',
-                students.student_category_id,
-                students.course_id,
-                user_id
+        sql = "
+SELECT
+person.person_id,
+MAX(students.id)id, 
+person.last_name,
+person.first_name,
+person.middle_name,
+person.display_name 'STUDENT NAME',
+person.gender,
+person.date_of_birth,
+person_address.address 'Address',
+person.telephone1 'ContactNumber',
+students.class_roll_no,
+Format(SUM(runningbalance),2)'runningbalance',
+students.scholarshipgrant,
+person_photo.photo_file_name,
+person_photo.original_file_name,
+students.stature,
+students.std_number 'ID NUMBER',
+students.student_category_id,
+students.course_id,
+user_id,
+enrollmentAS
 
-                FROM
-                person
-                LEFT JOIN person_address ON person.person_id = person_address.person_id AND person_address.address_type_id = 1
-                LEFT JOIN students ON person.person_id = students.person_id
-                LEFT JOIN person_photo ON person.person_id = person_photo.person_id
-                LEFT JOIN users ON users.id = students.user_id	
+FROM 	students
+  INNER JOIN person ON person.person_id = students.person_id
+	 LEFT JOIN person_address ON person.person_id = person_address.person_id AND person_address.address_type_id = 1
+	 LEFT JOIN person_photo ON person.person_id = person_photo.person_id
+	 LEFT JOIN users ON users.id = students.user_id	
+WHERE
+	students.status_type_id = 1 
+	AND  person.status_type_id = 1
+	GROUP BY person_id
+  ORDER BY person_id,id;
 
-                WHERE
-                person.person_type_id = 2 AND
-                person.status_type_id = 1 AND
-                person.end_time IS NULL AND
-                students.class_roll_no IS NOT NULL
-             
-                GROUP BY person_id
-                ORDER BY person_id
-                                        "
+
+"
         _dt_filter_student = DataSource(sql)
+
+#Region "old"
+        'Select 
+        '        person.person_id,
+        '        students.id,
+        '        person.last_name,
+        '        person.first_name,
+        '        person.middle_name,
+        '        person.display_name 'STUDENT NAME',
+        '    person.gender,
+        '        person.date_of_birth,
+        '        person_address.address 'Address',
+        '    person.telephone1 'ContactNumber',
+        '    students.class_roll_no,
+        '        students.runningbalance,
+        '        students.scholarshipgrant,
+        '        person_photo.photo_file_name,
+        '        person_photo.original_file_name,
+        '        students.stature,
+        '        students.std_number 'ID NUMBER',
+        '    students.student_category_id,
+        '        students.course_id,
+        '        user_id
+
+        '        FROM
+        '    person
+        '    Left Join person_address ON person.person_id = person_address.person_id And person_address.address_type_id = 1
+        '        Left Join students ON person.person_id = students.person_id
+        '        Left Join person_photo ON person.person_id = person_photo.person_id
+        '        Left Join users ON users.id = students.user_id	
+
+        '        WHERE
+        '    person.person_type_id = 2 And
+        '        person.status_type_id = 1 And
+        '        person.end_time Is NULL And
+        '        students.class_roll_no Is Not NULL
+
+        '    GROUP by person_id
+        '        ORDER by person_id
+
+#End Region
+
     End Sub
 
     Public Function querryDatatable(dt As DataTable, Column As String, value As String) As DataTable

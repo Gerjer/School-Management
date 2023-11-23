@@ -731,7 +731,7 @@ Partial Class ftmdiMainForm
         Me.ManageCourseOrGradeLevelToolStripMenuItem.AccessibleName = "25"
         Me.ManageCourseOrGradeLevelToolStripMenuItem.Image = CType(resources.GetObject("ManageCourseOrGradeLevelToolStripMenuItem.Image"), System.Drawing.Image)
         Me.ManageCourseOrGradeLevelToolStripMenuItem.Name = "ManageCourseOrGradeLevelToolStripMenuItem"
-        Me.ManageCourseOrGradeLevelToolStripMenuItem.Size = New System.Drawing.Size(303, 26)
+        Me.ManageCourseOrGradeLevelToolStripMenuItem.Size = New System.Drawing.Size(299, 24)
         Me.ManageCourseOrGradeLevelToolStripMenuItem.Text = "Manage Course or Grade Level"
         '
         'ManageBatchOrSectionToolStripMenuItem
@@ -739,7 +739,7 @@ Partial Class ftmdiMainForm
         Me.ManageBatchOrSectionToolStripMenuItem.AccessibleName = "26"
         Me.ManageBatchOrSectionToolStripMenuItem.Image = CType(resources.GetObject("ManageBatchOrSectionToolStripMenuItem.Image"), System.Drawing.Image)
         Me.ManageBatchOrSectionToolStripMenuItem.Name = "ManageBatchOrSectionToolStripMenuItem"
-        Me.ManageBatchOrSectionToolStripMenuItem.Size = New System.Drawing.Size(303, 26)
+        Me.ManageBatchOrSectionToolStripMenuItem.Size = New System.Drawing.Size(299, 24)
         Me.ManageBatchOrSectionToolStripMenuItem.Text = "Manage Batch or Section"
         '
         'ASSIGNINGFEESToolStripMenuItem
@@ -747,14 +747,14 @@ Partial Class ftmdiMainForm
         Me.ASSIGNINGFEESToolStripMenuItem.AccessibleName = "59"
         Me.ASSIGNINGFEESToolStripMenuItem.Image = CType(resources.GetObject("ASSIGNINGFEESToolStripMenuItem.Image"), System.Drawing.Image)
         Me.ASSIGNINGFEESToolStripMenuItem.Name = "ASSIGNINGFEESToolStripMenuItem"
-        Me.ASSIGNINGFEESToolStripMenuItem.Size = New System.Drawing.Size(303, 26)
+        Me.ASSIGNINGFEESToolStripMenuItem.Size = New System.Drawing.Size(299, 24)
         Me.ASSIGNINGFEESToolStripMenuItem.Text = "Assigning FEES"
         '
         'LinkGroupCoursesToolStripMenuItem
         '
         Me.LinkGroupCoursesToolStripMenuItem.AccessibleName = "27"
         Me.LinkGroupCoursesToolStripMenuItem.Name = "LinkGroupCoursesToolStripMenuItem"
-        Me.LinkGroupCoursesToolStripMenuItem.Size = New System.Drawing.Size(303, 26)
+        Me.LinkGroupCoursesToolStripMenuItem.Size = New System.Drawing.Size(299, 24)
         Me.LinkGroupCoursesToolStripMenuItem.Text = "Link/Group Courses"
         Me.LinkGroupCoursesToolStripMenuItem.Visible = False
         '
@@ -933,7 +933,7 @@ Partial Class ftmdiMainForm
         Me.SUBJECTSToolStripMenuItem.Image = CType(resources.GetObject("SUBJECTSToolStripMenuItem.Image"), System.Drawing.Image)
         Me.SUBJECTSToolStripMenuItem.Name = "SUBJECTSToolStripMenuItem"
         Me.SUBJECTSToolStripMenuItem.Size = New System.Drawing.Size(291, 28)
-        Me.SUBJECTSToolStripMenuItem.Text = "SUBJECTS CATALOG"
+        Me.SUBJECTSToolStripMenuItem.Text = "SUBJECTS SCHEDULING"
         '
         'ADMISSIONToolStripMenuItem
         '

@@ -101,7 +101,7 @@ Partial Class frmDailyCashCollection
         Me.expTuitionCollection.ColorSchemeStyle = DevComponents.DotNetBar.eDotNetBarStyle.Office2007
         Me.expTuitionCollection.Controls.Add(Me.GridControl2)
         Me.expTuitionCollection.Expanded = False
-        Me.expTuitionCollection.ExpandedBounds = New System.Drawing.Rectangle(3, 68, 251, 126)
+        Me.expTuitionCollection.ExpandedBounds = New System.Drawing.Rectangle(3, 149, 251, 126)
         Me.expTuitionCollection.Location = New System.Drawing.Point(3, 149)
         Me.expTuitionCollection.Name = "expTuitionCollection"
         Me.expTuitionCollection.Padding = New System.Windows.Forms.Padding(5)

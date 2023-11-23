@@ -545,6 +545,8 @@ CASE WHEN MIDTERM = 'NG' AND FINAL IS NULL THEN 'No Grade'
             Subject = dt(0)("Subject").ToString
 
             loadGradingPeriod()
+        Else
+            MsgBox("There is no Schedule Assign in this Subject...", MsgBoxStyle.Information, "NO SCHEDULE ASSIGN")
 
         End If
     End Sub

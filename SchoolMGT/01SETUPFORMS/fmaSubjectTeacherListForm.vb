@@ -13,9 +13,43 @@ Public Class fmaSubjectTeacherListForm
     Private Sub fmaStudentListForm_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
         lblStatus.Text = "Waiting ..."
 
+        displaySY()
         displayCategory()
         displayCourse()
+        displaySemester()
         displayBatches()
+    End Sub
+
+    Private Sub displaySemester()
+
+        Dim sql As String = "SELECT semester'name' FROM batches"
+        If cmbSY.Text <> "" Then
+            sql += " WHERE school_year = '" & cmbSY.Text & "'"
+        End If
+        If cmbCourse.Text <> "" Then
+            sql += " and course_id= '" & txtCourseID.Text & "'"
+        End If
+        sql += " GROUP BY semester  ORDER BY semester"
+
+        cmbsemester.DataSource = DataSource(String.Format(sql))
+        cmbsemester.DisplayMember = "name"
+        '  cmbsemester.ValueMember = "id"
+        cmbsemester.SelectedIndex = -1
+
+    End Sub
+
+    Private Sub displaySY()
+        cmbSY.DataSource = DataSource(String.Format("SELECT DISTINCT
+                1 as 'id',
+                batches.school_year 'name'
+                FROM
+                batches
+                WHERE school_year is NOT NULL
+                ORDER BY school_year DESC"))
+
+        cmbSY.DisplayMember = "name"
+        cmbSY.ValueMember = "id"
+        cmbSY.SelectedIndex = -1
     End Sub
 
     Private Sub displayCategory()
@@ -109,10 +143,21 @@ Public Class fmaSubjectTeacherListForm
 
 
     Private Sub displayCourse()
-        Dim SQLEX As String = "SELECT id, course_name  FROM courses"
-        SQLEX += " WHERE is_deleted <> 1 and category_id = '" & CatID & "' "
-        SQLEX += " GROUP BY course_name"
-        SQLEX += " ORDER BY course_name"
+        'Dim SQLEX As String = "SELECT id, course_name  FROM courses"
+        'SQLEX += " WHERE is_deleted <> 1 and category_id = '" & CatID & "' "
+        'SQLEX += " GROUP BY course_name"
+        'SQLEX += " ORDER BY course_name"
+
+        Dim SQLEX As String = "SELECT courses.id,courses.course_name  FROM batches"
+        SQLEX += " INNER JOIN courses ON batches.course_id = courses.id "
+        If cmbSY.Text <> "" Then
+            SQLEX += " WHERE batches.school_year = '" & cmbSY.Text & "'"
+        End If
+        If cmbCategory.Text <> "" Then
+            SQLEX += "and courses.category_id = '" & CatID & "'"
+        End If
+        SQLEX += " GROUP BY courses.id ORDER BY courses.course_name "
+
 
         Dim MeData As DataTable
         MeData = clsDBConn.ExecQuery(SQLEX)
@@ -134,7 +179,15 @@ Public Class fmaSubjectTeacherListForm
         SQLEX += " INNER JOIN courses"
         SQLEX += " ON (batches.course_id = courses.id)"
         SQLEX += " WHERE batches.is_deleted =0 AND batches.is_active=1"
-        SQLEX += " AND course_id='" & Me.txtCourseID.Text & "'"
+        If cmbSY.Text <> "" Then
+            SQLEX += " and school_year = '" & cmbSY.Text & "'"
+        End If
+        If cmbCourse.Text <> "" Then
+            SQLEX += " and course_id= '" & txtCourseID.Text & "'"
+        End If
+        If cmbsemester.Text <> "" Then
+            SQLEX += " and semester='" & cmbsemester.Text & "' "
+        End If
 
 
         Dim MeData As DataTable
@@ -256,13 +309,16 @@ Public Class fmaSubjectTeacherListForm
 
 
     Private Sub cmbCourse_SelectedIndexChanged(ByVal sender As Object, ByVal e As System.EventArgs) Handles cmbCourse.SelectedIndexChanged
-        Try
-            Dim drv As DataRowView = DirectCast(cmbCourse.SelectedItem, DataRowView)
-            Me.txtCourseID.Text = drv.Item("id").ToString
-        Catch ex As Exception
-            Me.txtCourseID.Text = ""
-        End Try
+        If cmbCourse.Focused Then
 
+            Try
+                Dim drv As DataRowView = DirectCast(cmbCourse.SelectedItem, DataRowView)
+                Me.txtCourseID.Text = drv.Item("id").ToString
+                displaySemester()
+            Catch ex As Exception
+                Me.txtCourseID.Text = ""
+            End Try
+        End If
     End Sub
 
     Private Sub cmbBatch_SelectedIndexChanged(ByVal sender As Object, ByVal e As System.EventArgs) Handles cmbBatch.SelectedIndexChanged
@@ -396,9 +452,11 @@ Public Class fmaSubjectTeacherListForm
     Private Sub btnClearFilter_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnClearFilter.Click
         lblStatus.Text = "Waiting ..."
 
+        displaySY()
+        displayCategory()
         displayCourse()
+        displaySemester()
         displayBatches()
-
 
 
     End Sub
@@ -756,12 +814,49 @@ Public Class fmaSubjectTeacherListForm
     End Sub
     Dim CatID As Integer
     Private Sub cmbCategory_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cmbCategory.SelectedIndexChanged
-        Try
-            Dim drv As DataRowView = DirectCast(cmbCategory.SelectedItem, DataRowView)
-            CatID = drv.Item("id")
-            displayCourse()
-        Catch ex As Exception
+        If cmbCategory.Focused Then
 
-        End Try
+            Try
+                Dim drv As DataRowView = DirectCast(cmbCategory.SelectedItem, DataRowView)
+                cmbCategory.Text = drv.Item("name").ToString
+                CatID = drv.Item("id")
+                displayCourse()
+            Catch ex As Exception
+
+            End Try
+        End If
+    End Sub
+
+    Private Sub txtElectives_TextChanged(sender As Object, e As EventArgs) Handles txtElectives.TextChanged
+
+    End Sub
+
+    Private Sub cmbSY_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cmbSY.SelectedIndexChanged
+
+        If cmbSY.Focused Then
+            Try
+                Dim drv As DataRowView = DirectCast(cmbSY.SelectedItem, DataRowView)
+                cmbSY.Text = drv.Item("name").ToString
+            Catch ex As Exception
+
+            End Try
+        End If
+
+    End Sub
+
+    Private Sub cmbsemester_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cmbsemester.SelectedIndexChanged
+        If cmbsemester.Focused Then
+            Try
+                Dim drv As DataRowView = DirectCast(cmbsemester.SelectedItem, DataRowView)
+                cmbsemester.Text = drv.Item("name").ToString
+                displayBatches()
+            Catch ex As Exception
+
+            End Try
+        End If
+    End Sub
+
+    Private Sub ButtonX1_Click(sender As Object, e As EventArgs) Handles ButtonX1.Click
+        Me.Close()
     End Sub
 End Class

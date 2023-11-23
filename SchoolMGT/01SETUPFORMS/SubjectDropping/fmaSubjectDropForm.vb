@@ -45,11 +45,10 @@ Public Class fmaSubjectDropForm
 
     Dim deletedSubjectlist As New List(Of Integer)
 
-
     Private Sub fmaSubjectDropForm_Load(sender As Object, e As EventArgs) Handles Me.Load
+
         loadAdjustmentHeader()
         ReloadAllDisplay()
-
 
     End Sub
 
@@ -183,6 +182,8 @@ Public Class fmaSubjectDropForm
             Dim MeData As DataTable
             MeData = clsDBConn.ExecQuery(SQLEX)
 
+            '      dgvSubjects.Columns("LAB AMT").ReadOnly = True
+
             If MeData.Rows.Count > 0 Then
                 For cnt As Integer = 0 To MeData.Rows.Count - 1
                     Dim subjID As String = MeData.Rows(cnt).Item("subjid").ToString()
@@ -252,6 +253,7 @@ Public Class fmaSubjectDropForm
                     End If
                     If Not IsDBNull(MeData.Rows(cnt).Item("lab_amount").ToString()) Then
                         dgvSubjects.Item(11, cnt).Value = MeData.Rows(cnt).Item("lab_amount").ToString()
+                        '          dgvSubjects.Columns(11).ReadOnly = True
                     End If
 
                     If Not IsDBNull(MeData.Rows(cnt).Item("credit_hours").ToString()) Then
@@ -263,7 +265,6 @@ Public Class fmaSubjectDropForm
                     If Not IsDBNull(MeData.Rows(cnt).Item("stdSubid").ToString()) Then
                         dgvSubjects.Item(14, cnt).Value = MeData.Rows(cnt).Item("stdSubid").ToString()
                     End If
-
 
                 Next
 
@@ -1109,12 +1110,14 @@ Public Class fmaSubjectDropForm
 
 
     Private Function getDiscount() As String
-        Dim SQLEX As String = "SELECT additional_info, student_additional_fields.id"
-        SQLEX += " FROM student_additional_details"
-        SQLEX += " INNER JOIN student_additional_fields"
-        SQLEX += " ON (student_additional_details.additional_field_id = student_additional_fields.id)"
-        SQLEX += " WHERE student_additional_fields.id ='2'"
-        SQLEX += " and student_id='" & txtStudentID.Text & "'"
+        'Dim SQLEX As String = "SELECT additional_info, student_additional_fields.id"
+        'SQLEX += " FROM student_additional_details"
+        'SQLEX += " INNER JOIN student_additional_fields"
+        'SQLEX += " ON (student_additional_details.additional_field_id = student_additional_fields.id)"
+        'SQLEX += " WHERE student_additional_fields.id ='2'"
+        'SQLEX += " and student_id='" & txtStudentID.Text & "'"
+
+        Dim SQLEX As String = "	SELECT grant_amount,IFNULL(deducted_amount,0)'deducted_amount' FROM scholarship_grant_details WHERE student_id = '" & txtStudentID.Text & "'"
 
         Dim MeData As DataTable
         MeData = clsDBConn.ExecQuery(SQLEX)
@@ -1124,7 +1127,7 @@ Public Class fmaSubjectDropForm
             Dim value As Double = 0
 
             Try
-                value = CDbl(MeData.Rows(0).Item("additional_info").ToString)
+                value = CDbl(MeData.Rows(0).Item("deducted_amount").ToString)
                 prevBal = Format(value, "#,##0.00")
 
             Catch ex As Exception
@@ -1148,6 +1151,7 @@ Public Class fmaSubjectDropForm
             addSubj.Show(Me)
 
         End If
+        addSubj = Nothing
     End Sub
 
     Private Sub addSubj_SUBJECTADDED() Handles addSubj.SUBJECTADDED
@@ -1173,7 +1177,7 @@ Public Class fmaSubjectDropForm
                 dgvSubjects.Item(13, nCtr).Value = ReplaceMe(lecAmount, rate_per_unit)
 
             Next
-
+            chkCompute.Visible = True
         End If
 
     End Sub
@@ -1352,11 +1356,18 @@ Public Class fmaSubjectDropForm
         ReloadAllDisplay()
     End Sub
 
-    Private Sub LabelX9_Click(sender As Object, e As EventArgs) Handles LabelX9.Click
+    Private Sub dgvSubjects_CellEndEdit(sender As Object, e As DataGridViewCellEventArgs) Handles dgvSubjects.CellEndEdit
 
-    End Sub
+        Dim rowIndex As Integer = e.RowIndex
+        Dim colIndex As Integer = e.ColumnIndex
 
-    Private Sub GroupBox1_Enter(sender As Object, e As EventArgs) Handles GroupBox1.Enter
+        Try
+
+            dgvSubjects.Item(colIndex, rowIndex).Value = dgvSubjects.Item(colIndex, rowIndex).Value 'Format(CDbl(dgvSubjects.Item(colIndex, rowIndex).Value), 
+            chkCompute.Visible = True
+        Catch ex As Exception
+            MsgBox(ex.Message)
+        End Try
 
     End Sub
 End Class

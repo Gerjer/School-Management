@@ -44,38 +44,84 @@ Public Class ftLoginForm
 
     End Sub
 
+
     Private Function IsLoginOK(ByVal UserName As String, ByVal Password As String) As Boolean
         Dim SQL As String = String.Format("SELECT id, CONCAT(first_name, ' ', last_name) AS 'AuthUserName', hashed_password,salt,application_setup_id,Type_User FROM users WHERE username='{0}' ", UserName)
         Dim Medata As New DataTable
         Dim Ret As Boolean = False
 
-        Try
-            Medata = clsDBConn.ExecQuery(SQL)
+        If checkingExpired(Date.Now) = False Then
 
-            If Medata.Rows.Count > 0 Then
-                Dim autPassword As String = HASH512(txtPassword.Text, Medata.Rows(0).Item("salt").ToString)
-                Dim hashed_password As String = Medata.Rows(0).Item("hashed_password").ToString
+            Try
+                Medata = clsDBConn.ExecQuery(SQL)
 
-                If autPassword = hashed_password Then
-                    AuthUserName = Medata.Rows(0).Item("AuthUserName").ToString
-                    LoginUserID = Medata.Rows(0).Item("id").ToString
-                    SALT = Medata.Rows(0).Item("salt").ToString
-                    AppSetup_Domain = Medata.Rows(0).Item("application_setup_id").ToString
-                    AuthUserType = Medata.Rows(0).Item("Type_User").ToString
-                    EMPLOYEE_ID = Medata.Rows(0).Item("application_setup_id").ToString
-                    Return True
+                If Medata.Rows.Count > 0 Then
+                    Dim autPassword As String = HASH512(txtPassword.Text, Medata.Rows(0).Item("salt").ToString)
+                    Dim hashed_password As String = Medata.Rows(0).Item("hashed_password").ToString
+
+                    If autPassword = hashed_password Then
+                        AuthUserName = Medata.Rows(0).Item("AuthUserName").ToString
+                        LoginUserID = Medata.Rows(0).Item("id").ToString
+                        SALT = Medata.Rows(0).Item("salt").ToString
+                        AppSetup_Domain = Medata.Rows(0).Item("application_setup_id").ToString
+                        AuthUserType = Medata.Rows(0).Item("Type_User").ToString
+                        EMPLOYEE_ID = Medata.Rows(0).Item("application_setup_id").ToString
+                        Return True
+                    End If
                 End If
-            End If
-        Catch ex As Exception
-            MsgBox(ex.Message)
-        End Try
-        Return Ret
+            Catch ex As Exception
+                MsgBox(ex.Message)
+            End Try
+            Return Ret
 
+        End If
 
     End Function
 
+    Dim Expired As Boolean = False
+    Private Function checkingExpired(now As Date) As Boolean
+
+        Dim dt As DataTable = DataSource(String.Format("SELECT sender,date(created_at)'date_start' FROM reminders WHERE is_read = 0"))
+
+        If dt.Rows.Count > 0 Then
+
+            Dim daysAllocate As Integer = dt(0)("sender")
+            Dim date_start As Date = dt(0)("date_start").ToString
+
+            Try
+                Dim StartDate As Date = Date.Parse(date_start)
+                Dim CurrentDate As Date = now
+
+                ' Determine the number of days between the two dates.
+                Dim daysCount As Long = DateDiff(DateInterval.Day, StartDate, CurrentDate)
+                daysAllocate = daysAllocate - daysCount
+
+                If daysAllocate < 0  Then
+                    Expired = True
+                    MessageBox.Show("Please Contact System Administrator.... ", "WARNING", MessageBoxButtons.OK, MessageBoxIcon.Warning)
+                    Return True
+                Else
+                    Expired = False
+                    Return False
+                End If
+
+                ' This statement has a string interval argument, and
+                ' is equivalent to the above statement.
+                'Dim days As Long = DateDiff("d", date1, date2)
+
+            Catch ex As Exception
+                Expired = False
+                Return False
+            End Try
+        Else
+            Expired = False
+            Return False
+        End If
 
 
+
+
+    End Function
 
     Private Sub getCompanyProfile()
         Dim SQLEX As String = "SELECT company_name, address FROM file"
@@ -274,7 +320,10 @@ Public Class ftLoginForm
 
             SetRootDirectory()
         Else
-            MessageBox.Show("Login is Incorrect....", "Please Verify UserName and Password!", MessageBoxButtons.OK, MessageBoxIcon.Information)
+            If Expired = False Then
+                MessageBox.Show("Login is Incorrect....", "Please Verify UserName and Password!", MessageBoxButtons.OK, MessageBoxIcon.Information)
+            End If
+
         End If
     End Sub
 
@@ -332,7 +381,9 @@ Public Class ftLoginForm
                 '    SetRootDirectory()
 
             Else
-                MessageBox.Show("Login is Incorrect....", "Please Verify UserName and Password!", MessageBoxButtons.OK, MessageBoxIcon.Information)
+                If Expired = False Then
+                    MessageBox.Show("Login is Incorrect....", "Please Verify UserName and Password!", MessageBoxButtons.OK, MessageBoxIcon.Information)
+                End If
             End If
         End If
 

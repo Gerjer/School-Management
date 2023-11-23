@@ -272,7 +272,7 @@ Partial Class fmaStudentAdmissionSetupForm
         Me.Panel1.Dock = System.Windows.Forms.DockStyle.Bottom
         Me.Panel1.Location = New System.Drawing.Point(0, 451)
         Me.Panel1.Name = "Panel1"
-        Me.Panel1.Padding = New System.Windows.Forms.Padding(5, 5, 5, 5)
+        Me.Panel1.Padding = New System.Windows.Forms.Padding(5)
         Me.Panel1.Size = New System.Drawing.Size(854, 47)
         Me.Panel1.TabIndex = 212
         '
@@ -1257,7 +1257,7 @@ Partial Class fmaStudentAdmissionSetupForm
         Me.GroupPanel1.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.GroupPanel1.Location = New System.Drawing.Point(0, 0)
         Me.GroupPanel1.Name = "GroupPanel1"
-        Me.GroupPanel1.Padding = New System.Windows.Forms.Padding(5, 5, 5, 5)
+        Me.GroupPanel1.Padding = New System.Windows.Forms.Padding(5)
         Me.GroupPanel1.Size = New System.Drawing.Size(854, 101)
         '
         '
@@ -1577,7 +1577,7 @@ Partial Class fmaStudentAdmissionSetupForm
         Me.Panel5.Controls.Add(Me.GroupPanel3)
         Me.Panel5.Location = New System.Drawing.Point(673, 11)
         Me.Panel5.Name = "Panel5"
-        Me.Panel5.Padding = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Panel5.Padding = New System.Windows.Forms.Padding(4)
         Me.Panel5.Size = New System.Drawing.Size(55, 81)
         Me.Panel5.TabIndex = 216
         '

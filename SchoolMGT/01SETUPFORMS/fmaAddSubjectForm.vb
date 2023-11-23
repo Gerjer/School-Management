@@ -25,6 +25,14 @@ Public Class fmaAddSubjectForm
 
         displayFindList()
 
+        cmbCourse.SelectedValue = _courseID
+        cmbCourse.SelectedIndex = 0
+        cmbBatchYear.Text = _batchyear
+        cmbBatchYear.SelectedIndex = 0
+        cmbBatch.SelectedValue = _batchID
+        cmbBatch.SelectedIndex = 0
+        displaySubject()
+
     End Sub
 
     Private Sub displayBatcheYear()

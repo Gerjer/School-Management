@@ -53,6 +53,7 @@ Partial Class fmaStudentFeePaymentsForm
         Me.Label1 = New System.Windows.Forms.Label()
         Me.dtpDateEnroll = New System.Windows.Forms.DateTimePicker()
         Me.groupboxPayment = New DevComponents.DotNetBar.Controls.GroupPanel()
+        Me.cbxdiscount = New System.Windows.Forms.CheckBox()
         Me.cxbxFullPayment = New System.Windows.Forms.CheckBox()
         Me.btnPost = New DevComponents.DotNetBar.ButtonX()
         Me.diAmount = New DevComponents.Editors.DoubleInput()
@@ -124,7 +125,6 @@ Partial Class fmaStudentFeePaymentsForm
         Me.CMenuStripOperations = New System.Windows.Forms.ContextMenuStrip(Me.components)
         Me.ViewAssessmentToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.StatementOfAccountToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.cbxdiscount = New System.Windows.Forms.CheckBox()
         Me.GroupPanel2.SuspendLayout()
         Me.GroupBox6.SuspendLayout()
         Me.GroupBox7.SuspendLayout()
@@ -483,6 +483,18 @@ Partial Class fmaStudentFeePaymentsForm
         Me.groupboxPayment.Style.TextLineAlignment = DevComponents.DotNetBar.eStyleTextAlignment.Near
         Me.groupboxPayment.TabIndex = 149
         Me.groupboxPayment.Text = "PAYMENTS"
+        '
+        'cbxdiscount
+        '
+        Me.cbxdiscount.AutoSize = True
+        Me.cbxdiscount.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.cbxdiscount.Location = New System.Drawing.Point(384, 34)
+        Me.cbxdiscount.Name = "cbxdiscount"
+        Me.cbxdiscount.Size = New System.Drawing.Size(105, 20)
+        Me.cbxdiscount.TabIndex = 10
+        Me.cbxdiscount.Text = "DISCOUNT"
+        Me.cbxdiscount.UseVisualStyleBackColor = True
+        Me.cbxdiscount.Visible = False
         '
         'cxbxFullPayment
         '
@@ -936,13 +948,11 @@ Partial Class fmaStudentFeePaymentsForm
         'RadioButton1
         '
         Me.RadioButton1.AutoSize = True
-        Me.RadioButton1.Checked = True
         Me.RadioButton1.ForeColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(192, Byte), Integer))
         Me.RadioButton1.Location = New System.Drawing.Point(72, 15)
         Me.RadioButton1.Name = "RadioButton1"
         Me.RadioButton1.Size = New System.Drawing.Size(74, 17)
         Me.RadioButton1.TabIndex = 0
-        Me.RadioButton1.TabStop = True
         Me.RadioButton1.Tag = "13"
         Me.RadioButton1.Text = "COLLEGE"
         Me.RadioButton1.UseVisualStyleBackColor = True
@@ -1412,18 +1422,6 @@ Partial Class fmaStudentFeePaymentsForm
         Me.StatementOfAccountToolStripMenuItem.Name = "StatementOfAccountToolStripMenuItem"
         Me.StatementOfAccountToolStripMenuItem.Size = New System.Drawing.Size(190, 22)
         Me.StatementOfAccountToolStripMenuItem.Text = "Statement of Account"
-        '
-        'cbxdiscount
-        '
-        Me.cbxdiscount.AutoSize = True
-        Me.cbxdiscount.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.cbxdiscount.Location = New System.Drawing.Point(384, 34)
-        Me.cbxdiscount.Name = "cbxdiscount"
-        Me.cbxdiscount.Size = New System.Drawing.Size(105, 20)
-        Me.cbxdiscount.TabIndex = 10
-        Me.cbxdiscount.Text = "DISCOUNT"
-        Me.cbxdiscount.UseVisualStyleBackColor = True
-        Me.cbxdiscount.Visible = False
         '
         'fmaStudentFeePaymentsForm
         '

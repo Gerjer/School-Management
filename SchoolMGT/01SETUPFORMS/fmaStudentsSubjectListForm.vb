@@ -23,6 +23,8 @@ Public Class fmaStudentsSubjectListForm
         'getSubjSchedule()
         FirstLoad = True
 
+        btnSearchCondition.Focus()
+
         displayFilterCategory()
         curriculumStatus()
         loadHandler()
@@ -418,7 +420,7 @@ Public Class fmaStudentsSubjectListForm
         AssessmentExist = DataSource(String.Format("SELECT * FROM students_assessment WHERE student_id = '" & Me.txtStudentID.Text & "'"))
 
         If AssessmentExist.Rows.Count > 0 Then
-            If MessageBox.Show("It cannot be ADD because a STUDENT ASSESSMENT has already been GENERATED...", "WARNING!!!", MessageBoxButtons.OK, MessageBoxIcon.Warning) = DialogResult.OK Then
+            If MessageBox.Show("Adding Subject is invalid,  TUITION FEES is already generated...", "WARNING!!!", MessageBoxButtons.OK, MessageBoxIcon.Warning) = DialogResult.OK Then
 
                 If MessageBox.Show("Please proceed to ADD/DROP Subject Function", "Please Verify !", MessageBoxButtons.YesNo, MessageBoxIcon.Information) = DialogResult.Yes Then
                     Me.DialogResult = DialogResult.OK
@@ -431,7 +433,7 @@ Public Class fmaStudentsSubjectListForm
                 With addSubj
                     .txtStudentID.Text = Me.txtStudentID.Text
                     .StudentSubjectSysPK = StudentSubjectSysPK
-                    .batchID = txtBatchName.Tag 'BatchID\
+                    .batchID = _batchID
                 End With
 
                 addSubj.Show(Me)
@@ -793,7 +795,8 @@ Public Class fmaStudentsSubjectListForm
     Private Sub ButtonX3_Click(sender As Object, e As EventArgs) Handles ButtonX3.Click
 
         Cursor = Cursors.WaitCursor
-
+        AutoFillControl = True
+        _student_name = txtStudentName.Text
         Dim frm As New fmaStudentFeePaymentsForm
         frm.shortcut = True
         frm.cmbyearbatch.Text = _batchyear

@@ -19,10 +19,13 @@ Partial Public Class SubjectSchedulePerInstructor
     Private Sub InitializeComponent()
         Dim resources As System.Resources.ResourceManager = New System.Resources.ResourceManager(GetType(SubjectSchedulePerInstructor))
         Me.PageHeader1 = New DataDynamics.ActiveReports.PageHeader()
+        Me.TextBox2 = New DataDynamics.ActiveReports.TextBox()
         Me.Detail1 = New DataDynamics.ActiveReports.Detail()
         Me.TextBox4 = New DataDynamics.ActiveReports.TextBox()
         Me.TextBox5 = New DataDynamics.ActiveReports.TextBox()
         Me.TextBox7 = New DataDynamics.ActiveReports.TextBox()
+        Me.TextBox13 = New DataDynamics.ActiveReports.TextBox()
+        Me.TextBox6 = New DataDynamics.ActiveReports.TextBox()
         Me.PageFooter1 = New DataDynamics.ActiveReports.PageFooter()
         Me.GroupHeader1 = New DataDynamics.ActiveReports.GroupHeader()
         Me.TextBox1 = New DataDynamics.ActiveReports.TextBox()
@@ -30,23 +33,20 @@ Partial Public Class SubjectSchedulePerInstructor
         Me.TextBox9 = New DataDynamics.ActiveReports.TextBox()
         Me.TextBox10 = New DataDynamics.ActiveReports.TextBox()
         Me.TextBox12 = New DataDynamics.ActiveReports.TextBox()
-        Me.GroupFooter1 = New DataDynamics.ActiveReports.GroupFooter()
-        Me.TextBox2 = New DataDynamics.ActiveReports.TextBox()
-        Me.TextBox13 = New DataDynamics.ActiveReports.TextBox()
         Me.TextBox3 = New DataDynamics.ActiveReports.TextBox()
-        Me.TextBox6 = New DataDynamics.ActiveReports.TextBox()
+        Me.GroupFooter1 = New DataDynamics.ActiveReports.GroupFooter()
+        CType(Me.TextBox2, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.TextBox4, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.TextBox5, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.TextBox7, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.TextBox13, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.TextBox6, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.TextBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.TextBox8, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.TextBox9, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.TextBox10, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.TextBox12, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.TextBox2, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.TextBox13, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.TextBox3, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.TextBox6, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me, System.ComponentModel.ISupportInitialize).BeginInit()
         '
         'PageHeader1
@@ -54,6 +54,24 @@ Partial Public Class SubjectSchedulePerInstructor
         Me.PageHeader1.Controls.AddRange(New DataDynamics.ActiveReports.ARControl() {Me.TextBox2})
         Me.PageHeader1.Height = 0.7604167!
         Me.PageHeader1.Name = "PageHeader1"
+        '
+        'TextBox2
+        '
+        Me.TextBox2.Border.BottomColor = System.Drawing.Color.Black
+        Me.TextBox2.Border.BottomStyle = DataDynamics.ActiveReports.BorderLineStyle.None
+        Me.TextBox2.Border.LeftColor = System.Drawing.Color.Black
+        Me.TextBox2.Border.LeftStyle = DataDynamics.ActiveReports.BorderLineStyle.None
+        Me.TextBox2.Border.RightColor = System.Drawing.Color.Black
+        Me.TextBox2.Border.RightStyle = DataDynamics.ActiveReports.BorderLineStyle.None
+        Me.TextBox2.Border.TopColor = System.Drawing.Color.Black
+        Me.TextBox2.Border.TopStyle = DataDynamics.ActiveReports.BorderLineStyle.None
+        Me.TextBox2.Height = 0.25!
+        Me.TextBox2.Left = 0!
+        Me.TextBox2.Name = "TextBox2"
+        Me.TextBox2.Style = "ddo-char-set: 0; text-align: center; font-weight: bold; font-size: 12pt; "
+        Me.TextBox2.Text = "SUBJECT SCHEDULE PER INSTRUCTOR"
+        Me.TextBox2.Top = 0.1875!
+        Me.TextBox2.Width = 7.5625!
         '
         'Detail1
         '
@@ -77,7 +95,8 @@ Partial Public Class SubjectSchedulePerInstructor
         Me.TextBox4.Height = 0.1875!
         Me.TextBox4.Left = 0!
         Me.TextBox4.Name = "TextBox4"
-        Me.TextBox4.Style = "text-align: center; "
+        Me.TextBox4.Style = "ddo-char-set: 0; text-align: center; font-size: 7pt; font-family: Calibri Light; " &
+    ""
         Me.TextBox4.Text = "Batch"
         Me.TextBox4.Top = 0!
         Me.TextBox4.Width = 0.625!
@@ -97,7 +116,7 @@ Partial Public Class SubjectSchedulePerInstructor
         Me.TextBox5.Height = 0.1875!
         Me.TextBox5.Left = 0.625!
         Me.TextBox5.Name = "TextBox5"
-        Me.TextBox5.Style = "ddo-char-set: 0; font-size: 8.25pt; "
+        Me.TextBox5.Style = "ddo-char-set: 0; font-size: 7pt; font-family: Calibri Light; "
         Me.TextBox5.Text = Nothing
         Me.TextBox5.Top = 0!
         Me.TextBox5.Width = 2.875!
@@ -117,10 +136,50 @@ Partial Public Class SubjectSchedulePerInstructor
         Me.TextBox7.Height = 0.1875!
         Me.TextBox7.Left = 4.1875!
         Me.TextBox7.Name = "TextBox7"
-        Me.TextBox7.Style = "ddo-char-set: 0; font-size: 8.25pt; "
+        Me.TextBox7.Style = "ddo-char-set: 0; font-size: 7pt; font-family: Calibri Light; "
         Me.TextBox7.Text = Nothing
         Me.TextBox7.Top = 0!
         Me.TextBox7.Width = 2.0!
+        '
+        'TextBox13
+        '
+        Me.TextBox13.Border.BottomColor = System.Drawing.Color.Black
+        Me.TextBox13.Border.BottomStyle = DataDynamics.ActiveReports.BorderLineStyle.Solid
+        Me.TextBox13.Border.LeftColor = System.Drawing.Color.Black
+        Me.TextBox13.Border.LeftStyle = DataDynamics.ActiveReports.BorderLineStyle.None
+        Me.TextBox13.Border.RightColor = System.Drawing.Color.Black
+        Me.TextBox13.Border.RightStyle = DataDynamics.ActiveReports.BorderLineStyle.Solid
+        Me.TextBox13.Border.TopColor = System.Drawing.Color.Black
+        Me.TextBox13.Border.TopStyle = DataDynamics.ActiveReports.BorderLineStyle.Solid
+        Me.TextBox13.CanGrow = False
+        Me.TextBox13.DataField = "no_exams"
+        Me.TextBox13.Height = 0.1875!
+        Me.TextBox13.Left = 3.5!
+        Me.TextBox13.Name = "TextBox13"
+        Me.TextBox13.Style = "ddo-char-set: 0; text-align: left; font-size: 7pt; font-family: Calibri Light; "
+        Me.TextBox13.Text = Nothing
+        Me.TextBox13.Top = 0!
+        Me.TextBox13.Width = 0.6875!
+        '
+        'TextBox6
+        '
+        Me.TextBox6.Border.BottomColor = System.Drawing.Color.Black
+        Me.TextBox6.Border.BottomStyle = DataDynamics.ActiveReports.BorderLineStyle.Solid
+        Me.TextBox6.Border.LeftColor = System.Drawing.Color.Black
+        Me.TextBox6.Border.LeftStyle = DataDynamics.ActiveReports.BorderLineStyle.Solid
+        Me.TextBox6.Border.RightColor = System.Drawing.Color.Black
+        Me.TextBox6.Border.RightStyle = DataDynamics.ActiveReports.BorderLineStyle.Solid
+        Me.TextBox6.Border.TopColor = System.Drawing.Color.Black
+        Me.TextBox6.Border.TopStyle = DataDynamics.ActiveReports.BorderLineStyle.Solid
+        Me.TextBox6.CanGrow = False
+        Me.TextBox6.DataField = "room"
+        Me.TextBox6.Height = 0.1875!
+        Me.TextBox6.Left = 6.1875!
+        Me.TextBox6.Name = "TextBox6"
+        Me.TextBox6.Style = "ddo-char-set: 0; font-size: 7pt; font-family: Calibri Light; "
+        Me.TextBox6.Text = Nothing
+        Me.TextBox6.Top = 0!
+        Me.TextBox6.Width = 1.25!
         '
         'PageFooter1
         '
@@ -230,49 +289,6 @@ Partial Public Class SubjectSchedulePerInstructor
         Me.TextBox12.Top = 0.375!
         Me.TextBox12.Width = 2.0!
         '
-        'GroupFooter1
-        '
-        Me.GroupFooter1.Height = 0!
-        Me.GroupFooter1.Name = "GroupFooter1"
-        '
-        'TextBox2
-        '
-        Me.TextBox2.Border.BottomColor = System.Drawing.Color.Black
-        Me.TextBox2.Border.BottomStyle = DataDynamics.ActiveReports.BorderLineStyle.None
-        Me.TextBox2.Border.LeftColor = System.Drawing.Color.Black
-        Me.TextBox2.Border.LeftStyle = DataDynamics.ActiveReports.BorderLineStyle.None
-        Me.TextBox2.Border.RightColor = System.Drawing.Color.Black
-        Me.TextBox2.Border.RightStyle = DataDynamics.ActiveReports.BorderLineStyle.None
-        Me.TextBox2.Border.TopColor = System.Drawing.Color.Black
-        Me.TextBox2.Border.TopStyle = DataDynamics.ActiveReports.BorderLineStyle.None
-        Me.TextBox2.Height = 0.25!
-        Me.TextBox2.Left = 0!
-        Me.TextBox2.Name = "TextBox2"
-        Me.TextBox2.Style = "ddo-char-set: 0; text-align: center; font-weight: bold; font-size: 12pt; "
-        Me.TextBox2.Text = "SUBJECT SCHEDULE PER INSTRUCTOR"
-        Me.TextBox2.Top = 0.1875!
-        Me.TextBox2.Width = 7.5625!
-        '
-        'TextBox13
-        '
-        Me.TextBox13.Border.BottomColor = System.Drawing.Color.Black
-        Me.TextBox13.Border.BottomStyle = DataDynamics.ActiveReports.BorderLineStyle.Solid
-        Me.TextBox13.Border.LeftColor = System.Drawing.Color.Black
-        Me.TextBox13.Border.LeftStyle = DataDynamics.ActiveReports.BorderLineStyle.None
-        Me.TextBox13.Border.RightColor = System.Drawing.Color.Black
-        Me.TextBox13.Border.RightStyle = DataDynamics.ActiveReports.BorderLineStyle.Solid
-        Me.TextBox13.Border.TopColor = System.Drawing.Color.Black
-        Me.TextBox13.Border.TopStyle = DataDynamics.ActiveReports.BorderLineStyle.Solid
-        Me.TextBox13.CanGrow = False
-        Me.TextBox13.DataField = "no_exams"
-        Me.TextBox13.Height = 0.1875!
-        Me.TextBox13.Left = 3.5!
-        Me.TextBox13.Name = "TextBox13"
-        Me.TextBox13.Style = "ddo-char-set: 0; text-align: left; font-size: 8.25pt; "
-        Me.TextBox13.Text = Nothing
-        Me.TextBox13.Top = 0!
-        Me.TextBox13.Width = 0.6875!
-        '
         'TextBox3
         '
         Me.TextBox3.Border.BottomColor = System.Drawing.Color.Black
@@ -292,25 +308,10 @@ Partial Public Class SubjectSchedulePerInstructor
         Me.TextBox3.Top = 0.375!
         Me.TextBox3.Width = 1.25!
         '
-        'TextBox6
+        'GroupFooter1
         '
-        Me.TextBox6.Border.BottomColor = System.Drawing.Color.Black
-        Me.TextBox6.Border.BottomStyle = DataDynamics.ActiveReports.BorderLineStyle.Solid
-        Me.TextBox6.Border.LeftColor = System.Drawing.Color.Black
-        Me.TextBox6.Border.LeftStyle = DataDynamics.ActiveReports.BorderLineStyle.Solid
-        Me.TextBox6.Border.RightColor = System.Drawing.Color.Black
-        Me.TextBox6.Border.RightStyle = DataDynamics.ActiveReports.BorderLineStyle.Solid
-        Me.TextBox6.Border.TopColor = System.Drawing.Color.Black
-        Me.TextBox6.Border.TopStyle = DataDynamics.ActiveReports.BorderLineStyle.Solid
-        Me.TextBox6.CanGrow = False
-        Me.TextBox6.DataField = "room"
-        Me.TextBox6.Height = 0.1875!
-        Me.TextBox6.Left = 6.1875!
-        Me.TextBox6.Name = "TextBox6"
-        Me.TextBox6.Style = "ddo-char-set: 0; font-size: 8.25pt; "
-        Me.TextBox6.Text = Nothing
-        Me.TextBox6.Top = 0!
-        Me.TextBox6.Width = 1.25!
+        Me.GroupFooter1.Height = 0!
+        Me.GroupFooter1.Name = "GroupFooter1"
         '
         'SubjectSchedulePerInstructor
         '
@@ -333,18 +334,18 @@ Partial Public Class SubjectSchedulePerInstructor
         Me.StyleSheet.Add(New DDCssLib.StyleSheetRule("font-family: Times New Roman; font-size: 14pt; font-weight: bold; font-style: ita" &
             "lic; ", "Heading2", "Normal"))
         Me.StyleSheet.Add(New DDCssLib.StyleSheetRule("font-size: 13pt; font-weight: bold; ", "Heading3", "Normal"))
+        CType(Me.TextBox2, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.TextBox4, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.TextBox5, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.TextBox7, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.TextBox13, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.TextBox6, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.TextBox1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.TextBox8, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.TextBox9, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.TextBox10, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.TextBox12, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.TextBox2, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.TextBox13, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.TextBox3, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.TextBox6, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me, System.ComponentModel.ISupportInitialize).EndInit()
 
     End Sub

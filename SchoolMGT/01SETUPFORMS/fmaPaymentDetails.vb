@@ -436,8 +436,20 @@
 
                 clsDBConn.Execute(SQLINDebit)
 
-                Dim is_grant As Integer = 0
-                Dim discountedAmt As Double = 0
+                'Update Scholarship Grand Details
+                Dim remarks As String = ""
+                If isDiscount = True Or isFullPayment = True Then
+
+                    If isFullPayment = True Then
+                        remarks = "FULL"
+                    Else
+                        remarks = "PARTIAL"
+                    End If
+
+                    DataSource(String.Format("UPDATE scholarship_grant_details SET deducted_amount = '" & CDbl(Me.txtTotalPayment.Text) & "',remarks = '" & remarks & "',is_grant = '1' WHERE student_id = '" & Me.txtStudentID.Text & "'"))
+
+                End If
+
 
                 'insert DEBIT First into 0_gl_trans END
 
@@ -460,24 +472,6 @@
 
                         If CDbl(value) = 0 Then
                             Continue For
-                        End If
-
-                        'Update Scholarship Grand Details
-                        If isDiscount = True Or isFullPayment = True Then
-
-                            discountedAmt += value
-
-                            Dim remarks As String = ""
-                            If discountedAmt >= txtAmount.Text Then
-                                is_grant = 1
-                                remarks = "FULL"
-                            Else
-                                is_grant = 0
-                                remarks = "PARTIAL"
-                            End If
-
-                            DataSource(String.Format("UPDATE scholarship_grant_details SET deducted_amount = '" & discountedAmt & "',remarks = '" & remarks & "',is_grant = '" & is_grant & "' WHERE student_id = '" & Me.txtStudentID.Text & "'"))
-
                         End If
 
                         Dim URBSQL As String = "UPDATE students_assessment SET running_balance=running_balance - " & CDbl(value)

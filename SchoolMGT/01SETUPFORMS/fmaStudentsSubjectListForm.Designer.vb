@@ -121,7 +121,7 @@ Partial Class fmaStudentsSubjectListForm
         Me.GroupPanel2.Dock = System.Windows.Forms.DockStyle.Fill
         Me.GroupPanel2.Location = New System.Drawing.Point(0, 0)
         Me.GroupPanel2.Name = "GroupPanel2"
-        Me.GroupPanel2.Size = New System.Drawing.Size(1139, 609)
+        Me.GroupPanel2.Size = New System.Drawing.Size(1139, 667)
         '
         '
         '
@@ -151,7 +151,7 @@ Partial Class fmaStudentsSubjectListForm
         Me.GroupBox2.Dock = System.Windows.Forms.DockStyle.Top
         Me.GroupBox2.Location = New System.Drawing.Point(0, 247)
         Me.GroupBox2.Name = "GroupBox2"
-        Me.GroupBox2.Size = New System.Drawing.Size(1116, 306)
+        Me.GroupBox2.Size = New System.Drawing.Size(1133, 306)
         Me.GroupBox2.TabIndex = 28
         Me.GroupBox2.TabStop = False
         '
@@ -192,7 +192,7 @@ Partial Class fmaStudentsSubjectListForm
         DataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
         Me.dgvSubjects.RowHeadersDefaultCellStyle = DataGridViewCellStyle8
         Me.dgvSubjects.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect
-        Me.dgvSubjects.Size = New System.Drawing.Size(1110, 287)
+        Me.dgvSubjects.Size = New System.Drawing.Size(1127, 287)
         Me.dgvSubjects.TabIndex = 27
         '
         'Column6
@@ -315,9 +315,9 @@ Partial Class fmaStudentsSubjectListForm
         Me.GroupBox3.Controls.Add(Me.txtNoOfUnits)
         Me.GroupBox3.Controls.Add(Me.LabelX6)
         Me.GroupBox3.Dock = System.Windows.Forms.DockStyle.Bottom
-        Me.GroupBox3.Location = New System.Drawing.Point(0, 553)
+        Me.GroupBox3.Location = New System.Drawing.Point(0, 554)
         Me.GroupBox3.Name = "GroupBox3"
-        Me.GroupBox3.Size = New System.Drawing.Size(1116, 107)
+        Me.GroupBox3.Size = New System.Drawing.Size(1133, 107)
         Me.GroupBox3.TabIndex = 27
         Me.GroupBox3.TabStop = False
         '
@@ -376,7 +376,7 @@ Partial Class fmaStudentsSubjectListForm
         Me.GroupBox1.Location = New System.Drawing.Point(0, 0)
         Me.GroupBox1.Name = "GroupBox1"
         Me.GroupBox1.Padding = New System.Windows.Forms.Padding(0)
-        Me.GroupBox1.Size = New System.Drawing.Size(1116, 247)
+        Me.GroupBox1.Size = New System.Drawing.Size(1133, 247)
         Me.GroupBox1.TabIndex = 22
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "FILTER"
@@ -503,7 +503,7 @@ Partial Class fmaStudentsSubjectListForm
         Me.Panel1.Location = New System.Drawing.Point(0, 209)
         Me.Panel1.Name = "Panel1"
         Me.Panel1.Padding = New System.Windows.Forms.Padding(150, 0, 0, 0)
-        Me.Panel1.Size = New System.Drawing.Size(1116, 38)
+        Me.Panel1.Size = New System.Drawing.Size(1133, 38)
         Me.Panel1.TabIndex = 133
         '
         'ButtonX1
@@ -514,7 +514,7 @@ Partial Class fmaStudentsSubjectListForm
         Me.ButtonX1.Dock = System.Windows.Forms.DockStyle.Right
         Me.ButtonX1.Image = Global.SchoolMGT.My.Resources.Resources.close
         Me.ButtonX1.ImageFixedSize = New System.Drawing.Size(25, 25)
-        Me.ButtonX1.Location = New System.Drawing.Point(1002, 0)
+        Me.ButtonX1.Location = New System.Drawing.Point(1019, 0)
         Me.ButtonX1.Name = "ButtonX1"
         Me.ButtonX1.Size = New System.Drawing.Size(114, 38)
         Me.ButtonX1.TabIndex = 132
@@ -794,7 +794,7 @@ Partial Class fmaStudentsSubjectListForm
         Me.BackColor = System.Drawing.Color.Azure
         Me.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.CancelButton = Me.ButtonX1
-        Me.ClientSize = New System.Drawing.Size(1139, 609)
+        Me.ClientSize = New System.Drawing.Size(1139, 667)
         Me.Controls.Add(Me.GroupPanel2)
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "fmaStudentsSubjectListForm"

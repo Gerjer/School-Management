@@ -30,6 +30,7 @@ Partial Public Class SubjectTeacherSummaryPerBatch
         Me.TextBox12 = New DataDynamics.ActiveReports.TextBox()
         Me.txtNo = New DataDynamics.ActiveReports.TextBox()
         Me.TextBox18 = New DataDynamics.ActiveReports.TextBox()
+        Me.TextBox25 = New DataDynamics.ActiveReports.TextBox()
         Me.PageFooter1 = New DataDynamics.ActiveReports.PageFooter()
         Me.ReportInfo1 = New DataDynamics.ActiveReports.ReportInfo()
         Me.GroupHeader1 = New DataDynamics.ActiveReports.GroupHeader()
@@ -53,9 +54,11 @@ Partial Public Class SubjectTeacherSummaryPerBatch
         Me.TextBox21 = New DataDynamics.ActiveReports.TextBox()
         Me.TextBox22 = New DataDynamics.ActiveReports.TextBox()
         Me.TextBox13 = New DataDynamics.ActiveReports.TextBox()
-        Me.GroupFooter2 = New DataDynamics.ActiveReports.GroupFooter()
         Me.TextBox24 = New DataDynamics.ActiveReports.TextBox()
-        Me.TextBox25 = New DataDynamics.ActiveReports.TextBox()
+        Me.GroupFooter2 = New DataDynamics.ActiveReports.GroupFooter()
+        Me.TextBox26 = New DataDynamics.ActiveReports.TextBox()
+        Me.TextBox27 = New DataDynamics.ActiveReports.TextBox()
+        Me.TextBox28 = New DataDynamics.ActiveReports.TextBox()
         CType(Me.TextBox2, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.TextBox3, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.txtCourseLevel, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -65,6 +68,7 @@ Partial Public Class SubjectTeacherSummaryPerBatch
         CType(Me.TextBox12, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.txtNo, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.TextBox18, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.TextBox25, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.ReportInfo1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.TextBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.TextBox8, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -84,7 +88,9 @@ Partial Public Class SubjectTeacherSummaryPerBatch
         CType(Me.TextBox22, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.TextBox13, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.TextBox24, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.TextBox25, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.TextBox26, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.TextBox27, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.TextBox28, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me, System.ComponentModel.ISupportInitialize).BeginInit()
         '
         'PageHeader1
@@ -189,8 +195,8 @@ Partial Public Class SubjectTeacherSummaryPerBatch
         'Detail1
         '
         Me.Detail1.ColumnSpacing = 0!
-        Me.Detail1.Controls.AddRange(New DataDynamics.ActiveReports.ARControl() {Me.TextBox5, Me.TextBox11, Me.TextBox12, Me.txtNo, Me.TextBox18, Me.TextBox25})
-        Me.Detail1.Height = 0.1666667!
+        Me.Detail1.Controls.AddRange(New DataDynamics.ActiveReports.ARControl() {Me.TextBox5, Me.TextBox11, Me.TextBox12, Me.txtNo, Me.TextBox18, Me.TextBox25, Me.TextBox26, Me.TextBox27, Me.TextBox28})
+        Me.Detail1.Height = 0.1875!
         Me.Detail1.Name = "Detail1"
         '
         'TextBox5
@@ -208,7 +214,7 @@ Partial Public Class SubjectTeacherSummaryPerBatch
         Me.TextBox5.Height = 0.1875!
         Me.TextBox5.Left = 0.375!
         Me.TextBox5.Name = "TextBox5"
-        Me.TextBox5.Style = "ddo-char-set: 0; font-size: 8.25pt; font-family: Microsoft Sans Serif; "
+        Me.TextBox5.Style = "ddo-char-set: 0; font-size: 7pt; font-family: Calibri Light; "
         Me.TextBox5.Text = Nothing
         Me.TextBox5.Top = 0!
         Me.TextBox5.Width = 0.9375!
@@ -228,7 +234,7 @@ Partial Public Class SubjectTeacherSummaryPerBatch
         Me.TextBox11.Height = 0.1875!
         Me.TextBox11.Left = 1.3125!
         Me.TextBox11.Name = "TextBox11"
-        Me.TextBox11.Style = "ddo-char-set: 0; font-size: 8.25pt; font-family: Microsoft Sans Serif; "
+        Me.TextBox11.Style = "ddo-char-set: 0; font-size: 7pt; font-family: Calibri Light; "
         Me.TextBox11.Text = Nothing
         Me.TextBox11.Top = 0!
         Me.TextBox11.Width = 2.0!
@@ -248,7 +254,7 @@ Partial Public Class SubjectTeacherSummaryPerBatch
         Me.TextBox12.Height = 0.1875!
         Me.TextBox12.Left = 3.3125!
         Me.TextBox12.Name = "TextBox12"
-        Me.TextBox12.Style = "ddo-char-set: 0; font-size: 8.25pt; font-family: Microsoft Sans Serif; "
+        Me.TextBox12.Style = "ddo-char-set: 0; font-size: 7pt; font-family: Calibri Light; "
         Me.TextBox12.Text = Nothing
         Me.TextBox12.Top = 0!
         Me.TextBox12.Width = 2.1875!
@@ -267,8 +273,8 @@ Partial Public Class SubjectTeacherSummaryPerBatch
         Me.txtNo.Height = 0.1875!
         Me.txtNo.Left = 0!
         Me.txtNo.Name = "txtNo"
-        Me.txtNo.Style = "ddo-char-set: 0; text-align: center; font-size: 8.25pt; font-family: Microsoft Sa" &
-    "ns Serif; "
+        Me.txtNo.Style = "ddo-char-set: 0; text-align: center; font-size: 7pt; font-family: Calibri Light; " &
+    ""
         Me.txtNo.Text = Nothing
         Me.txtNo.Top = 0!
         Me.txtNo.Width = 0.375!
@@ -288,10 +294,30 @@ Partial Public Class SubjectTeacherSummaryPerBatch
         Me.TextBox18.Height = 0.1875!
         Me.TextBox18.Left = 5.5!
         Me.TextBox18.Name = "TextBox18"
-        Me.TextBox18.Style = "ddo-char-set: 0; font-size: 8.25pt; font-family: Microsoft Sans Serif; "
+        Me.TextBox18.Style = "ddo-char-set: 0; font-size: 7pt; font-family: Calibri Light; "
         Me.TextBox18.Text = Nothing
         Me.TextBox18.Top = 0!
         Me.TextBox18.Width = 1.3125!
+        '
+        'TextBox25
+        '
+        Me.TextBox25.Border.BottomColor = System.Drawing.Color.Black
+        Me.TextBox25.Border.BottomStyle = DataDynamics.ActiveReports.BorderLineStyle.Solid
+        Me.TextBox25.Border.LeftColor = System.Drawing.Color.Black
+        Me.TextBox25.Border.LeftStyle = DataDynamics.ActiveReports.BorderLineStyle.None
+        Me.TextBox25.Border.RightColor = System.Drawing.Color.Black
+        Me.TextBox25.Border.RightStyle = DataDynamics.ActiveReports.BorderLineStyle.Solid
+        Me.TextBox25.Border.TopColor = System.Drawing.Color.Black
+        Me.TextBox25.Border.TopStyle = DataDynamics.ActiveReports.BorderLineStyle.Solid
+        Me.TextBox25.CanGrow = False
+        Me.TextBox25.DataField = "gender"
+        Me.TextBox25.Height = 0.1875!
+        Me.TextBox25.Left = 6.8125!
+        Me.TextBox25.Name = "TextBox25"
+        Me.TextBox25.Style = "ddo-char-set: 0; font-size: 7pt; font-family: Calibri Light; "
+        Me.TextBox25.Text = Nothing
+        Me.TextBox25.Top = 0!
+        Me.TextBox25.Width = 0.6875!
         '
         'PageFooter1
         '
@@ -338,7 +364,7 @@ Partial Public Class SubjectTeacherSummaryPerBatch
         Me.TextBox1.Height = 0.1875!
         Me.TextBox1.Left = 0!
         Me.TextBox1.Name = "TextBox1"
-        Me.TextBox1.Style = "background-color: #C0FFC0; "
+        Me.TextBox1.Style = "background-color: #FFE0C0; "
         Me.TextBox1.Text = "Subject :"
         Me.TextBox1.Top = 0!
         Me.TextBox1.Width = 0.9375!
@@ -358,7 +384,7 @@ Partial Public Class SubjectTeacherSummaryPerBatch
         Me.TextBox8.Height = 0.1875!
         Me.TextBox8.Left = 2.0!
         Me.TextBox8.Name = "TextBox8"
-        Me.TextBox8.Style = "text-align: center; background-color: #C0FFC0; "
+        Me.TextBox8.Style = "text-align: center; background-color: #FFE0C0; "
         Me.TextBox8.Text = Nothing
         Me.TextBox8.Top = 0!
         Me.TextBox8.Width = 4.0!
@@ -378,7 +404,7 @@ Partial Public Class SubjectTeacherSummaryPerBatch
         Me.TextBox6.Height = 0.1875!
         Me.TextBox6.Left = 6.0!
         Me.TextBox6.Name = "TextBox6"
-        Me.TextBox6.Style = "background-color: #C0FFC0; "
+        Me.TextBox6.Style = "background-color: #FFE0C0; "
         Me.TextBox6.Text = Nothing
         Me.TextBox6.Top = 0!
         Me.TextBox6.Width = 1.5!
@@ -398,7 +424,7 @@ Partial Public Class SubjectTeacherSummaryPerBatch
         Me.TextBox23.Height = 0.1875!
         Me.TextBox23.Left = 0.9375!
         Me.TextBox23.Name = "TextBox23"
-        Me.TextBox23.Style = "text-align: left; background-color: #C0FFC0; "
+        Me.TextBox23.Style = "text-align: left; background-color: #FFE0C0; "
         Me.TextBox23.Text = Nothing
         Me.TextBox23.Top = 0!
         Me.TextBox23.Width = 1.0625!
@@ -423,7 +449,7 @@ Partial Public Class SubjectTeacherSummaryPerBatch
         Me.TextBox14.Height = 0.1875!
         Me.TextBox14.Left = 0!
         Me.TextBox14.Name = "TextBox14"
-        Me.TextBox14.Style = "text-align: right; background-color: #C0FFC0; "
+        Me.TextBox14.Style = "text-align: right; background-color: #FFE0C0; "
         Me.TextBox14.Text = "TOTAL NUMBER OF STUDENT :"
         Me.TextBox14.Top = 0!
         Me.TextBox14.Width = 7.5!
@@ -683,11 +709,6 @@ Partial Public Class SubjectTeacherSummaryPerBatch
         Me.TextBox13.Top = 0.375!
         Me.TextBox13.Width = 1.3125!
         '
-        'GroupFooter2
-        '
-        Me.GroupFooter2.Height = 0!
-        Me.GroupFooter2.Name = "GroupFooter2"
-        '
         'TextBox24
         '
         Me.TextBox24.Border.BottomColor = System.Drawing.Color.Black
@@ -707,25 +728,70 @@ Partial Public Class SubjectTeacherSummaryPerBatch
         Me.TextBox24.Top = 0.375!
         Me.TextBox24.Width = 0.6875!
         '
-        'TextBox25
+        'GroupFooter2
         '
-        Me.TextBox25.Border.BottomColor = System.Drawing.Color.Black
-        Me.TextBox25.Border.BottomStyle = DataDynamics.ActiveReports.BorderLineStyle.Solid
-        Me.TextBox25.Border.LeftColor = System.Drawing.Color.Black
-        Me.TextBox25.Border.LeftStyle = DataDynamics.ActiveReports.BorderLineStyle.None
-        Me.TextBox25.Border.RightColor = System.Drawing.Color.Black
-        Me.TextBox25.Border.RightStyle = DataDynamics.ActiveReports.BorderLineStyle.Solid
-        Me.TextBox25.Border.TopColor = System.Drawing.Color.Black
-        Me.TextBox25.Border.TopStyle = DataDynamics.ActiveReports.BorderLineStyle.Solid
-        Me.TextBox25.CanGrow = False
-        Me.TextBox25.DataField = "gender"
-        Me.TextBox25.Height = 0.1875!
-        Me.TextBox25.Left = 6.8125!
-        Me.TextBox25.Name = "TextBox25"
-        Me.TextBox25.Style = "ddo-char-set: 0; font-size: 8.25pt; font-family: Microsoft Sans Serif; "
-        Me.TextBox25.Text = Nothing
-        Me.TextBox25.Top = 0!
-        Me.TextBox25.Width = 0.6875!
+        Me.GroupFooter2.Height = 0!
+        Me.GroupFooter2.Name = "GroupFooter2"
+        '
+        'TextBox26
+        '
+        Me.TextBox26.Border.BottomColor = System.Drawing.Color.Black
+        Me.TextBox26.Border.BottomStyle = DataDynamics.ActiveReports.BorderLineStyle.Solid
+        Me.TextBox26.Border.LeftColor = System.Drawing.Color.Black
+        Me.TextBox26.Border.LeftStyle = DataDynamics.ActiveReports.BorderLineStyle.Solid
+        Me.TextBox26.Border.RightColor = System.Drawing.Color.Black
+        Me.TextBox26.Border.RightStyle = DataDynamics.ActiveReports.BorderLineStyle.Solid
+        Me.TextBox26.Border.TopColor = System.Drawing.Color.Black
+        Me.TextBox26.Border.TopStyle = DataDynamics.ActiveReports.BorderLineStyle.Solid
+        Me.TextBox26.CanGrow = False
+        Me.TextBox26.Height = 0.1875!
+        Me.TextBox26.Left = 0!
+        Me.TextBox26.Name = "TextBox26"
+        Me.TextBox26.Style = "ddo-char-set: 0; text-align: center; font-size: 7pt; font-family: Calibri Light; " &
+    ""
+        Me.TextBox26.Text = Nothing
+        Me.TextBox26.Top = 0!
+        Me.TextBox26.Width = 0.375!
+        '
+        'TextBox27
+        '
+        Me.TextBox27.Border.BottomColor = System.Drawing.Color.Black
+        Me.TextBox27.Border.BottomStyle = DataDynamics.ActiveReports.BorderLineStyle.Solid
+        Me.TextBox27.Border.LeftColor = System.Drawing.Color.Black
+        Me.TextBox27.Border.LeftStyle = DataDynamics.ActiveReports.BorderLineStyle.Solid
+        Me.TextBox27.Border.RightColor = System.Drawing.Color.Black
+        Me.TextBox27.Border.RightStyle = DataDynamics.ActiveReports.BorderLineStyle.Solid
+        Me.TextBox27.Border.TopColor = System.Drawing.Color.Black
+        Me.TextBox27.Border.TopStyle = DataDynamics.ActiveReports.BorderLineStyle.Solid
+        Me.TextBox27.CanGrow = False
+        Me.TextBox27.DataField = "std_number"
+        Me.TextBox27.Height = 0.1875!
+        Me.TextBox27.Left = 0.375!
+        Me.TextBox27.Name = "TextBox27"
+        Me.TextBox27.Style = "ddo-char-set: 0; font-size: 7pt; font-family: Calibri Light; "
+        Me.TextBox27.Text = Nothing
+        Me.TextBox27.Top = 0!
+        Me.TextBox27.Width = 0.9375!
+        '
+        'TextBox28
+        '
+        Me.TextBox28.Border.BottomColor = System.Drawing.Color.Black
+        Me.TextBox28.Border.BottomStyle = DataDynamics.ActiveReports.BorderLineStyle.Solid
+        Me.TextBox28.Border.LeftColor = System.Drawing.Color.Black
+        Me.TextBox28.Border.LeftStyle = DataDynamics.ActiveReports.BorderLineStyle.Solid
+        Me.TextBox28.Border.RightColor = System.Drawing.Color.Black
+        Me.TextBox28.Border.RightStyle = DataDynamics.ActiveReports.BorderLineStyle.None
+        Me.TextBox28.Border.TopColor = System.Drawing.Color.Black
+        Me.TextBox28.Border.TopStyle = DataDynamics.ActiveReports.BorderLineStyle.Solid
+        Me.TextBox28.CanGrow = False
+        Me.TextBox28.DataField = "last_name"
+        Me.TextBox28.Height = 0.1875!
+        Me.TextBox28.Left = 1.3125!
+        Me.TextBox28.Name = "TextBox28"
+        Me.TextBox28.Style = "ddo-char-set: 0; font-size: 7pt; font-family: Calibri Light; "
+        Me.TextBox28.Text = Nothing
+        Me.TextBox28.Top = 0!
+        Me.TextBox28.Width = 2.0!
         '
         'SubjectTeacherSummaryPerBatch
         '
@@ -761,6 +827,7 @@ Partial Public Class SubjectTeacherSummaryPerBatch
         CType(Me.TextBox12, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.txtNo, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.TextBox18, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.TextBox25, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.ReportInfo1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.TextBox1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.TextBox8, System.ComponentModel.ISupportInitialize).EndInit()
@@ -780,7 +847,9 @@ Partial Public Class SubjectTeacherSummaryPerBatch
         CType(Me.TextBox22, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.TextBox13, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.TextBox24, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.TextBox25, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.TextBox26, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.TextBox27, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.TextBox28, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me, System.ComponentModel.ISupportInitialize).EndInit()
 
     End Sub
@@ -819,4 +888,7 @@ Partial Public Class SubjectTeacherSummaryPerBatch
     Friend WithEvents TextBox23 As DataDynamics.ActiveReports.TextBox
     Friend WithEvents TextBox25 As DataDynamics.ActiveReports.TextBox
     Friend WithEvents TextBox24 As DataDynamics.ActiveReports.TextBox
+    Friend WithEvents TextBox26 As DataDynamics.ActiveReports.TextBox
+    Friend WithEvents TextBox27 As DataDynamics.ActiveReports.TextBox
+    Friend WithEvents TextBox28 As DataDynamics.ActiveReports.TextBox
 End Class

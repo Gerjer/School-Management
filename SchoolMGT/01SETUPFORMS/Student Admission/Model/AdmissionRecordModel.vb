@@ -41,15 +41,16 @@ SELECT DISTINCT
         Return DataSource(sql)
     End Function
 
-    Friend Function getBatch(courseID As Integer, year_batch As String, semester As String, year_level As String) As Object
+    Friend Function getBatch(courseID As Integer, semester As String, ayFrom As String, ayTo As String) As Object
         Dim sql As String = ""
         sql = "
-SELECT batches.id, name FROM batches
+SELECT batches.id, name,school_year,year_level FROM batches
             INNER JOIN courses
             ON (batches.course_id = courses.id)
             WHERE batches.is_deleted =0 AND batches.is_active=1
-            AND course_id='" & courseID & "' AND batches.school_year = '" & year_batch & "'
-            AND semester = '" & semester & "' AND year_level = '" & year_level & "'
+            AND course_id='" & courseID & "'  AND semester = '" & semester & "' 
+            AND batches.school_year BETWEEN '" & ayFrom & "' AND '" & ayTo & "'
+        
 
 "
         Return DataSource(sql)
@@ -118,6 +119,14 @@ SELECT batches.id, name FROM batches
                     ORDER BY
                     students.id DESC
                     LIMIT 1"
+        Return DataSource(sql)
+    End Function
+
+    Friend Function getTotalPayments(pERSON_ID As Integer) As DataTable
+        Dim sql As String = ""
+        sql = "SELECT Format(SUM(amount),2)'amount',count(amount)'count' FROM  finance_transactions
+WHERE payee_type = 0 AND finance_transactions.student_id IN 
+(SELECT id FROM students WHERE students.status_type_id = 1 and person_id = 5658  ORDER BY person_id)"
         Return DataSource(sql)
     End Function
 End Class
